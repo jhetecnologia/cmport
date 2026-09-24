@@ -1,1 +1,64 @@
-document.addEventListener("DOMContentLoaded",()=>{const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".main-nav");if(toggle&&nav)toggle.addEventListener("click",()=>nav.classList.toggle("open"));const counters=document.querySelectorAll(".counter");const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=Number(el.dataset.target||0);let start=0;const step=Math.max(1,Math.ceil(target/50));const tick=()=>{start=Math.min(target,start+step);el.textContent=start.toLocaleString("pt-BR");if(start<target)requestAnimationFrame(tick)};tick();obs.unobserve(el)})},{threshold:.4});counters.forEach(c=>obs.observe(c));});
+// =========================================================
+// MENU MOBILE
+// =========================================================
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
+
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("open");
+    });
+}
+
+
+// =========================================================
+// NÚMEROS ANIMADOS
+// =========================================================
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            const counter = entry.target;
+            const target = Number(counter.dataset.target);
+
+            let current = 0;
+
+            const duration = 1800;
+            const increment = target / (duration / 16);
+
+            const updateCounter = () => {
+
+                current += increment;
+
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString("pt-BR");
+                    return;
+                }
+
+                counter.textContent = Math.floor(current).toLocaleString("pt-BR");
+
+                requestAnimationFrame(updateCounter);
+            };
+
+            updateCounter();
+
+            observer.unobserve(counter);
+        });
+
+    },
+    {
+        threshold: 0.5
+    }
+);
+
+
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
