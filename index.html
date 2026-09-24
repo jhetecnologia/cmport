@@ -1,674 +1,925 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CMPORT Sistemas de Eletrônicos de Segurança</title>
+    <title>CMPORT | Sistemas Eletrônicos de Segurança</title>
 
-    <meta name="description" content="Segurança e conveniência para o seu condomínio.">
+    <meta name="description"
+        content="CMPORT Sistemas Eletrônicos de Segurança. Soluções em CFTV, controle de acesso, alarmes, cercas elétricas, portões, interfones e manutenção. Atendimento 24 horas, 7 dias por semana.">
 
+    <meta name="theme-color" content="#0B1F3B">
+
+    <link rel="icon" href="Logo.png">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lato:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-<header class="site-header">
-    <div class="header-inner">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <a class="logo" href="index.html">
-            <img src="Logo.jpeg" alt="CMPORT">
-        </a>
+    <header class="site-header">
 
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="container header-container">
 
-        <nav class="main-nav">
-            <a class="active" href="index.html">Home</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="quem-somos.html">Quem somos</a>
-            <a href="contato.html">Contato</a>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-
-<!-- HERO -->
-<section class="hero"
-    style="--hero:url('Imagens/security-service-hero-img-bg.jpg')">
-
-    <div class="hero-overlay"></div>
-
-    <div class="container hero-content">
-
-        <h6>Tecnologia de Vigilância de Ponta</h6>
-
-        <div class="hero-divider">★</div>
-
-        <h1>
-            SEGURANÇA E CONVENIÊNCIA PARA O SEU CONDOMÍNIO
-        </h1>
-
-        <p>
-            Oferecemos soluções completas com fornecimento de equipamento
-            e instalação profissional para o seu condomínio em São Paulo
-        </p>
-
-        <a class="btn btn-yellow"
-            href="https://api.whatsapp.com/send/?phone=5511940341682&text="
-            target="_blank">
-
-            <i class="fa-brands fa-whatsapp"></i>
-            Quero um orçamento
-
-        </a>
-
-    </div>
-</section>
-
-
-<!-- SOBRE -->
-<section class="about section">
-
-    <div class="container about-grid">
-
-        <div class="about-copy">
-
-            <h2>
-                Descubra a CMPORT Sistemas de Eletrônicos de Segurança
-            </h2>
-
-            <p>
-                Com um compromisso inabalável com a segurança e proteção,
-                a CMPORT Sistemas de Eletrônicos de Segurança se destaca
-                como líder na indústria. Nossa expertise abrange uma ampla
-                gama de soluções, incluindo câmeras de segurança, sistemas
-                de alarme, controle de acesso, cercas elétricas,
-                intercomunicadores e muito mais. Estamos empenhados em
-                fornecer serviços de alta qualidade e tecnologias avançadas
-                para garantir a segurança de nossos clientes.
-            </p>
-
-            <a class="text-link" href="quem-somos.html">
-                Saiba mais <span>›</span>
+            <a href="index.html" class="logo">
+                <img src="Logo.png" alt="CMPORT Sistemas Eletrônicos de Segurança">
             </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="main-nav">
+
+                <a href="index.html" class="active">Home</a>
+
+                <a href="servicos.html">Serviços</a>
+
+                <a href="quem-somos.html">Quem somos</a>
+
+                <a href="contato.html">Contato</a>
+
+                <a href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                    class="nav-button"
+                    target="_blank"
+                    rel="noopener">
+                    Solicitar orçamento
+                </a>
+
+            </nav>
 
         </div>
 
+    </header>
 
-        <div class="numbers">
 
-            <h3>os nossos números</h3>
+    <main>
 
-            <div class="numbers-grid">
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-                <div>
-                    <strong class="counter" data-target="15">0</strong>
-                    <span>+ Anos no mercado</span>
+        <section class="hero">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-content container">
+
+                <div class="hero-text">
+
+                    <span class="hero-eyebrow">
+                        <span></span>
+                        SISTEMAS ELETRÔNICOS DE SEGURANÇA
+                    </span>
+
+                    <h1>
+                        Segurança e tecnologia
+                        <strong>para proteger o que importa.</strong>
+                    </h1>
+
+                    <p>
+                        Soluções em segurança eletrônica, controle de acesso
+                        e manutenção para condomínios, empresas e residências.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                            class="btn btn-primary"
+                            target="_blank"
+                            rel="noopener">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Solicitar orçamento
+                        </a>
+
+                        <a href="#solucoes" class="btn btn-outline">
+                            Conheça nossas soluções
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+
+                        <div>
+                            <i class="fa-solid fa-clock"></i>
+
+                            <span>
+                                <strong>24 horas</strong>
+                                Atendimento
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <span>
+                                <strong>Segurança</strong>
+                                Soluções especializadas
+                            </span>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div>
-                    <strong class="counter" data-target="1000">0</strong>
-                    <span>+ Acessos</span>
+            </div>
+
+            <div class="hero-bottom-line"></div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO
+        ====================================================== -->
+
+        <section class="intro-section">
+
+            <div class="container intro-grid">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        CMPORT
+                    </span>
+
+                    <h2>
+                        Segurança que vai além
+                        <span>do equipamento.</span>
+                    </h2>
+
                 </div>
 
-                <div>
-                    <strong class="counter" data-target="10">0</strong>
-                    <span>Contatos por dia</span>
+                <div class="intro-text">
+
+                    <p>
+                        A CMPORT trabalha com sistemas eletrônicos de segurança
+                        e soluções para controle e proteção de ambientes.
+                    </p>
+
+                    <p>
+                        Atuamos com instalação, manutenção preventiva,
+                        manutenção corretiva e contratos mensais,
+                        oferecendo suporte técnico para manter seus sistemas
+                        funcionando de forma adequada.
+                    </p>
+
                 </div>
 
-                <div>
-                    <strong class="counter" data-target="1">0</strong>
-                    <span>K+ Projetos realizados</span>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DIFERENCIAIS
+        ====================================================== -->
+
+        <section class="differentials">
+
+            <div class="container">
+
+                <div class="differentials-grid">
+
+                    <div class="differential-item">
+
+                        <div class="differential-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+                            <strong>24 horas</strong>
+                            <span>Atendimento técnico</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="differential-item">
+
+                        <div class="differential-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div>
+                            <strong>7 dias por semana</strong>
+                            <span>De segunda a segunda</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="differential-item">
+
+                        <div class="differential-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <div>
+                            <strong>Manutenção</strong>
+                            <span>Preventiva e corretiva</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="differential-item">
+
+                        <div class="differential-icon">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+
+                        <div>
+                            <strong>Contrato mensal</strong>
+                            <span>Manutenção contínua</span>
+                        </div>
+
+                    </div>
+
                 </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SOLUÇÕES
+        ====================================================== -->
+
+        <section class="solutions-section" id="solucoes">
+
+            <div class="container">
+
+                <div class="section-top">
+
+                    <div>
+
+                        <span class="section-label">
+                            NOSSAS SOLUÇÕES
+                        </span>
+
+                        <h2>
+                            Tecnologia para uma
+                            <span>segurança mais completa.</span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Soluções pensadas para diferentes necessidades
+                        de segurança, controle e proteção.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <!-- 01 -->
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.55-1.jpeg"
+                                alt="Sistema de alarme">
+
+                            <span class="service-number">01</span>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-category">
+                                SEGURANÇA
+                            </span>
+
+                            <h3>Sistemas de Alarme</h3>
+
+                            <p>
+                                Sistemas para identificar situações de risco
+                                e tentativas de intrusão, proporcionando mais
+                                controle e agilidade diante de ocorrências.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 02 -->
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.54-2.jpeg"
+                                alt="Controle de acesso">
+
+                            <span class="service-number">02</span>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-category">
+                                ACESSO
+                            </span>
+
+                            <h3>Controle de Acesso</h3>
+
+                            <p>
+                                Soluções para controlar a entrada e saída
+                                de pessoas autorizadas, aumentando a segurança
+                                e a organização do ambiente.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 03 -->
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg"
+                                alt="Cerca elétrica">
+
+                            <span class="service-number">03</span>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-category">
+                                PROTEÇÃO PERIMETRAL
+                            </span>
+
+                            <h3>Cerca Elétrica</h3>
+
+                            <p>
+                                Proteção perimetral para aumentar a segurança
+                                do imóvel e dificultar tentativas de invasão.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 04 -->
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="Imagens/WhatsApp-Image-2023-08-18-at-14.48.38-1.jpeg"
+                                alt="Câmeras de segurança CFTV">
+
+                            <span class="service-number">04</span>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-category">
+                                MONITORAMENTO
+                            </span>
+
+                            <h3>Câmeras de Segurança</h3>
+
+                            <p>
+                                Sistemas de CFTV para monitoramento das áreas
+                                protegidas, com soluções adequadas a cada projeto.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 05 -->
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="Imagens/manutencao-portao-automatico-1.jpg"
+                                alt="Manutenção de portões">
+
+                            <span class="service-number">05</span>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-category">
+                                MANUTENÇÃO
+                            </span>
+
+                            <h3>Manutenção de Portões</h3>
+
+                            <p>
+                                Manutenção preventiva e corretiva para manter
+                                portões funcionando com segurança e eficiência.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 06 -->
+
+                    <article class="service-card">
+
+                        <div class="service-image">
+
+                            <img
+                                src="Imagens/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages-1-1024x683.jpg"
+                                alt="Sistema de interfone">
+
+                            <span class="service-number">06</span>
+
+                        </div>
+
+                        <div class="service-content">
+
+                            <span class="service-category">
+                                COMUNICAÇÃO
+                            </span>
+
+                            <h3>Interfone</h3>
+
+                            <p>
+                                Comunicação e identificação de visitantes
+                                para tornar o controle de acesso mais seguro.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- OUTRAS SOLUÇÕES -->
+
+                <div class="other-solutions">
+
+                    <div class="other-solutions-title">
+
+                        <span>Também trabalhamos com</span>
+
+                    </div>
+
+                    <div class="solution-tags">
+
+                        <span>Sistema Linear</span>
+
+                        <span>Antena Coletiva</span>
+
+                        <span>Sistema IVA</span>
+
+                        <span>Alarme de Incêndio</span>
+
+                        <span>Poste de Monitoramento</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MANUTENÇÃO
+        ====================================================== -->
+
+        <section class="maintenance-section">
+
+            <div class="maintenance-background"></div>
+
+            <div class="container maintenance-content">
+
+                <div class="maintenance-text">
+
+                    <span class="section-label light">
+                        MANUTENÇÃO CMPORT
+                    </span>
+
+                    <h2>
+                        Seu sistema funcionando
+                        <span>quando você precisa.</span>
+                    </h2>
+
+                    <p>
+                        Conte com a CMPORT para manutenção preventiva,
+                        manutenção corretiva e contratos mensais.
+                        Nosso objetivo é manter os sistemas de segurança
+                        funcionando corretamente e reduzir falhas inesperadas.
+                    </p>
+
+                    <a href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Falar com a CMPORT
+
+                    </a>
+
+                </div>
+
+
+                <div class="maintenance-features">
+
+                    <div class="maintenance-feature">
+
+                        <span>01</span>
+
+                        <div>
+                            <strong>Manutenção preventiva</strong>
+
+                            <p>
+                                Acompanhamento periódico para ajudar
+                                a evitar falhas.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="maintenance-feature">
+
+                        <span>02</span>
+
+                        <div>
+                            <strong>Manutenção corretiva</strong>
+
+                            <p>
+                                Atendimento para identificar e corrigir
+                                problemas nos sistemas.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="maintenance-feature">
+
+                        <span>03</span>
+
+                        <div>
+                            <strong>Contrato mensal</strong>
+
+                            <p>
+                                Manutenção contínua para maior
+                                previsibilidade e acompanhamento.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="maintenance-feature">
+
+                        <span>04</span>
+
+                        <div>
+                            <strong>Atendimento 24 horas</strong>
+
+                            <p>
+                                Suporte de segunda a segunda,
+                                24 horas por dia.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             POR QUE CMPORT
+        ====================================================== -->
+
+        <section class="why-section">
+
+            <div class="container">
+
+                <div class="why-grid">
+
+                    <div class="why-title">
+
+                        <span class="section-label">
+                            POR QUE CMPORT?
+                        </span>
+
+                        <h2>
+                            Segurança precisa de
+                            <span>continuidade.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="why-list">
+
+                        <div class="why-item">
+
+                            <div class="why-icon">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+
+                            <div>
+                                <h3>Atendimento 24 horas</h3>
+
+                                <p>
+                                    Suporte de segunda a segunda para
+                                    situações que não podem esperar.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="why-item">
+
+                            <div class="why-icon">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+
+                            <div>
+                                <h3>Manutenção especializada</h3>
+
+                                <p>
+                                    Preventiva e corretiva para diferentes
+                                    sistemas eletrônicos de segurança.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="why-item">
+
+                            <div class="why-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+
+                            <div>
+                                <h3>Soluções integradas</h3>
+
+                                <p>
+                                    Diferentes tecnologias trabalhando
+                                    em conjunto para proteger o ambiente.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="why-item">
+
+                            <div class="why-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+
+                            <div>
+                                <h3>Atendimento para diferentes ambientes</h3>
+
+                                <p>
+                                    Soluções para condomínios, empresas
+                                    e residências.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA FINAL
+        ====================================================== -->
+
+        <section class="final-cta">
+
+            <div class="container">
+
+                <div class="final-cta-box">
+
+                    <div>
+
+                        <span class="section-label light">
+                            PRECISA DE SUPORTE?
+                        </span>
+
+                        <h2>
+                            Fale com a CMPORT.
+                        </h2>
+
+                        <p>
+                            Solicite um orçamento ou entre em contato
+                            com nossa equipe.
+                        </p>
+
+                    </div>
+
+                    <a href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                        class="btn btn-white"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Falar pelo WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html">
+                    <img src="Logo.png" alt="CMPORT">
+                </a>
+
+                <p>
+                    Sistemas eletrônicos de segurança,
+                    manutenção e suporte técnico.
+                </p>
+
+                <div class="footer-contact">
+
+                    <a href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Atendimento pelo WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Navegação</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="servicos.html">Serviços</a>
+
+                <a href="quem-somos.html">Quem somos</a>
+
+                <a href="contato.html">Contato</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Soluções</h3>
+
+                <a href="servicos.html">CFTV</a>
+
+                <a href="servicos.html">Controle de acesso</a>
+
+                <a href="servicos.html">Alarmes</a>
+
+                <a href="servicos.html">Cerca elétrica</a>
+
+                <a href="servicos.html">Manutenção</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Atendimento</h3>
+
+                <p>
+                    Atendimento 24 horas
+                </p>
+
+                <p>
+                    De segunda a segunda
+                </p>
+
+                <p>
+                    Manutenção preventiva
+                    e corretiva
+                </p>
 
             </div>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="footer-bottom">
 
-
-<!-- SERVIÇOS -->
-<section class="services section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>Principais Serviços</h2>
-
-            <p>
-                Vigilância Nítida e Contínua para Sua Tranquilidade.
-            </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-
-            <!-- ALARME -->
-            <article class="service-card">
-
-                <img
-                    src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.55-1.jpeg"
-                    alt="Sistemas de Alarme">
-
-                <div class="service-card-body">
-
-                    <h3>Sistemas de Alarme</h3>
-
-                    <p>
-                        Confie em nossos sistemas de alarme altamente
-                        sensíveis para uma proteção abrangente. Detectando
-                        movimentos suspeitos e intrusões, esses sistemas
-                        emitem alertas instantâneos, oferecendo segurança
-                        inabalável e proporcionando tranquilidade para sua
-                        casa ou negócio.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- CONTROLE DE ACESSO -->
-            <article class="service-card">
-
-                <img
-                    src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.54-2.jpeg"
-                    alt="Controle de Acesso">
-
-                <div class="service-card-body">
-
-                    <h3>Controle de Acesso</h3>
-
-                    <p>
-                        Mantenha o controle total de quem entra em suas
-                        instalações com nossas soluções de controle de acesso.
-                        Desde sistemas de cartão de identificação até leitores
-                        biométricos, garanta a segurança e a privacidade ao
-                        permitir o acesso apenas a indivíduos autorizados.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- CERCA ELÉTRICA -->
-            <article class="service-card">
-
-                <img
-                    src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg"
-                    alt="Cerca Elétrica">
-
-                <div class="service-card-body">
-
-                    <h3>Cerca Elétrica</h3>
-
-                    <p>
-                        Nossas cercas elétricas proporcionam uma barreira
-                        dissuasória e eficaz contra invasões. Com eletrificação
-                        controlada, oferecemos uma camada adicional de proteção
-                        perimetral para impedir intrusões indesejadas.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- CÂMERAS -->
-            <article class="service-card">
-
-                <img
-                    src="Imagens/WhatsApp-Image-2023-08-18-at-14.48.38-1.jpeg"
-                    alt="Câmeras de Segurança">
-
-                <div class="service-card-body">
-
-                    <h3>Câmeras de Segurança</h3>
-
-                    <p>
-                        Nossas câmeras de segurança de última geração oferecem
-                        vigilância contínua e nítida para proteger o que é
-                        importante para você. Com resolução de alta definição
-                        e recursos de monitoramento remoto, mantenha-se
-                        conectado e informado sobre sua propriedade a qualquer
-                        hora, em qualquer lugar.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- PORTÕES -->
-            <article class="service-card">
-
-                <img
-                    src="Imagens/manutencao-portao-automatico-1.jpg"
-                    alt="Manutenção Corretiva e Preventiva de Portões">
-
-                <div class="service-card-body">
-
-                    <h3>
-                        Manutenção Corretiva e Preventiva de Portões
-                    </h3>
-
-                    <p>
-                        Nossa equipe especializada oferece manutenção
-                        confiável para garantir que seus portões estejam
-                        sempre funcionando perfeitamente. Desde reparos
-                        emergenciais até inspeções regulares, mantemos seu
-                        sistema de entrada em ótimo estado de operação,
-                        prevenindo problemas futuros.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <!-- INTERFONE -->
-            <article class="service-card">
-
-                <img
-                    src="Imagens/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages-1-1024x683.jpg"
-                    alt="Interfone">
-
-                <div class="service-card-body">
-
-                    <h3>Interfone</h3>
-
-                    <p>
-                        Comunique-se com clareza e eficiência através de
-                        nossos sistemas de interfone. Melhore a segurança
-                        e a comunicação interna, permitindo a identificação
-                        de visitantes antes de conceder o acesso, garantindo
-                        um ambiente seguro e controlado.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <div class="center">
-
-            <a class="btn btn-outline" href="servicos.html">
-                SERVIÇOS
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- INOVAÇÕES -->
-<section class="rank section"
-    style="--rank:url('Imagens/security-service-rank-img-bg.jpg')">
-
-    <div class="rank-overlay"></div>
-
-    <div class="container">
-
-        <h2>
-            Inovações que Potencializam a Proteção e o Controle nas
-            Comunidades Residenciais e Comerciais
-        </h2>
-
-        <h3>Saiba mais sobre a segurança</h3>
-
-
-        <div class="feature-grid">
-
-
-            <article class="feature-card">
-
-                <i class="fas fa-clock"></i>
-
-                <h3>Vigilância Inteligente</h3>
+            <div class="container">
 
                 <p>
-                    Descubra nossa tecnologia de análise de vídeo inteligente
-                    (IVA) que detecta atividades suspeitas automaticamente.
-                    Uma camada extra de proteção para identificar ameaças
-                    potenciais.
+                    © 2026 CMPORT Sistemas Eletrônicos de Segurança.
+                    Todos os direitos reservados.
                 </p>
-
-            </article>
-
-
-            <article class="feature-card">
-
-                <i class="fas fa-hand-paper"></i>
-
-                <h3>Acesso Controlado</h3>
-
-                <p>
-                    Tenha o controle total sobre quem entra em suas
-                    instalações com nossos sistemas de controle de acesso.
-                    Utilize cartões de identificação ou leitores biométricos
-                    para garantir acesso autorizado.
-                </p>
-
-            </article>
-
-
-            <article class="feature-card">
-
-                <i class="fas fa-hammer"></i>
-
-                <h3>Manutenção Confiável</h3>
-
-                <p>
-                    Além de oferecer soluções de segurança avançadas,
-                    também garantimos que tudo funcione perfeitamente.
-                    Nossa equipe especializada oferece serviços de manutenção
-                    corretiva e preventiva para manter seus sistemas de
-                    segurança em ótimo estado.
-                </p>
-
-            </article>
-
-
-            <article class="feature-card">
-
-                <i class="fas fa-phone-volume"></i>
-
-                <h3>Comunicação Confiável</h3>
-
-                <p>
-                    Melhore a comunicação e a segurança com nossos sistemas
-                    de interfone de alta qualidade. Identifique visitantes
-                    antes de abrir a porta, mantendo sua casa ou negócio seguro.
-                </p>
-
-            </article>
-
-
-            <article class="feature-card">
-
-                <i class="fas fa-laptop-house"></i>
-
-                <h3>Segurança Residencial</h3>
-
-                <p>
-                    Proteja sua casa e sua família com soluções de segurança
-                    personalizadas, incluindo câmeras de vigilância, sistemas
-                    de alarme e controle de acesso. Garanta tranquilidade onde
-                    mais importa.
-                </p>
-
-            </article>
-
-
-            <article class="feature-card">
-
-                <i class="fas fa-user-tie"></i>
-
-                <h3>Condomínios</h3>
-
-                <p>
-                    Oferecemos soluções de segurança avançadas para empresas
-                    de todos os tamanhos. Desde monitoramento 24 horas até
-                    análise de vídeo inteligente, mantenha seus ativos e
-                    funcionários protegidos.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- AVALIAÇÕES -->
-<section class="reviews section">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <h2>Avaliações</h2>
-        </div>
-
-
-        <div class="review-grid">
-
-
-            <article class="review-card">
-
-                <p>
-                    “Contratei a CMPORT para instalar um sistema completo de
-                    segurança em minha residência e estou extremamente
-                    satisfeito com os resultados. As câmeras de alta definição
-                    oferecem uma visão clara em tempo real, e o sistema de
-                    alarme me proporciona uma sensação de tranquilidade que
-                    nunca tive antes. Além disso, a equipe foi profissional,
-                    pontual e dedicada. Recomendo fortemente seus serviços!”
-                </p>
-
-                <h4>Jóse antonio</h4>
-
-                <span>Condomínios</span>
-
-            </article>
-
-
-            <article class="review-card">
-
-                <p>
-                    “Como proprietário de uma empresa, a segurança é uma
-                    prioridade máxima para mim. A CMPORT superou minhas
-                    expectativas com seu sistema de controle de acesso e
-                    monitoramento de alta qualidade. Agora posso acompanhar
-                    as atividades em minha empresa de qualquer lugar, graças
-                    às câmeras e à plataforma de análise inteligente. A equipe
-                    técnica também se mostrou ágil e competente. Excelente
-                    trabalho!”
-                </p>
-
-                <h4>Carlos Oliveira</h4>
-
-                <span>Empresa Privada</span>
-
-            </article>
-
-
-            <article class="review-card">
-
-                <p>
-                    “Eu estava procurando por um sistema de interfone
-                    confiável para minha casa e, depois de pesquisar bastante,
-                    escolhi a CMPORT. Estou muito feliz com a qualidade do
-                    interfone e com a facilidade de comunicação que ele
-                    proporciona. Agora posso verificar quem está na porta
-                    antes de decidir se abro ou não. A equipe da CMPORT foi
-                    atenciosa e prestativa durante todo o processo. Recomendo
-                    a todos”
-                </p>
-
-                <h4>Julia mendes</h4>
-
-                <span>Condomínios</span>
-
-            </article>
-
-        </div>
-
-
-        <div class="center">
-
-            <a class="text-link" href="contato.html">
-                entre em contato <span>›</span>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTATO -->
-<section class="meeting section">
-
-    <div class="container meeting-grid">
-
-        <div>
-
-            <h2>Marque uma reunião</h2>
-
-            <p>
-                Estamos aqui para responder às suas perguntas e ajudar no que
-                for necessário. Entre em contato conosco hoje mesmo!
-            </p>
-
-
-            <div class="social-links">
-
-                <a
-                    href="https://api.whatsapp.com/send/?phone=5511940341682&text="
-                    target="_blank">
-
-                    <i class="fa-brands fa-whatsapp"></i>
-                    WhatsApp
-
-                </a>
-
-                <a href="#">
-                    <i class="fa-brands fa-facebook"></i>
-                    Facebook
-                </a>
-
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                    Instagram
-                </a>
 
             </div>
 
         </div>
 
-
-        <div class="form-box">
-
-            <form onsubmit="return false">
-
-                <label>
-                    Nome
-                    <input type="text">
-                </label>
-
-                <label>
-                    Email
-                    <input type="email">
-                </label>
-
-                <label>
-                    Assunto
-                    <input type="text">
-                </label>
-
-                <label>
-                    Mensagem
-                    <textarea rows="5"></textarea>
-                </label>
-
-                <button class="btn btn-yellow" type="submit">
-                    Enviar
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
+    </footer>
 
 
-<!-- RODAPÉ -->
-<footer class="site-footer">
+    <!-- =====================================================
+         WHATSAPP FLUTUANTE
+    ====================================================== -->
 
-    <div class="footer-inner">
+    <a href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener"
+        aria-label="Falar com a CMPORT pelo WhatsApp">
 
-        <div>
+        <i class="fa-brands fa-whatsapp"></i>
 
-            <img
-                class="footer-logo"
-                src="Logo.jpeg"
-                alt="CMPORT">
+        <span>
+            Fale conosco
+        </span>
 
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="index.html">Home</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="quem-somos.html">Quem somos</a>
-            <a href="contato.html">Contato</a>
-
-        </div>
+    </a>
 
 
-        <div class="footer-contact">
+    <!-- JAVASCRIPT -->
 
-            <strong>Contato</strong>
-
-            <a
-                href="https://api.whatsapp.com/send/?phone=5511940341682&text="
-                target="_blank">
-
-                WhatsApp
-
-            </a>
-
-            <span>(11) 94034-1682</span>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        © CMPORT Sistemas de Eletrônicos de Segurança
-
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
