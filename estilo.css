@@ -111,9 +111,12 @@ textarea {
 }
 
 .logo img {
-    width: 112px;
+    width: 90px;
     height: auto;
     object-fit: contain;
+    background: transparent;
+}
+}
 
     /* NÃO coloca fundo na logo */
     background: transparent;
@@ -1079,8 +1082,7 @@ textarea {
 }
 
 .footer-brand img {
-    width: 112px;
-
+    width: 90px;
     background: transparent;
 }
 
@@ -1446,9 +1448,8 @@ textarea {
     }
 
     .logo img {
-        width: 112px;
-    }
-
+    width: 90px;
+}
     .hero {
         min-height: 730px;
     }
