@@ -122,7 +122,7 @@ textarea {
 }
 
 .logo img {
-    width: 132px;
+    width: 112px;
     height: auto;
     object-fit: contain;
 
@@ -1090,7 +1090,7 @@ textarea {
 }
 
 .footer-brand img {
-    width: 130px;
+    width: 112px;
 
     background: transparent;
 }
@@ -1560,6 +1560,8 @@ textarea {
         font-size: 23px;
     }
 }
+
+
 /* =========================================================
    ANIMAÇÕES
 ========================================================= */
