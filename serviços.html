@@ -32,16 +32,18 @@
 
 <header class="site-header">
 
-    <div class="header-inner">
+    <div class="container header-container">
 
         <a class="logo" href="index.html">
             <img src="Logo.png" alt="CMPORT">
         </a>
 
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button
+            class="menu-toggle"
+            aria-label="Abrir menu"
+            type="button"
+        >
+            <i class="fa-solid fa-bars"></i>
         </button>
 
         <nav class="main-nav">
@@ -63,7 +65,7 @@
             </a>
 
             <a
-                class="nav-cta"
+                class="nav-button"
                 href="https://api.whatsapp.com/send/?phone=5511940341682&text="
                 target="_blank"
                 rel="noopener"
@@ -80,11 +82,14 @@
 
 <main>
 
-    <!-- HERO -->
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section class="page-hero">
 
-        <div class="container">
+        <div class="container page-hero-content">
 
             <span class="eyebrow">
                 NOSSAS SOLUÇÕES
@@ -107,9 +112,11 @@
     </section>
 
 
-    <!-- INTRODUÇÃO -->
+    <!-- =====================================================
+         INTRODUÇÃO
+    ====================================================== -->
 
-    <section class="section">
+    <section class="intro-section">
 
         <div class="container">
 
@@ -134,9 +141,8 @@
             </div>
 
 
-            <!-- DESTAQUES -->
-
             <div class="differential-grid">
+
 
                 <div class="differential-item">
 
@@ -145,8 +151,15 @@
                     </div>
 
                     <div>
-                        <strong>24 horas</strong>
-                        <span>Atendimento de segunda a segunda</span>
+
+                        <strong>
+                            24 horas
+                        </strong>
+
+                        <span>
+                            Atendimento de segunda a segunda
+                        </span>
+
                     </div>
 
                 </div>
@@ -159,8 +172,15 @@
                     </div>
 
                     <div>
-                        <strong>Manutenção</strong>
-                        <span>Preventiva e corretiva</span>
+
+                        <strong>
+                            Manutenção
+                        </strong>
+
+                        <span>
+                            Preventiva e corretiva
+                        </span>
+
                     </div>
 
                 </div>
@@ -173,8 +193,15 @@
                     </div>
 
                     <div>
-                        <strong>Contrato mensal</strong>
-                        <span>Acompanhamento contínuo</span>
+
+                        <strong>
+                            Contrato mensal
+                        </strong>
+
+                        <span>
+                            Acompanhamento contínuo
+                        </span>
+
                     </div>
 
                 </div>
@@ -187,11 +214,19 @@
                     </div>
 
                     <div>
-                        <strong>Soluções integradas</strong>
-                        <span>Segurança e tecnologia</span>
+
+                        <strong>
+                            Soluções integradas
+                        </strong>
+
+                        <span>
+                            Segurança e tecnologia
+                        </span>
+
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -200,42 +235,62 @@
     </section>
 
 
-    <!-- SERVIÇOS -->
+    <!-- =====================================================
+         SERVIÇOS
+    ====================================================== -->
 
-    <section class="section services">
+    <section class="solutions-section">
 
         <div class="container">
 
-            <div class="section-heading">
+            <div class="section-top">
 
-                <span class="section-label">
-                    PRINCIPAIS SERVIÇOS
-                </span>
+                <div>
 
-                <h2>
-                    Soluções para proteger
-                    o que importa.
-                </h2>
+                    <span class="section-label">
+                        PRINCIPAIS SERVIÇOS
+                    </span>
+
+                    <h2>
+                        Soluções para proteger
+                        o que importa.
+                    </h2>
+
+                </div>
+
+                <p>
+                    Soluções eletrônicas para segurança, controle
+                    e monitoramento de diferentes ambientes,
+                    com suporte e manutenção especializada.
+                </p>
 
             </div>
 
 
-            <div class="service-grid">
+            <div class="services-grid">
 
 
-                <!-- ALARME -->
+                <!-- 01 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.55-1.jpeg"
-                        alt="Sistema de alarme"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.55-1.jpeg"
+                            alt="Sistema de alarme"
+                        >
 
                         <span class="service-number">
                             01
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            SEGURANÇA
                         </span>
 
                         <h3>
@@ -254,19 +309,27 @@
                 </article>
 
 
-                <!-- CONTROLE DE ACESSO -->
+                <!-- 02 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.54-2.jpeg"
-                        alt="Controle de acesso"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.54-2.jpeg"
+                            alt="Controle de acesso"
+                        >
 
                         <span class="service-number">
                             02
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            ACESSO
                         </span>
 
                         <h3>
@@ -284,19 +347,27 @@
                 </article>
 
 
-                <!-- CERCA ELÉTRICA -->
+                <!-- 03 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg"
-                        alt="Cerca elétrica"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg"
+                            alt="Cerca elétrica"
+                        >
 
                         <span class="service-number">
                             03
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            PROTEÇÃO PERIMETRAL
                         </span>
 
                         <h3>
@@ -314,19 +385,27 @@
                 </article>
 
 
-                <!-- CFTV -->
+                <!-- 04 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/Camera de segurança.jpeg"
-                        alt="Câmeras de segurança e CFTV"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/Camera de segurança.jpeg"
+                            alt="Câmeras de segurança e CFTV"
+                        >
 
                         <span class="service-number">
                             04
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            MONITORAMENTO
                         </span>
 
                         <h3>
@@ -345,19 +424,27 @@
                 </article>
 
 
-                <!-- PORTÕES -->
+                <!-- 05 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/manutencao-portao-automatico-1.jpg"
-                        alt="Manutenção de portões automáticos"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/manutencao-portao-automatico-1.jpg"
+                            alt="Manutenção de portões automáticos"
+                        >
 
                         <span class="service-number">
                             05
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            MANUTENÇÃO
                         </span>
 
                         <h3>
@@ -376,19 +463,27 @@
                 </article>
 
 
-                <!-- INTERFONE -->
+                <!-- 06 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages-1-1024x683.jpg"
-                        alt="Sistema de interfone"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages-1-1024x683.jpg"
+                            alt="Sistema de interfone"
+                        >
 
                         <span class="service-number">
                             06
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            COMUNICAÇÃO
                         </span>
 
                         <h3>
@@ -406,19 +501,27 @@
                 </article>
 
 
-                <!-- POSTE DE MONITORAMENTO -->
+                <!-- 07 -->
 
                 <article class="service-card">
 
-                    <img
-                        src="Imagens/Poste de Monitoramento.jpeg"
-                        alt="Poste de Monitoramento"
-                    >
+                    <div class="service-image">
 
-                    <div class="service-card-body">
+                        <img
+                            src="Imagens/Poste de Monitoramento.jpeg"
+                            alt="Poste de Monitoramento"
+                        >
 
                         <span class="service-number">
                             07
+                        </span>
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <span class="service-category">
+                            MONITORAMENTO
                         </span>
 
                         <h3>
@@ -438,48 +541,38 @@
 
             </div>
 
-        </div>
 
-    </section>
+            <!-- OUTRAS SOLUÇÕES -->
 
+            <div class="other-solutions">
 
-    <!-- OUTRAS SOLUÇÕES -->
+                <div class="other-solutions-title">
 
-    <section class="section section-dark">
+                    <span>
+                        Também trabalhamos com
+                    </span>
 
-        <div class="container">
+                </div>
 
-            <div class="section-heading light">
+                <div class="solution-tags">
 
-                <span class="section-label">
-                    TAMBÉM TRABALHAMOS COM
-                </span>
+                    <span>
+                        Sistema Linear
+                    </span>
 
-                <h2>
-                    Outras soluções para
-                    segurança e infraestrutura.
-                </h2>
+                    <span>
+                        Antena Coletiva
+                    </span>
 
-            </div>
+                    <span>
+                        Sistema IVA
+                    </span>
 
+                    <span>
+                        Alarme de Incêndio
+                    </span>
 
-            <div class="solution-tags">
-
-                <span>
-                    Sistema Linear
-                </span>
-
-                <span>
-                    Antena Coletiva
-                </span>
-
-                <span>
-                    Sistema IVA
-                </span>
-
-                <span>
-                    Alarme de Incêndio
-                </span>
+                </div>
 
             </div>
 
@@ -488,29 +581,47 @@
     </section>
 
 
-    <!-- MANUTENÇÃO -->
+    <!-- =====================================================
+         MANUTENÇÃO
+    ====================================================== -->
 
-    <section class="maintenance section">
+    <section class="maintenance-section">
+
+        <div class="maintenance-background"></div>
 
         <div class="container">
 
             <div class="maintenance-content">
 
-                <span class="section-label">
-                    MANUTENÇÃO
-                </span>
+                <div class="maintenance-text">
 
-                <h2>
-                    Seu sistema precisa
-                    continuar funcionando.
-                </h2>
+                    <span class="section-label light">
+                        MANUTENÇÃO
+                    </span>
 
-                <p>
-                    Além da instalação e implantação das soluções,
-                    a CMPORT trabalha com manutenção preventiva,
-                    manutenção corretiva e contratos mensais,
-                    garantindo acompanhamento contínuo dos sistemas.
-                </p>
+                    <h2>
+                        Seu sistema precisa
+                        continuar funcionando.
+                    </h2>
+
+                    <p>
+                        Além da instalação e implantação das soluções,
+                        a CMPORT trabalha com manutenção preventiva,
+                        manutenção corretiva e contratos mensais,
+                        garantindo acompanhamento contínuo dos sistemas.
+                    </p>
+
+                    <a
+                        class="btn btn-primary"
+                        href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Solicitar atendimento
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
 
 
                 <div class="maintenance-features">
@@ -526,10 +637,10 @@
                                 Preventiva
                             </strong>
 
-                            <span>
+                            <p>
                                 Acompanhamento periódico para
                                 reduzir falhas e preservar os equipamentos.
-                            </span>
+                            </p>
 
                         </div>
 
@@ -546,10 +657,10 @@
                                 Corretiva
                             </strong>
 
-                            <span>
+                            <p>
                                 Atendimento para identificar e
                                 solucionar problemas nos sistemas.
-                            </span>
+                            </p>
 
                         </div>
 
@@ -566,10 +677,10 @@
                                 Atendimento 24 horas
                             </strong>
 
-                            <span>
+                            <p>
                                 Suporte de segunda a segunda,
                                 24 horas por dia.
-                            </span>
+                            </p>
 
                         </div>
 
@@ -585,36 +696,46 @@
     </section>
 
 
-    <!-- CTA -->
+    <!-- =====================================================
+         CTA FINAL
+    ====================================================== -->
 
-    <section class="final-cta section">
+    <section class="final-cta">
 
         <div class="container">
 
-            <span class="section-label">
-                FALE COM A CMPORT
-            </span>
+            <div class="final-cta-box">
 
-            <h2>
-                Precisa de uma solução
-                para o seu ambiente?
-            </h2>
+                <div>
 
-            <p>
-                Entre em contato e explique o que você precisa.
-                Nossa equipe pode orientar sobre a solução mais
-                adequada para o seu caso.
-            </p>
+                    <span class="section-label">
+                        FALE COM A CMPORT
+                    </span>
 
-            <a
-                class="btn btn-primary"
-                href="https://api.whatsapp.com/send/?phone=5511940341682&text="
-                target="_blank"
-                rel="noopener"
-            >
-                Solicitar orçamento
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
+                    <h2>
+                        Precisa de uma solução
+                        para o seu ambiente?
+                    </h2>
+
+                    <p>
+                        Entre em contato e explique o que você precisa.
+                        Nossa equipe pode orientar sobre a solução mais
+                        adequada para o seu caso.
+                    </p>
+
+                </div>
+
+                <a
+                    class="btn btn-white"
+                    href="https://api.whatsapp.com/send/?phone=5511940341682&text="
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Solicitar orçamento
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
 
         </div>
 
@@ -623,11 +744,13 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer class="site-footer">
 
-    <div class="footer-inner">
+    <div class="container footer-grid">
 
 
         <div class="footer-brand">
@@ -668,11 +791,11 @@
         </div>
 
 
-        <div class="footer-links">
+        <div class="footer-column">
 
-            <strong>
+            <h3>
                 Navegação
-            </strong>
+            </h3>
 
             <a href="index.html">
                 Início
@@ -693,19 +816,44 @@
         </div>
 
 
-        <div class="footer-contact">
+        <div class="footer-column">
 
-            <strong>
+            <h3>
+                Soluções
+            </h3>
+
+            <a href="serviços.html">
+                CFTV
+            </a>
+
+            <a href="serviços.html">
+                Controle de Acesso
+            </a>
+
+            <a href="serviços.html">
+                Cerca Elétrica
+            </a>
+
+            <a href="serviços.html">
+                Manutenção
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
                 Atendimento
-            </strong>
+            </h3>
 
-            <span>
+            <p>
                 24 horas por dia
-            </span>
+            </p>
 
-            <span>
+            <p>
                 7 dias por semana
-            </span>
+            </p>
 
             <a
                 href="https://api.whatsapp.com/send/?phone=5511940341682&text="
@@ -724,16 +872,22 @@
 
     <div class="footer-bottom">
 
-        <span>
-            © CMPORT Sistemas de Eletrônicos de Segurança
-        </span>
+        <div class="container">
+
+            <p>
+                © CMPORT Sistemas Eletrônicos de Segurança
+            </p>
+
+        </div>
 
     </div>
 
 </footer>
 
 
-<!-- WHATSAPP -->
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
 
 <a
     class="whatsapp-float"
