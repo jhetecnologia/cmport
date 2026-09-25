@@ -19,6 +19,8 @@ if (menuToggle && mainNav) {
 
         const icon = menuToggle.querySelector("i");
 
+        if (!icon) return;
+
         if (mainNav.classList.contains("open")) {
 
             icon.classList.remove("fa-bars");
@@ -52,6 +54,8 @@ if (menuToggle && mainNav) {
             mainNav.classList.remove("open");
 
             const icon = menuToggle.querySelector("i");
+
+            if (!icon) return;
 
             icon.classList.remove("fa-xmark");
             icon.classList.add("fa-bars");
@@ -94,8 +98,15 @@ document.addEventListener("click", event => {
 
         const icon = menuToggle.querySelector("i");
 
+        if (!icon) return;
+
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
 
     }
 
@@ -179,14 +190,15 @@ if ("IntersectionObserver" in window) {
    ANO AUTOMÁTICO NO FOOTER
 ========================================================= */
 
-const footerYear =
-    document.querySelector(".footer-bottom p");
+const footerYear = document.querySelector(
+    ".footer-bottom p, .footer-bottom span"
+);
 
 if (footerYear) {
 
-    footerYear.innerHTML =
-        footerYear.innerHTML.replace(
-            "2026",
+    footerYear.textContent =
+        footerYear.textContent.replace(
+            /20\d{2}/,
             new Date().getFullYear()
         );
 
