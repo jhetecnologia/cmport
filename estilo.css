@@ -107,7 +107,7 @@ textarea {
 }
 
 .header-container {
-    min-height: 82px;
+    min-height: 74px;
 
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@ textarea {
 }
 
 .logo img {
-    width: 132px;
+    width: 115px;
     height: auto;
     object-fit: contain;
     background: transparent;
@@ -173,7 +173,7 @@ textarea {
 }
 
 .nav-button {
-    padding: 12px 19px;
+    padding: 11px 18px;
 
     border-radius: 8px;
 
@@ -265,7 +265,7 @@ textarea {
     position: relative;
     z-index: 2;
 
-    padding-top: 82px;
+    padding-top: 74px;
 }
 
 .hero-text {
@@ -461,9 +461,10 @@ textarea {
     letter-spacing: 2px;
 }
 
-.section-heading h2,
-.section-top h2,
-.why-title h2 {
+
+/* CORREÇÃO DOS TÍTULOS */
+
+.section-heading {
     margin-top: 15px;
 
     font-family: "Lato", sans-serif;
@@ -477,12 +478,30 @@ textarea {
     letter-spacing: -1.5px;
 }
 
-.section-heading h2 span,
-.section-top h2 span,
-.why-title h2 span {
+.section-top .section-heading {
+    margin-top: 15px;
+}
+
+.why-title {
+    margin-top: 15px;
+
+    font-family: "Lato", sans-serif;
+
+    color: var(--navy);
+
+    font-size: clamp(34px, 4vw, 50px);
+    line-height: 1.08;
+
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.section-heading span,
+.why-title span {
     color: var(--blue);
 }
 
+.section-heading + p,
 .section-heading > p {
     max-width: 760px;
 
@@ -795,6 +814,13 @@ textarea {
     gap: 30px;
 }
 
+.other-solutions-title {
+    color: var(--navy);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
 .other-solutions-title span {
     color: var(--navy);
 
@@ -834,7 +860,7 @@ textarea {
     background: var(--navy);
 }
 
-.section-dark .section-heading h2 {
+.section-dark .section-heading {
     color: var(--white);
 }
 
@@ -842,7 +868,7 @@ textarea {
     color: rgba(255, 255, 255, 0.62);
 }
 
-.section-heading.light h2 {
+.section-heading.light {
     color: var(--white);
 }
 
@@ -1207,7 +1233,7 @@ textarea {
 
 .footer-brand img,
 .footer-logo {
-    width: 130px;
+    width: 100px;
 
     background: transparent;
 }
@@ -1343,7 +1369,7 @@ textarea {
     display: flex;
     align-items: center;
 
-    padding-top: 82px;
+    padding-top: 74px;
 
     background:
         linear-gradient(
@@ -1379,6 +1405,7 @@ textarea {
 
     font-size: 15px;
 }
+
 
 /* Compatibilidade com o HTML atual das páginas internas */
 
@@ -1471,22 +1498,26 @@ textarea {
 
     z-index: 9999;
 
-    width: 58px;
-    height: 58px;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
+    gap: 9px;
+
+    padding: 13px 17px;
+
+    min-height: 48px;
+
+    border-radius: 100px;
 
     background: #25D366;
 
     color: #FFFFFF !important;
 
-    font-size: 26px;
+    font-size: 12px;
+    font-weight: 800;
 
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.20);
 
     transition: var(--transition);
 }
@@ -1496,17 +1527,25 @@ textarea {
 
     color: #FFFFFF !important;
 
-    font-size: 26px;
+    font-size: 20px;
 
     line-height: 1;
 }
 
-.whatsapp-float:hover {
-    background: #25D366;
+.whatsapp-float span {
+    display: inline;
 
     color: #FFFFFF !important;
 
-    transform: translateY(-4px) scale(1.05);
+    white-space: nowrap;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe5d;
+
+    color: #FFFFFF !important;
+
+    transform: translateY(-3px);
 
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
@@ -1580,7 +1619,11 @@ textarea {
     }
 
     .header-container {
-        min-height: 72px;
+        min-height: 68px;
+    }
+
+    .logo img {
+        width: 108px;
     }
 
     .menu-toggle {
@@ -1590,7 +1633,7 @@ textarea {
     .main-nav {
         position: absolute;
 
-        top: 72px;
+        top: 68px;
         left: 17px;
         right: 17px;
 
@@ -1643,7 +1686,7 @@ textarea {
     }
 
     .hero-content {
-        padding-top: 110px;
+        padding-top: 105px;
     }
 
     .hero h1 {
@@ -1734,7 +1777,12 @@ textarea {
     }
 
     .logo img {
-        width: 112px;
+        width: 105px;
+    }
+
+    .footer-brand img,
+    .footer-logo {
+        width: 95px;
     }
 
     .hero {
@@ -1809,7 +1857,8 @@ textarea {
     }
 
     .maintenance-feature {
-        grid-template-columns: 35px 1fr;
+        display: flex;
+        align-items: flex-start;
     }
 
     .final-cta {
@@ -1834,7 +1883,7 @@ textarea {
     .page-hero {
         min-height: 420px;
 
-        padding-top: 90px;
+        padding-top: 85px;
     }
 
     .page-hero > .container h1 {
@@ -1845,12 +1894,24 @@ textarea {
         font-size: 14px;
     }
 
+    /* WhatsApp no celular: somente o círculo */
+
     .whatsapp-float {
         right: 15px;
         bottom: 15px;
 
         width: 52px;
         height: 52px;
+
+        min-height: 52px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+    .whatsapp-float span {
+        display: none;
     }
 
     .whatsapp-float i {
