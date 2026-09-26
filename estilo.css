@@ -172,8 +172,11 @@ textarea {
     width: 100%;
 }
 
+
+/* BOTÃO SOLICITAR ORÇAMENTO */
+
 .nav-button {
-    padding: 11px 18px;
+    padding: 9px 15px;
 
     border-radius: 8px;
 
@@ -1436,24 +1439,26 @@ textarea {
 
 
 /* =========================================================
-   TOPO INTERNO — CENTRALIZADO
+   TOPO INTERNO — ALINHADO À ESQUERDA
 ========================================================= */
 
 .page-hero-content {
     width: 100%;
-    max-width: 900px;
+    max-width: 760px;
 
-    margin: 0 auto;
+    margin: 0;
 
     color: var(--white);
 
-    text-align: center;
+    text-align: left;
 }
 
 .page-hero-content h1 {
     max-width: 850px;
 
-    margin: 12px auto 0;
+    margin: 12px 0 0;
+
+    color: var(--white);
 
     font-family: "Lato", sans-serif;
 
@@ -1462,12 +1467,14 @@ textarea {
     line-height: 1;
 
     font-weight: 900;
+
+    letter-spacing: -1.5px;
 }
 
 .page-hero-content p {
     max-width: 720px;
 
-    margin: 18px auto 0;
+    margin: 18px 0 0;
 
     color: rgba(255, 255, 255, 0.62);
 
@@ -1507,17 +1514,22 @@ textarea {
 }
 
 
-/* Centralização caso o HTML use
-   diretamente .container */
+/* =========================================================
+   CONTAINER DO HERO INTERNO
+========================================================= */
 
 .page-hero > .container {
-    text-align: center;
+    width: min(1180px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    text-align: left;
 }
 
 .page-hero > .container h1 {
     max-width: 850px;
 
-    margin: 18px auto 0;
+    margin: 18px 0 0;
 
     color: var(--white);
 
@@ -1535,7 +1547,7 @@ textarea {
 .page-hero > .container p {
     max-width: 720px;
 
-    margin: 20px auto 0;
+    margin: 20px 0 0;
 
     color: rgba(255, 255, 255, 0.64);
 
@@ -1755,8 +1767,8 @@ textarea {
         background: rgba(0, 168, 255, 0.08);
     }
 
-    .main-nav .nav-button {
-        margin-top: 8px;
+    .nav-button {
+        padding: 9px 15px;
 
         text-align: center;
     }
@@ -2009,6 +2021,11 @@ textarea {
         font-size: 9px;
     }
 
+
+    /* =====================================================
+       HERO DAS PÁGINAS INTERNAS — CELULAR
+    ===================================================== */
+
     .page-hero {
         min-height: 420px;
 
@@ -2018,11 +2035,13 @@ textarea {
     .page-hero-content {
         max-width: 100%;
 
-        text-align: center;
+        text-align: left;
     }
 
     .page-hero-content h1 {
         max-width: 100%;
+
+        margin: 12px 0 0;
 
         font-size: clamp(36px, 11vw, 48px);
     }
@@ -2030,15 +2049,19 @@ textarea {
     .page-hero-content p {
         max-width: 100%;
 
+        margin: 18px 0 0;
+
         font-size: 14px;
     }
 
     .page-hero > .container {
-        text-align: center;
+        text-align: left;
     }
 
     .page-hero > .container h1 {
         max-width: 100%;
+
+        margin: 18px 0 0;
 
         font-size: clamp(36px, 11vw, 48px);
     }
@@ -2046,10 +2069,15 @@ textarea {
     .page-hero > .container p {
         max-width: 100%;
 
+        margin: 18px 0 0;
+
         font-size: 14px;
     }
 
-    /* WhatsApp no celular: somente o círculo */
+
+    /* =====================================================
+       WHATSAPP NO CELULAR — SOMENTE CÍRCULO
+    ===================================================== */
 
     .whatsapp-float {
         right: 15px;
