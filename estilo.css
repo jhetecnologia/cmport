@@ -1284,21 +1284,26 @@ textarea {
     letter-spacing: 0.5px;
 }
 
+/* =========================================================
+   PADRÃO DE TAMANHO DOS LINKS DO RODAPÉ
+========================================================= */
 .footer-column a,
-.footer-column p,
-.footer-links a,
-.footer-contact span {
-    color: rgba(255, 255, 255, 0.48);
-
+.footer-links a {
     font-size: 11px;
     line-height: 1.6;
-
+    color: rgba(255, 255, 255, 0.48);
+    font-weight: 400;
     transition: var(--transition);
 }
 
+.footer-column a.active,
+.footer-links a.active {
+    color: var(--blue);
+    font-weight: 700;
+}
+
 .footer-column a:hover,
-.footer-links a:hover,
-.footer-contact a:hover {
+.footer-links a:hover {
     color: var(--blue);
 }
 
