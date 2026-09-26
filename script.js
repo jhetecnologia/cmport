@@ -11,9 +11,26 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
+function closeMobileMenu() {
+    if (!menuToggle || !mainNav) return;
+
+    mainNav.classList.remove("open");
+
+    const icon = menuToggle.querySelector("i");
+
+    if (icon) {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+
+    menuToggle.setAttribute("aria-label", "Abrir menu");
+}
+
 if (menuToggle && mainNav) {
 
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", (event) => {
+
+        event.stopPropagation();
 
         mainNav.classList.toggle("open");
 
@@ -33,13 +50,8 @@ if (menuToggle && mainNav) {
 
         } else {
 
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
+            closeMobileMenu();
 
-            menuToggle.setAttribute(
-                "aria-label",
-                "Abrir menu"
-            );
         }
 
     });
@@ -50,21 +62,7 @@ if (menuToggle && mainNav) {
     navLinks.forEach(link => {
 
         link.addEventListener("click", () => {
-
-            mainNav.classList.remove("open");
-
-            const icon = menuToggle.querySelector("i");
-
-            if (!icon) return;
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Abrir menu"
-            );
-
+            closeMobileMenu();
         });
 
     });
@@ -78,9 +76,7 @@ if (menuToggle && mainNav) {
 
 document.addEventListener("click", event => {
 
-    if (!menuToggle || !mainNav) {
-        return;
-    }
+    if (!menuToggle || !mainNav) return;
 
     const clickedInsideMenu =
         mainNav.contains(event.target);
@@ -94,19 +90,7 @@ document.addEventListener("click", event => {
         mainNav.classList.contains("open")
     ) {
 
-        mainNav.classList.remove("open");
-
-        const icon = menuToggle.querySelector("i");
-
-        if (!icon) return;
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
-        menuToggle.setAttribute(
-            "aria-label",
-            "Abrir menu"
-        );
+        closeMobileMenu();
 
     }
 
@@ -121,22 +105,27 @@ const header = document.querySelector(".site-header");
 
 if (header) {
 
+    const updateHeader = () => {
+
+        if (window.scrollY > 30) {
+
+            header.style.background =
+                "rgba(7, 20, 38, 0.98)";
+
+        } else {
+
+            header.style.background =
+                "rgba(11, 31, 59, 0.94)";
+
+        }
+
+    };
+
+    updateHeader();
+
     window.addEventListener(
         "scroll",
-        () => {
-
-            if (window.scrollY > 30) {
-
-                header.style.background =
-                    "rgba(7, 20, 38, 0.98)";
-
-            } else {
-
-                header.style.background =
-                    "rgba(11, 31, 59, 0.94)";
-            }
-
-        },
+        updateHeader,
         { passive: true }
     );
 
@@ -144,14 +133,14 @@ if (header) {
 
 
 /* =========================================================
-   ANIMAÇÃO SUAVE DOS ELEMENTOS
+   ANIMAÇÃO DOS ELEMENTOS
 ========================================================= */
 
 const animatedElements = document.querySelectorAll(
     ".service-card, .why-item, .differential-item, .maintenance-feature"
 );
 
-if ("IntersectionObserver" in window) {
+if ("IntersectionObserver" in window && animatedElements.length) {
 
     const animationObserver =
         new IntersectionObserver(
@@ -159,9 +148,7 @@ if ("IntersectionObserver" in window) {
 
                 entries.forEach(entry => {
 
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+                    if (!entry.isIntersecting) return;
 
                     entry.target.classList.add("is-visible");
 
@@ -187,17 +174,17 @@ if ("IntersectionObserver" in window) {
 
 
 /* =========================================================
-   ANO AUTOMÁTICO NO FOOTER
+   ANO AUTOMÁTICO
 ========================================================= */
 
 const footerYear = document.querySelector(
-    ".footer-bottom p, .footer-bottom span"
+    ".footer-bottom p"
 );
 
 if (footerYear) {
 
-    footerYear.textContent =
-        footerYear.textContent.replace(
+    footerYear.innerHTML =
+        footerYear.innerHTML.replace(
             /20\d{2}/,
             new Date().getFullYear()
         );
