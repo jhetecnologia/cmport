@@ -2765,3 +2765,89 @@ textarea {
     }
 
 }
+
+/* =========================================================
+   CORREÇÃO FINAL — MENU E POR QUE A CMPORT
+========================================================= */
+
+/* BOTÃO FALE CONOSCO DO MENU */
+
+.main-nav a.nav-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+
+    padding: 10px 16px !important;
+
+    background: #00A8FF !important;
+    color: #FFFFFF !important;
+
+    border-radius: 8px !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    white-space: nowrap !important;
+
+    text-decoration: none !important;
+}
+
+.main-nav a.nav-button i {
+    color: #FFFFFF !important;
+}
+
+.main-nav a.nav-button:hover {
+    background: #FFFFFF !important;
+    color: #0B1F3B !important;
+}
+
+.main-nav a.nav-button:hover i {
+    color: #0B1F3B !important;
+}
+
+
+/* =========================================================
+   POR QUE A CMPORT
+========================================================= */
+
+.why-section {
+    background: #0B1F3B !important;
+    color: #FFFFFF !important;
+}
+
+.why-section .section-label {
+    color: #00A8FF !important;
+}
+
+.why-section .why-title {
+    color: #FFFFFF !important;
+}
+
+.why-section .why-title span {
+    color: #00A8FF !important;
+}
+
+.why-section .why-list {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.why-section .why-item {
+    border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.why-section .why-item h3 {
+    color: #FFFFFF !important;
+}
+
+.why-section .why-item p {
+    color: rgba(255, 255, 255, 0.68) !important;
+}
+
+.why-section .why-icon {
+    background: rgba(0, 168, 255, 0.12) !important;
+    color: #00A8FF !important;
+}
