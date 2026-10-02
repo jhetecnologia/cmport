@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 
 <html lang="pt-BR">
@@ -12,9 +11,23 @@
     content="width=device-width, initial-scale=1.0"
 >
 
+<title>
+    Quem Somos | CMPORT Sistemas Eletrônicos de Segurança
+</title>
+
 <meta
     name="description"
-    content="Conheça a CMPORT Sistemas Eletrônicos de Segurança, especializada em segurança eletrônica, manutenção e suporte técnico."
+    content="Conheça a CMPORT Sistemas Eletrônicos de Segurança, especializada em segurança eletrônica, CFTV, controle de acesso, alarmes, manutenção e suporte técnico."
+>
+
+<meta
+    name="author"
+    content="CMPORT Sistemas Eletrônicos de Segurança"
+>
+
+<meta
+    name="robots"
+    content="index, follow"
 >
 
 <meta
@@ -22,7 +35,20 @@
     content="#0B1F3B"
 >
 
-<title>Quem Somos | CMPORT Sistemas Eletrônicos de Segurança</title>
+
+<!-- =====================================================
+     CANONICAL
+====================================================== -->
+
+<link
+    rel="canonical"
+    href="https://www.cmport.com.br/quem-somos.html"
+>
+
+
+<!-- =====================================================
+     FAVICON
+====================================================== -->
 
 <link
     rel="icon"
@@ -30,14 +56,14 @@
     href="Logo.png"
 >
 
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
+
+<!-- =====================================================
+     GOOGLE FONTS
+====================================================== -->
 
 <link
     rel="preconnect"
-    href="https://fonts.gstatic.com"
+    href="https://fonts.googleapis.com"
 >
 
 <link
@@ -51,15 +77,113 @@
     rel="stylesheet"
 >
 
+
+<!-- =====================================================
+     FONT AWESOME
+====================================================== -->
+
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
+
+<!-- =====================================================
+     OPEN GRAPH
+====================================================== -->
+
+<meta
+    property="og:type"
+    content="website"
+>
+
+<meta
+    property="og:locale"
+    content="pt_BR"
+>
+
+<meta
+    property="og:title"
+    content="Quem Somos | CMPORT Sistemas Eletrônicos de Segurança"
+>
+
+<meta
+    property="og:description"
+    content="Conheça a CMPORT e seu trabalho com segurança eletrônica, CFTV, controle de acesso, manutenção e suporte técnico."
+>
+
+<meta
+    property="og:url"
+    content="https://www.cmport.com.br/quem-somos.html"
+>
+
+<meta
+    property="og:site_name"
+    content="CMPORT Sistemas Eletrônicos de Segurança"
+>
+
+<meta
+    property="og:image"
+    content="https://www.cmport.com.br/Logo.png"
+>
+
+
+<!-- =====================================================
+     TWITTER CARD
+====================================================== -->
+
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="Quem Somos | CMPORT Sistemas Eletrônicos de Segurança"
+>
+
+<meta
+    name="twitter:description"
+    content="Conheça a CMPORT e nossas soluções em segurança eletrônica, manutenção e controle de acesso."
+>
+
+<meta
+    name="twitter:image"
+    content="https://www.cmport.com.br/Logo.png"
+>
+
+
+<!-- =====================================================
+     CSS
+====================================================== -->
+
 <link
     rel="stylesheet"
     href="estilo.css"
 >
+
+
+<!-- =====================================================
+     DADOS ESTRUTURADOS
+====================================================== -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.cmport.com.br/#organization",
+    "name": "CMPORT Sistemas Eletrônicos de Segurança",
+    "url": "https://www.cmport.com.br/",
+    "logo": "https://www.cmport.com.br/Logo.png",
+    "image": "https://www.cmport.com.br/Logo.png",
+    "description": "Empresa especializada em segurança eletrônica, CFTV, controle de acesso, alarmes, manutenção e suporte técnico.",
+    "telephone": "+55 11 94034-1682",
+    "sameAs": [
+        "https://www.instagram.com/cmport_/",
+        "https://www.facebook.com/cmport.sistemas/"
+    ]
+}
+</script>
 
 </head>
 
@@ -84,7 +208,7 @@
 
             <img
                 src="Logo.png"
-                alt="CMPORT"
+                alt="CMPORT Sistemas Eletrônicos de Segurança"
             >
 
         </a>
@@ -102,7 +226,10 @@
         </button>
 
 
-        <nav class="main-nav">
+        <nav
+            class="main-nav"
+            aria-label="Navegação principal"
+        >
 
 
             <a href="index.html">
@@ -118,6 +245,7 @@
             <a
                 href="quem-somos.html"
                 class="active"
+                aria-current="page"
             >
                 Quem somos
             </a>
@@ -133,6 +261,7 @@
                 class="nav-button"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Falar com a CMPORT pelo WhatsApp"
             >
 
                 <i class="fa-brands fa-whatsapp"></i>
@@ -525,6 +654,8 @@
         <div class="services-grid">
 
 
+            <!-- ALARME -->
+
             <article class="service-card">
 
 
@@ -532,7 +663,8 @@
 
                     <img
                         src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.55-1.jpeg"
-                        alt="Sistema de alarme"
+                        alt="Sistema de alarme para segurança de imóveis"
+                        loading="lazy"
                     >
 
                     <span class="service-number">
@@ -548,9 +680,11 @@
                         SEGURANÇA
                     </span>
 
+
                     <h3>
-                        Alarme
+                        Sistemas de Alarme
                     </h3>
+
 
                     <p>
                         Sistemas de alarme para auxiliar na proteção
@@ -564,6 +698,8 @@
 
 
 
+            <!-- CONTROLE DE ACESSO -->
+
             <article class="service-card">
 
 
@@ -571,7 +707,8 @@
 
                     <img
                         src="Imagens/WhatsApp-Image-2023-08-18-at-14.47.54-2.jpeg"
-                        alt="Sistema de controle de acesso"
+                        alt="Sistema de controle de acesso para entrada e saída de pessoas"
+                        loading="lazy"
                     >
 
                     <span class="service-number">
@@ -587,9 +724,11 @@
                         CONTROLE
                     </span>
 
+
                     <h3>
                         Controle de Acesso
                     </h3>
+
 
                     <p>
                         Soluções para controle e gerenciamento do
@@ -603,6 +742,8 @@
 
 
 
+            <!-- CERCA ELÉTRICA -->
+
             <article class="service-card">
 
 
@@ -610,7 +751,8 @@
 
                     <img
                         src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg"
-                        alt="Cerca elétrica"
+                        alt="Cerca elétrica para proteção perimetral"
+                        loading="lazy"
                     >
 
                     <span class="service-number">
@@ -626,9 +768,11 @@
                         PROTEÇÃO
                     </span>
 
+
                     <h3>
                         Cerca Elétrica
                     </h3>
+
 
                     <p>
                         Sistemas de proteção perimetral para
@@ -642,6 +786,8 @@
 
 
 
+            <!-- CÂMERAS -->
+
             <article class="service-card">
 
 
@@ -649,7 +795,8 @@
 
                     <img
                         src="Imagens/Camera de segurança.jpeg"
-                        alt="Câmeras de segurança"
+                        alt="Câmeras de segurança e sistema CFTV"
+                        loading="lazy"
                     >
 
                     <span class="service-number">
@@ -665,9 +812,11 @@
                         MONITORAMENTO
                     </span>
 
+
                     <h3>
-                        Câmeras
+                        Câmeras de Segurança e CFTV
                     </h3>
+
 
                     <p>
                         Sistemas de CFTV para monitoramento e
@@ -1099,6 +1248,7 @@
                 class="btn btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Falar com a CMPORT pelo WhatsApp"
             >
 
                 <i class="fa-brands fa-whatsapp"></i>
@@ -1135,11 +1285,12 @@
             <a
                 href="index.html"
                 class="footer-logo"
+                aria-label="CMPORT - Página inicial"
             >
 
                 <img
                     src="Logo.png"
-                    alt="CMPORT"
+                    alt="CMPORT Sistemas Eletrônicos de Segurança"
                 >
 
             </a>
@@ -1190,6 +1341,7 @@
             <a
                 href="quem-somos.html"
                 class="active"
+                aria-current="page"
             >
                 Quem somos
             </a>
@@ -1313,7 +1465,7 @@
                 href="https://www.instagram.com/cmport_/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
+                aria-label="Instagram da CMPORT"
             >
 
                 <i class="fa-brands fa-instagram"></i>
@@ -1325,7 +1477,7 @@
                 href="https://www.facebook.com/cmport.sistemas/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label="Facebook da CMPORT"
             >
 
                 <i class="fa-brands fa-facebook-f"></i>
@@ -1363,7 +1515,7 @@
 
 <script src="script.js"></script>
 
+
 </body>
 
 </html>
-```
