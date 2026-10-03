@@ -17,7 +17,7 @@
 
 <meta
     name="description"
-    content="Conheça os serviços da CMPORT em segurança eletrônica, CFTV, câmeras de segurança, controle de acesso, alarmes, cerca elétrica, portões, interfones e manutenção 24 horas."
+    content="Conheça os serviços da CMPORT em segurança eletrônica, CFTV, câmeras de segurança, alarmes, controle de acesso, cerca elétrica, portões, interfones e manutenção."
 >
 
 <meta
@@ -113,7 +113,7 @@
 
 <meta
     name="twitter:description"
-    content="Confira as soluções da CMPORT em segurança eletrônica, CFTV, controle de acesso e manutenção."
+    content="Conheça as soluções da CMPORT em segurança eletrônica, CFTV, controle de acesso, alarmes, cerca elétrica e manutenção."
 >
 
 <meta
@@ -170,81 +170,97 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Serviços de Segurança Eletrônica da CMPORT",
-    "url": "https://www.cmport.com.br/servi%C3%A7os.html",
-    "description": "Serviços e soluções da CMPORT em segurança eletrônica, CFTV, controle de acesso, alarmes, cerca elétrica, portões, interfones e manutenção.",
-    "itemListElement": [
+    "@graph": [
+
         {
-            "@type": "Service",
-            "position": 1,
-            "name": "Sistemas de Alarme",
-            "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
+            "@type": "Organization",
+            "@id": "https://www.cmport.com.br/#organization",
+            "name": "CMPORT Sistemas Eletrônicos de Segurança",
+            "url": "https://www.cmport.com.br/",
+            "logo": "https://www.cmport.com.br/Logo.png",
+            "image": "https://www.cmport.com.br/Logo.png",
+            "description": "Empresa especializada em segurança eletrônica, CFTV, controle de acesso, alarmes, cercas elétricas, portões, interfones e manutenção.",
+            "telephone": "+55 11 94034-1682",
+            "sameAs": [
+                "https://www.instagram.com/cmport_/",
+                "https://www.facebook.com/cmport.sistemas/"
+            ]
         },
+
+
         {
-            "@type": "Service",
-            "position": 2,
-            "name": "Controle de Acesso",
-            "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
+            "@type": "WebPage",
+            "@id": "https://www.cmport.com.br/servi%C3%A7os.html#webpage",
+            "url": "https://www.cmport.com.br/servi%C3%A7os.html",
+            "name": "Serviços de Segurança Eletrônica | CMPORT",
+            "description": "Conheça os serviços da CMPORT em segurança eletrônica, CFTV, câmeras de segurança, alarmes, controle de acesso, cerca elétrica, portões, interfones e manutenção.",
+            "isPartOf": {
+                "@id": "https://www.cmport.com.br/#website"
+            },
+            "about": {
+                "@id": "https://www.cmport.com.br/#organization"
+            },
+            "inLanguage": "pt-BR"
         },
+
+
         {
-            "@type": "Service",
-            "position": 3,
-            "name": "Cerca Elétrica",
-            "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
+            "@type": "WebSite",
+            "@id": "https://www.cmport.com.br/#website",
+            "url": "https://www.cmport.com.br/",
+            "name": "CMPORT Sistemas Eletrônicos de Segurança",
+            "publisher": {
+                "@id": "https://www.cmport.com.br/#organization"
+            },
+            "inLanguage": "pt-BR"
         },
+
+
         {
             "@type": "Service",
-            "position": 4,
-            "name": "Câmeras de Segurança e CFTV",
+            "@id": "https://www.cmport.com.br/servi%C3%A7os.html#servicos",
+            "name": "Serviços de Segurança Eletrônica",
+            "url": "https://www.cmport.com.br/servi%C3%A7os.html",
+            "description": "Soluções em segurança eletrônica, CFTV, câmeras de segurança, alarmes, controle de acesso, cerca elétrica, manutenção de portões, interfone e monitoramento.",
             "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
+                "@id": "https://www.cmport.com.br/#organization"
+            },
+            "serviceType": [
+                "Sistemas de Alarme",
+                "Câmeras de Segurança",
+                "CFTV",
+                "Controle de Acesso",
+                "Cerca Elétrica",
+                "Manutenção de Portões",
+                "Interfone",
+                "Poste de Monitoramento",
+                "Sistema Linear",
+                "Antena Coletiva",
+                "Sistema IVA",
+                "Alarme de Incêndio"
+            ]
         },
+
+
         {
-            "@type": "Service",
-            "position": 5,
-            "name": "Manutenção de Portões",
-            "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
-        },
-        {
-            "@type": "Service",
-            "position": 6,
-            "name": "Interfone",
-            "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
-        },
-        {
-            "@type": "Service",
-            "position": 7,
-            "name": "Poste de Monitoramento",
-            "provider": {
-                "@type": "Organization",
-                "name": "CMPORT Sistemas Eletrônicos de Segurança",
-                "url": "https://www.cmport.com.br/"
-            }
+            "@type": "BreadcrumbList",
+            "@id": "https://www.cmport.com.br/servi%C3%A7os.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Início",
+                    "item": "https://www.cmport.com.br/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Serviços",
+                    "item": "https://www.cmport.com.br/servi%C3%A7os.html"
+                }
+            ]
         }
+
     ]
 }
 </script>
@@ -272,7 +288,7 @@
 
         <img
             src="Logo.png"
-            alt="CMPORT Sistemas Eletrônicos de Segurança"
+            alt="Logo da CMPORT Sistemas Eletrônicos de Segurança"
         >
 
     </a>
@@ -358,16 +374,16 @@
 
 
         <h1>
-            Segurança eletrônica
+            Segurança eletrônica,
             <br>
-            para diferentes necessidades.
+            CFTV e controle de acesso.
         </h1>
 
 
         <p>
-            Soluções para proteção, controle de acesso e manutenção,
-            com atendimento especializado e suporte 24 horas por dia,
-            7 dias por semana.
+            Soluções para proteção, monitoramento, controle de acesso
+            e manutenção, com atendimento especializado e suporte
+            24 horas por dia, 7 dias por semana.
         </p>
 
     </div>
@@ -397,10 +413,11 @@
 
 
             <p>
-                Trabalhamos com sistemas eletrônicos de segurança
-                e soluções para condomínios, residências, empresas
-                e outros ambientes que precisam de proteção e
-                funcionamento confiável.
+                Trabalhamos com sistemas eletrônicos de segurança,
+                CFTV, câmeras de segurança, controle de acesso
+                e soluções de monitoramento para condomínios,
+                residências, empresas e outros ambientes que
+                precisam de proteção e funcionamento confiável.
             </p>
 
         </div>
@@ -527,16 +544,16 @@
 
 
                 <h2>
-                    Soluções para proteger
-                    o que importa.
+                    Soluções em segurança eletrônica
+                    para proteger o que importa.
                 </h2>
 
             </div>
 
 
             <p>
-                Soluções eletrônicas para segurança, controle
-                e monitoramento de diferentes ambientes,
+                Soluções para segurança, controle de acesso,
+                monitoramento e proteção de diferentes ambientes,
                 com suporte e manutenção especializada.
             </p>
 
@@ -580,10 +597,9 @@
 
 
                     <p>
-                        Sistemas de alarme desenvolvidos para
-                        identificar situações de risco e emitir
-                        alertas, contribuindo para a proteção de
-                        residências, condomínios e empresas.
+                        Sistemas de alarme para identificar situações
+                        de risco e emitir alertas, contribuindo para
+                        a proteção de residências, condomínios e empresas.
                     </p>
 
                 </div>
@@ -625,9 +641,9 @@
 
 
                     <p>
-                        Soluções para controlar e organizar a
-                        entrada e saída de pessoas, aumentando
-                        o controle e a segurança do ambiente.
+                        Soluções para controlar e organizar a entrada
+                        e saída de pessoas, aumentando o controle e a
+                        segurança do ambiente.
                     </p>
 
                 </div>
@@ -669,9 +685,9 @@
 
 
                     <p>
-                        Proteção perimetral para dificultar
-                        tentativas de invasão e reforçar a
-                        segurança de imóveis e áreas externas.
+                        Proteção perimetral para reforçar a segurança
+                        de imóveis e áreas externas e dificultar
+                        tentativas de acesso não autorizado.
                     </p>
 
                 </div>
@@ -689,7 +705,7 @@
 
                     <img
                         src="Imagens/Camera de segurança.jpeg"
-                        alt="Câmeras de segurança e sistema CFTV para monitoramento"
+                        alt="Câmeras de segurança e sistema CFTV para monitoramento de ambientes"
                         loading="lazy"
                     >
 
@@ -713,10 +729,9 @@
 
 
                     <p>
-                        Sistemas de CFTV para monitoramento de
-                        ambientes, permitindo acompanhar áreas
-                        estratégicas e aumentar a segurança
-                        do local.
+                        Sistemas de CFTV para monitoramento de ambientes,
+                        permitindo acompanhar áreas estratégicas e ampliar
+                        a segurança do local.
                     </p>
 
                 </div>
@@ -734,7 +749,7 @@
 
                     <img
                         src="Imagens/manutencao-portao-automatico-1.jpg"
-                        alt="Manutenção de portões automáticos e sistemas de acionamento"
+                        alt="Manutenção preventiva e corretiva de portões automáticos"
                         loading="lazy"
                     >
 
@@ -758,10 +773,9 @@
 
 
                     <p>
-                        Manutenção preventiva e corretiva para
-                        portões, buscando manter o equipamento
-                        funcionando corretamente e reduzir
-                        problemas inesperados.
+                        Manutenção preventiva e corretiva para portões
+                        e sistemas de acionamento, buscando preservar
+                        o funcionamento adequado dos equipamentos.
                     </p>
 
                 </div>
@@ -803,9 +817,9 @@
 
 
                     <p>
-                        Sistemas de interfone para comunicação
-                        e identificação de visitantes antes
-                        da liberação do acesso ao ambiente.
+                        Sistemas de interfone para comunicação e
+                        identificação de visitantes antes da liberação
+                        do acesso ao ambiente.
                     </p>
 
                 </div>
@@ -924,8 +938,8 @@
 
 
                 <h2>
-                    Seu sistema precisa
-                    continuar funcionando.
+                    Manutenção preventiva e corretiva
+                    para manter seu sistema funcionando.
                 </h2>
 
 
@@ -933,7 +947,7 @@
                     Além da instalação e implantação das soluções,
                     a CMPORT trabalha com manutenção preventiva,
                     manutenção corretiva e contratos mensais,
-                    garantindo acompanhamento contínuo dos sistemas.
+                    oferecendo acompanhamento contínuo dos sistemas.
                 </p>
 
 
@@ -942,6 +956,7 @@
                     href="https://api.whatsapp.com/send/?phone=5511940341682&text=Ol%C3%A1%2C+gostaria+de+solicitar+um+atendimento+da+CMPORT.&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Solicitar atendimento da CMPORT pelo WhatsApp"
                 >
 
                     Solicitar atendimento
@@ -1063,6 +1078,7 @@
                 href="https://api.whatsapp.com/send/?phone=5511940341682&text=Ol%C3%A1%2C+gostaria+de+solicitar+um+atendimento+da+CMPORT.&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Solicitar orçamento pelo WhatsApp"
             >
 
                 Solicitar orçamento
@@ -1102,7 +1118,7 @@
 
                 <img
                     src="Logo.png"
-                    alt="CMPORT Sistemas Eletrônicos de Segurança"
+                    alt="Logo da CMPORT Sistemas Eletrônicos de Segurança"
                 >
 
             </a>
@@ -1110,7 +1126,7 @@
 
             <p>
                 Sistemas eletrônicos de segurança,
-                manutenção e suporte técnico.
+                CFTV, manutenção e suporte técnico.
             </p>
 
 
@@ -1207,7 +1223,7 @@
 
 
             <a href="serviços.html">
-                Câmeras de Segurança
+                Câmeras de Segurança e CFTV
             </a>
 
 
@@ -1217,7 +1233,7 @@
 
 
             <a href="serviços.html">
-                Manutenção
+                Manutenção de Portões
             </a>
 
         </div>
@@ -1250,6 +1266,7 @@
                 href="https://api.whatsapp.com/send/?phone=5511940341682&text=Ol%C3%A1%2C+gostaria+de+solicitar+um+atendimento+da+CMPORT.&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Falar com a CMPORT pelo WhatsApp"
             >
 
                 <i class="fa-brands fa-whatsapp"></i>
