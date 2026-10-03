@@ -61,6 +61,9 @@ body {
     color: var(--navy);
     line-height: 1.6;
     overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -107,9 +110,12 @@ ol {
 .site-header,
 .header {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
     background: rgba(11, 31, 59, 0.96);
@@ -118,6 +124,10 @@ ol {
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition);
 }
 
 .header-container,
@@ -134,26 +144,31 @@ ol {
 .logo {
     display: inline-flex;
     align-items: center;
+
     flex-shrink: 0;
 }
 
 .logo img {
     width: auto;
+
     max-width: 190px;
     max-height: 52px;
+
     object-fit: contain;
 }
 
 
 /* =========================================================
-   NAVIGAÇÃO
+   NAVEGAÇÃO
 ========================================================= */
 
 .site-nav,
 .nav {
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 28px;
 }
 
@@ -174,6 +189,7 @@ ol {
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -8px;
 
@@ -186,12 +202,16 @@ ol {
 }
 
 .site-nav a:hover,
-.nav a:hover {
+.nav a:hover,
+.site-nav a.active,
+.nav a.active {
     color: var(--white);
 }
 
 .site-nav a:hover::after,
-.nav a:hover::after {
+.nav a:hover::after,
+.site-nav a.active::after,
+.nav a.active::after {
     width: 100%;
 }
 
@@ -203,17 +223,20 @@ ol {
 .header-whatsapp,
 .nav-whatsapp {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     gap: 9px;
 
     min-height: 44px;
+
     padding: 0 18px;
 
     border-radius: 999px;
 
     background: var(--blue);
+
     color: var(--white);
 
     font-size: 13px;
@@ -230,7 +253,8 @@ ol {
 
     transform: translateY(-2px);
 
-    box-shadow: 0 10px 25px rgba(0, 168, 255, 0.25);
+    box-shadow:
+        0 10px 25px rgba(0, 168, 255, 0.25);
 }
 
 
@@ -240,8 +264,11 @@ ol {
 
 .btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
+    gap: 9px;
 
     min-height: 52px;
 
@@ -259,9 +286,11 @@ ol {
 
 .btn-primary {
     background: var(--blue);
+
     color: var(--white);
 
-    box-shadow: 0 12px 30px rgba(0, 168, 255, 0.22);
+    box-shadow:
+        0 12px 30px rgba(0, 168, 255, 0.22);
 }
 
 .btn-primary:hover {
@@ -269,7 +298,8 @@ ol {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 18px 35px rgba(0, 168, 255, 0.28);
+    box-shadow:
+        0 18px 35px rgba(0, 168, 255, 0.28);
 }
 
 .btn-secondary {
@@ -315,6 +345,7 @@ ol {
 
 .hero {
     position: relative;
+
     isolation: isolate;
 
     min-height: 92vh;
@@ -361,6 +392,7 @@ ol {
 
 .hero-background {
     position: absolute;
+
     inset: 0;
 
     background:
@@ -381,13 +413,16 @@ ol {
    CONTEÚDO HERO
 ========================================================= */
 
-.hero-content {
+.hero-content,
+.hero-content-inner {
     position: relative;
 
     z-index: 2;
 
     width: 100%;
+}
 
+.hero-content {
     padding-top: 74px;
 }
 
@@ -398,7 +433,9 @@ ol {
 .hero-label,
 .hero-eyebrow {
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 18px;
@@ -409,6 +446,7 @@ ol {
     font-weight: 800;
 
     letter-spacing: 0.16em;
+
     text-transform: uppercase;
 }
 
@@ -454,8 +492,13 @@ ol {
     line-height: 1.75;
 }
 
-.hero-actions {
+
+/* HTML REAL: hero-buttons */
+
+.hero-actions,
+.hero-buttons {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 14px;
@@ -470,6 +513,7 @@ ol {
 
 .hero-trust {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 28px;
@@ -477,8 +521,13 @@ ol {
     margin-top: 46px;
 }
 
-.hero-trust-item {
+
+/* compatibilidade com o HTML real */
+
+.hero-trust-item,
+.trust-item {
     display: flex;
+
     align-items: center;
 
     gap: 12px;
@@ -489,6 +538,7 @@ ol {
     height: 42px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -499,16 +549,37 @@ ol {
     color: var(--blue);
 }
 
-.hero-trust strong {
+.trust-item > i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: rgba(0, 168, 255, 0.12);
+
+    color: var(--blue);
+}
+
+.hero-trust strong,
+.trust-item strong {
     display: block;
 
     color: var(--white);
 
     font-size: 14px;
+
     font-weight: 800;
 }
 
-.hero-trust span {
+.hero-trust span,
+.trust-item span {
     display: block;
 
     margin-top: 2px;
@@ -545,7 +616,7 @@ ol {
 
 
 /* =========================================================
-   SEÇÕES
+   SEÇÕES GENÉRICAS
 ========================================================= */
 
 .section {
@@ -566,10 +637,12 @@ ol {
 
 .section-dark {
     background: var(--navy);
+
     color: var(--white);
 }
 
-.section-heading {
+.section-heading,
+.section-header {
     max-width: 760px;
 
     margin-bottom: 55px;
@@ -582,9 +655,12 @@ ol {
     text-align: center;
 }
 
-.section-eyebrow {
+.section-eyebrow,
+.section-label {
     display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 15px;
@@ -592,13 +668,16 @@ ol {
     color: var(--blue);
 
     font-size: 11px;
+
     font-weight: 800;
 
     letter-spacing: 0.16em;
+
     text-transform: uppercase;
 }
 
-.section-eyebrow::before {
+.section-eyebrow::before,
+.section-label::before {
     content: "";
 
     width: 26px;
@@ -607,7 +686,8 @@ ol {
     background: var(--blue);
 }
 
-.section-heading h2 {
+.section-heading h2,
+.section-header h2 {
     color: var(--navy);
 
     font-size: clamp(32px, 4vw, 48px);
@@ -619,11 +699,13 @@ ol {
     font-weight: 800;
 }
 
-.section-dark .section-heading h2 {
+.section-dark .section-heading h2,
+.section-dark .section-header h2 {
     color: var(--white);
 }
 
-.section-heading p {
+.section-heading p,
+.section-header p {
     max-width: 680px;
 
     margin-top: 18px;
@@ -635,7 +717,8 @@ ol {
     line-height: 1.75;
 }
 
-.section-dark .section-heading p {
+.section-dark .section-heading p,
+.section-dark .section-header p {
     color: rgba(255, 255, 255, 0.64);
 }
 
@@ -643,6 +726,49 @@ ol {
 /* =========================================================
    INTRO
 ========================================================= */
+
+.intro {
+    padding: 110px 0;
+
+    background: var(--ice);
+}
+
+.intro > .container {
+    max-width: var(--container);
+}
+
+.intro h2 {
+    max-width: 760px;
+
+    color: var(--navy);
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.12;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 800;
+}
+
+.intro > .container > p {
+    max-width: 760px;
+
+    margin-top: 20px;
+
+    color: var(--gray);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.intro > .container > p + p {
+    margin-top: 14px;
+}
+
+
+/* compatibilidade com estrutura antiga */
 
 .intro-grid {
     display: grid;
@@ -682,7 +808,84 @@ ol {
 
 
 /* =========================================================
-   DIFERENCIAIS
+   DIFERENCIAIS DA INTRO
+========================================================= */
+
+.intro-features {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-top: 48px;
+}
+
+.feature-item {
+    padding: 24px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(0, 168, 255, 0.25);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.feature-item > i {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(0, 168, 255, 0.10);
+
+    color: var(--blue);
+}
+
+.feature-item strong {
+    display: block;
+
+    color: var(--navy);
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.feature-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DIFERENCIAIS — ESTRUTURA ANTIGA
 ========================================================= */
 
 .differentials {
@@ -722,6 +925,7 @@ ol {
     height: 52px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -757,6 +961,12 @@ ol {
    SERVIÇOS
 ========================================================= */
 
+.services {
+    padding: 110px 0;
+
+    background: var(--white);
+}
+
 .services-grid {
     display: grid;
 
@@ -768,9 +978,7 @@ ol {
 .service-card {
     position: relative;
 
-    min-height: 230px;
-
-    padding: 30px;
+    min-height: 430px;
 
     background: var(--white);
 
@@ -783,6 +991,14 @@ ol {
     overflow: hidden;
 
     transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-color: rgba(0, 168, 255, 0.25);
 }
 
 .service-card::before {
@@ -799,28 +1015,128 @@ ol {
     background: var(--blue);
 
     transform: scaleX(0);
+
     transform-origin: left;
 
     transition: var(--transition);
-}
 
-.service-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow: var(--shadow-hover);
-
-    border-color: rgba(0, 168, 255, 0.25);
+    z-index: 3;
 }
 
 .service-card:hover::before {
     transform: scaleX(1);
 }
 
+
+/* imagem real usada pelo HTML */
+
+.service-image {
+    position: relative;
+
+    width: 100%;
+    height: 210px;
+
+    overflow: hidden;
+
+    background: var(--navy);
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.04);
+}
+
+.service-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 20, 38, 0.05),
+            rgba(7, 20, 38, 0.48)
+        );
+
+    pointer-events: none;
+}
+
+.service-image > span {
+    position: absolute;
+
+    right: 16px;
+    bottom: 14px;
+
+    z-index: 2;
+
+    color: var(--white);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.service-content {
+    padding: 25px 30px 30px;
+}
+
+.service-content > span {
+    display: block;
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.10em;
+
+    text-transform: uppercase;
+}
+
+.service-content h3 {
+    margin-top: 8px;
+
+    color: var(--navy);
+
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+.service-content p {
+    margin-top: 10px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* estrutura antiga */
+
 .service-icon {
     width: 50px;
     height: 50px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -843,7 +1159,7 @@ ol {
     transform: translateY(-2px);
 }
 
-.service-card h3 {
+.service-card > h3 {
     color: var(--navy);
 
     font-size: 18px;
@@ -853,7 +1169,7 @@ ol {
     font-weight: 800;
 }
 
-.service-card p {
+.service-card > p {
     margin-top: 10px;
 
     color: var(--gray);
@@ -865,20 +1181,38 @@ ol {
 
 
 /* =========================================================
-   TAGS / OUTRAS SOLUÇÕES
+   OUTRAS SOLUÇÕES
 ========================================================= */
 
-.services-tags {
+.other-solutions {
+    margin-top: 55px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid var(--border);
+}
+
+.other-solutions h3 {
+    color: var(--navy);
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.solution-tags {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 10px;
 
-    margin-top: 34px;
+    margin-top: 18px;
 }
 
-.services-tags span {
+.solution-tags span {
     display: inline-flex;
+
     align-items: center;
 
     min-height: 38px;
@@ -894,6 +1228,42 @@ ol {
     color: var(--navy);
 
     font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* compatibilidade antiga */
+
+.services-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 34px;
+}
+
+.services-tags span {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 38px;
+
+    padding: 0 15px;
+
+    border-radius: 999px;
+
+    background: rgba(0, 168, 255, 0.07);
+
+    border: 1px solid rgba(0, 168, 255, 0.14);
+
+    color: var(--navy);
+
+    font-size: 12px;
+
     font-weight: 700;
 }
 
@@ -904,6 +1274,8 @@ ol {
 
 .maintenance {
     position: relative;
+
+    padding: 110px 0;
 
     background: var(--navy);
 
@@ -930,6 +1302,12 @@ ol {
     pointer-events: none;
 }
 
+.maintenance-container {
+    position: relative;
+
+    z-index: 1;
+}
+
 .maintenance-content {
     position: relative;
 
@@ -937,6 +1315,8 @@ ol {
 }
 
 .maintenance-content > h2 {
+    max-width: 760px;
+
     color: var(--white);
 
     font-size: clamp(32px, 4vw, 48px);
@@ -959,6 +1339,80 @@ ol {
 
     line-height: 1.8;
 }
+
+
+/* HTML REAL */
+
+.maintenance-list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-top: 48px;
+}
+
+.maintenance-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 24px;
+
+    border-radius: var(--radius);
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: var(--transition);
+}
+
+.maintenance-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    border-color: rgba(0, 168, 255, 0.25);
+
+    transform: translateY(-4px);
+}
+
+.maintenance-item > i {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: var(--blue);
+
+    font-size: 17px;
+}
+
+.maintenance-item strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+.maintenance-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.50);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* estrutura antiga */
 
 .maintenance-grid {
     display: grid;
@@ -1029,15 +1483,85 @@ ol {
    POR QUE A CMPORT
 ========================================================= */
 
+.why-cmport {
+    padding: 110px 0;
+
+    background: var(--ice);
+}
+
 .why-grid {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 60px;
+    gap: 20px;
+}
+
+
+/* HTML REAL */
+
+.why-card {
+    padding: 30px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(0, 168, 255, 0.25);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.why-card > i {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
 
     align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 168, 255, 0.10);
+
+    color: var(--blue);
 }
+
+.why-card h3 {
+    color: var(--navy);
+
+    font-size: 17px;
+
+    line-height: 1.35;
+
+    font-weight: 800;
+}
+
+.why-card p {
+    margin-top: 9px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* estrutura antiga */
 
 .why-list {
     display: grid;
@@ -1076,6 +1600,7 @@ ol {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1176,6 +1701,90 @@ ol {
 
 
 /* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    position: relative;
+
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-dark),
+            var(--navy)
+        );
+
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: -220px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 168, 255, 0.10);
+}
+
+.cta-container {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.cta .section-label {
+    margin-bottom: 15px;
+}
+
+.cta h2 {
+    max-width: 760px;
+
+    color: var(--white);
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.12;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 800;
+}
+
+.cta p {
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+.cta .btn {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
    HERO DAS PÁGINAS INTERNAS
 ========================================================= */
 
@@ -1183,6 +1792,7 @@ ol {
     min-height: 380px;
 
     display: flex;
+
     align-items: center;
 
     padding-top: 74px;
@@ -1202,7 +1812,8 @@ ol {
     max-width: 760px;
 }
 
-.page-hero .section-eyebrow {
+.page-hero .section-eyebrow,
+.page-hero .section-label {
     margin-bottom: 15px;
 }
 
@@ -1232,6 +1843,7 @@ ol {
 
 .page-hero-actions {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 14px;
@@ -1314,6 +1926,7 @@ ol {
 
 .about-card-list li {
     display: flex;
+
     align-items: flex-start;
 
     gap: 10px;
@@ -1375,6 +1988,7 @@ ol {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1462,12 +2076,13 @@ ol {
 
     background: var(--white);
 
-    box-shadow: 0 0 0 4px rgba(0, 168, 255, 0.08);
+    box-shadow:
+        0 0 0 4px rgba(0, 168, 255, 0.08);
 }
 
 
 /* =========================================================
-   CTA FINAL
+   CTA FINAL — ESTRUTURA ANTIGA
 ========================================================= */
 
 .final-cta {
@@ -1566,12 +2181,16 @@ ol {
     color: var(--white);
 }
 
+
+/* HTML REAL */
+
+.footer-container,
 .footer-main {
     display: grid;
 
-    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
 
-    gap: 60px;
+    gap: 50px;
 
     padding: 75px 0 55px;
 }
@@ -1604,6 +2223,34 @@ ol {
 
     font-weight: 800;
 }
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-column a,
+.footer-column span {
+    color: rgba(255, 255, 255, 0.52);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--blue);
+
+    transform: translateX(3px);
+}
+
+
+/* estrutura antiga */
 
 .footer-links {
     display: grid;
@@ -1644,8 +2291,15 @@ ol {
     color: var(--blue);
 }
 
+
+/* WhatsApp do rodapé */
+
 .footer-brand > a:last-child {
     display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
 
     margin-top: 20px;
 
@@ -1654,7 +2308,18 @@ ol {
     font-size: 13px;
 
     font-weight: 700;
+
+    transition: var(--transition);
 }
+
+.footer-brand > a:last-child:hover {
+    color: var(--blue-light);
+
+    transform: translateX(3px);
+}
+
+
+/* linha inferior */
 
 .footer-bottom {
     padding: 20px 0;
@@ -1687,6 +2352,7 @@ ol {
     height: 58px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1707,6 +2373,10 @@ ol {
 
     box-shadow:
         0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-float i {
+    font-size: 25px;
 }
 
 
@@ -1760,7 +2430,16 @@ ol {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .maintenance-grid {
+    .intro-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .maintenance-grid,
+    .maintenance-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1771,10 +2450,19 @@ ol {
         gap: 40px;
     }
 
+    .footer-container,
     .footer-main {
         grid-template-columns: 1.2fr 1fr 1fr;
 
         gap: 35px;
+    }
+
+    .footer-container .footer-column:last-child {
+        grid-column: auto;
+    }
+
+    .cta-container {
+        gap: 30px;
     }
 }
 
@@ -1790,7 +2478,9 @@ ol {
     }
 
 
-    /* HEADER */
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .header-container,
     .site-header .container {
@@ -1817,7 +2507,9 @@ ol {
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
         min-height: 730px;
@@ -1861,7 +2553,8 @@ ol {
         line-height: 1.7;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .hero-buttons {
         flex-direction: column;
 
         align-items: stretch;
@@ -1869,7 +2562,8 @@ ol {
         margin-top: 28px;
     }
 
-    .hero-actions .btn {
+    .hero-actions .btn,
+    .hero-buttons .btn {
         width: 100%;
     }
 
@@ -1883,12 +2577,15 @@ ol {
         margin-top: 35px;
     }
 
-    .hero-trust-item {
+    .hero-trust-item,
+    .trust-item {
         align-items: flex-start;
     }
 
 
-    /* SEÇÕES */
+    /* =====================================================
+       SEÇÕES
+    ===================================================== */
 
     .section {
         padding: 80px 0;
@@ -1898,23 +2595,59 @@ ol {
         padding: 65px 0;
     }
 
-    .section-heading {
+    .intro,
+    .services,
+    .maintenance,
+    .why-cmport {
+        padding: 80px 0;
+    }
+
+    .section-heading,
+    .section-header {
         margin-bottom: 38px;
     }
 
-    .section-heading h2 {
+    .section-heading h2,
+    .section-header h2 {
         font-size: 32px;
     }
 
-    .section-heading p {
+    .section-heading p,
+    .section-header p {
         font-size: 14px;
     }
 
 
-    /* GRIDS */
+    /* =====================================================
+       INTRO
+    ===================================================== */
+
+    .intro h2 {
+        font-size: 32px;
+    }
+
+    .intro > .container > p {
+        font-size: 14px;
+    }
+
+    .intro-features {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+
+        margin-top: 35px;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
+
+
+    /* =====================================================
+       GRIDS
+    ===================================================== */
 
     .intro-grid,
-    .why-grid,
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
@@ -1927,22 +2660,45 @@ ol {
         grid-template-columns: 1fr;
     }
 
-    .maintenance-grid {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .maintenance-grid,
+    .maintenance-list {
         grid-template-columns: 1fr 1fr;
     }
 
 
-    /* CARDS */
+    /* =====================================================
+       SERVIÇOS
+    ===================================================== */
 
-    .service-card,
-    .differential-card {
+    .service-card {
         min-height: auto;
+    }
 
-        padding: 25px;
+    .service-image {
+        height: 220px;
+    }
+
+    .service-content {
+        padding: 23px 25px 26px;
     }
 
 
-    /* PAGE HERO */
+    /* =====================================================
+       OUTRAS SOLUÇÕES
+    ===================================================== */
+
+    .other-solutions {
+        margin-top: 45px;
+    }
+
+
+    /* =====================================================
+       PAGE HERO
+    ===================================================== */
 
     .page-hero {
         min-height: 420px;
@@ -1968,35 +2724,90 @@ ol {
     }
 
 
-    /* ABOUT */
+    /* =====================================================
+       MANUTENÇÃO
+    ===================================================== */
 
-    .about-card {
-        padding: 30px;
+    .maintenance-content > h2 {
+        font-size: 32px;
+    }
+
+    .maintenance-content > p {
+        font-size: 14px;
     }
 
 
-    /* CONTATO */
+    /* =====================================================
+       WHY
+    ===================================================== */
 
-    .contact-form {
+    .why-card {
         padding: 25px;
     }
 
 
-    /* CTA */
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+        padding: 75px 0;
+    }
+
+    .cta-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .cta h2 {
+        font-size: 32px;
+    }
+
+    .cta p {
+        font-size: 14px;
+    }
 
     .final-cta-content h2 {
         font-size: 34px;
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       ABOUT
+    ===================================================== */
 
+    .about-card {
+        padding: 30px;
+    }
+
+
+    /* =====================================================
+       CONTATO
+    ===================================================== */
+
+    .contact-form {
+        padding: 25px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-container,
     .footer-main {
         grid-template-columns: 1fr;
 
         gap: 35px;
 
         padding: 60px 0 45px;
+    }
+
+    .footer-container .footer-column:last-child {
+        grid-column: auto;
     }
 
 }
@@ -2026,6 +2837,11 @@ ol {
         font-size: 0;
     }
 
+    .header-whatsapp i,
+    .nav-whatsapp i {
+        font-size: 19px;
+    }
+
     .header-whatsapp svg,
     .nav-whatsapp svg {
         width: 19px;
@@ -2044,18 +2860,26 @@ ol {
         grid-template-columns: 1fr;
     }
 
-    .hero-trust-item {
+    .hero-trust-item,
+    .trust-item {
         padding: 4px 0;
     }
 
-    .maintenance-grid {
+    .intro-features {
         grid-template-columns: 1fr;
     }
 
+    .maintenance-grid,
+    .maintenance-list {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-tags,
     .services-tags {
         gap: 8px;
     }
 
+    .solution-tags span,
     .services-tags span {
         font-size: 11px;
 
@@ -2116,8 +2940,11 @@ select:focus-visible {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: 0.01ms !important;
+
         scroll-behavior: auto !important;
     }
 
