@@ -10,7 +10,6 @@
 ========================================================= */
 
 :root {
-
     --navy: #0B1F3B;
     --navy-dark: #071426;
     --navy-light: #102B4D;
@@ -56,27 +55,39 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
+
     font-family: "Inter", sans-serif;
+
     background: var(--ice);
     color: var(--navy);
+
     line-height: 1.6;
+
     overflow-x: hidden;
 }
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 button,
 input,
-textarea {
+textarea,
+select {
     font-family: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 .container {
@@ -89,21 +100,27 @@ textarea {
    HEADER
 ========================================================= */
 
-.site-header {
+.site-header,
+.header {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
-    background: rgba(11, 31, 59, 0.94);
+    background: rgba(11, 31, 59, 0.96);
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
-    transition: background var(--transition);
+    transition:
+        background var(--transition),
+        box-shadow var(--transition);
 }
 
 .header-container {
@@ -113,40 +130,62 @@ textarea {
     align-items: center;
     justify-content: space-between;
 
-    gap: 40px;
+    gap: 35px;
 }
 
 .logo {
     display: inline-flex;
+
     align-items: center;
+
     flex-shrink: 0;
 }
 
 .logo img {
     width: 95px;
     height: auto;
+
     object-fit: contain;
+
     background: transparent;
 }
 
-.main-nav {
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+.main-nav,
+.nav {
     display: flex;
+
     align-items: center;
-    gap: 34px;
+
+    gap: 30px;
 }
 
-.main-nav > a {
+.main-nav > a,
+.nav > a {
     position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
 
     color: rgba(255, 255, 255, 0.82);
 
     font-size: 14px;
+
     font-weight: 600;
 
-    transition: var(--transition);
+    transition:
+        color var(--transition),
+        background var(--transition),
+        transform var(--transition);
 }
 
-.main-nav > a:not(.nav-button)::after {
+.main-nav > a:not(.nav-button):not(.header-whatsapp)::after,
+.nav > a:not(.nav-button):not(.header-whatsapp)::after {
     content: "";
 
     position: absolute;
@@ -159,28 +198,34 @@ textarea {
 
     background: var(--blue);
 
-    transition: var(--transition);
+    transition: width var(--transition);
 }
 
 .main-nav > a:hover,
-.main-nav > a.active {
+.main-nav > a.active,
+.nav > a:hover,
+.nav > a.active {
     color: var(--white);
 }
 
 .main-nav > a:hover::after,
-.main-nav > a.active::after {
+.main-nav > a.active::after,
+.nav > a:hover::after,
+.nav > a.active::after {
     width: 100%;
 }
 
 
 /* =========================================================
-   BOTÃO FALE CONOSCO
+   BOTÃO WHATSAPP / FALE CONOSCO
 ========================================================= */
 
-.main-nav > a.nav-button {
-    position: relative;
-
+.main-nav > a.nav-button,
+.main-nav > a.header-whatsapp,
+.nav > a.nav-button,
+.nav > a.header-whatsapp {
     display: inline-flex !important;
+
     align-items: center !important;
     justify-content: center !important;
 
@@ -189,20 +234,20 @@ textarea {
     padding: 10px 16px !important;
 
     background: var(--blue) !important;
+
     color: var(--white) !important;
 
     border: 1px solid var(--blue) !important;
+
     border-radius: 8px !important;
 
     box-shadow: 0 8px 25px rgba(0, 168, 255, 0.20);
 
     font-size: 14px !important;
+
     font-weight: 700 !important;
 
     line-height: 1.2;
-
-    opacity: 1 !important;
-    visibility: visible !important;
 
     white-space: nowrap !important;
 
@@ -216,17 +261,28 @@ textarea {
         box-shadow var(--transition);
 }
 
-.main-nav > a.nav-button::after {
+.main-nav > a.nav-button::after,
+.main-nav > a.header-whatsapp::after,
+.nav > a.nav-button::after,
+.nav > a.header-whatsapp::after {
     display: none !important;
 }
 
-.main-nav > a.nav-button i {
+.main-nav > a.nav-button i,
+.main-nav > a.header-whatsapp i,
+.nav > a.nav-button i,
+.nav > a.header-whatsapp i {
     color: var(--white) !important;
+
     font-size: 15px;
 }
 
-.main-nav > a.nav-button:hover {
+.main-nav > a.nav-button:hover,
+.main-nav > a.header-whatsapp:hover,
+.nav > a.nav-button:hover,
+.nav > a.header-whatsapp:hover {
     background: var(--white) !important;
+
     color: var(--navy) !important;
 
     border-color: var(--white) !important;
@@ -236,10 +292,17 @@ textarea {
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
 }
 
-.main-nav > a.nav-button:hover i {
+.main-nav > a.nav-button:hover i,
+.main-nav > a.header-whatsapp:hover i,
+.nav > a.nav-button:hover i,
+.nav > a.header-whatsapp:hover i {
     color: var(--navy) !important;
 }
 
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
 
 .menu-toggle {
     display: none;
@@ -251,14 +314,26 @@ textarea {
     justify-content: center;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
+
     border-radius: 8px;
 
     background: transparent;
+
     color: var(--white);
 
     font-size: 20px;
 
     cursor: pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.menu-toggle:hover {
+    background: rgba(0, 168, 255, 0.08);
+
+    border-color: rgba(0, 168, 255, 0.4);
 }
 
 
@@ -276,13 +351,6 @@ textarea {
 
     overflow: hidden;
 
-    background: var(--navy);
-}
-
-.hero-background {
-    position: absolute;
-    inset: 0;
-
     background:
         linear-gradient(
             90deg,
@@ -292,14 +360,13 @@ textarea {
         ),
         url("Imagens/security-service-hero-img-bg.jpg")
         center center / cover no-repeat;
-
-    transform: scale(1.02);
 }
 
-.hero-background::after {
+.hero::before {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -308,11 +375,50 @@ textarea {
             rgba(0, 168, 255, 0.18),
             transparent 32%
         );
+
+    pointer-events: none;
+}
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 20, 38, 0.35),
+            rgba(11, 31, 59, 0.10)
+        ),
+        url("Imagens/security-service-hero-img-bg.jpg")
+        center center / cover no-repeat;
+
+    transform: scale(1.02);
+
+    z-index: 0;
+}
+
+.hero-background::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 78% 45%,
+            rgba(0, 168, 255, 0.12),
+            transparent 32%
+        );
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
+
+    width: 100%;
 
     padding-top: 74px;
 }
@@ -321,9 +427,12 @@ textarea {
     max-width: 760px;
 }
 
-.hero-eyebrow {
-    display: flex;
+.hero-eyebrow,
+.hero-label {
+    display: inline-flex;
+
     align-items: center;
+
     gap: 10px;
 
     margin-bottom: 25px;
@@ -331,11 +440,23 @@ textarea {
     color: var(--blue);
 
     font-size: 12px;
+
     font-weight: 800;
+
     letter-spacing: 2px;
 }
 
-.hero-eyebrow span {
+.hero-eyebrow span,
+.hero-label span {
+    width: 28px;
+    height: 2px;
+
+    background: var(--blue);
+}
+
+.hero-label::before {
+    content: "";
+
     width: 28px;
     height: 2px;
 
@@ -350,14 +471,17 @@ textarea {
     font-family: "Lato", sans-serif;
 
     font-size: clamp(42px, 5vw, 72px);
+
     line-height: 1.04;
 
     font-weight: 900;
+
     letter-spacing: -2px;
 }
 
 .hero h1 strong {
     display: block;
+
     color: var(--blue);
 }
 
@@ -369,12 +493,21 @@ textarea {
     color: rgba(255, 255, 255, 0.72);
 
     font-size: 17px;
+
     line-height: 1.8;
 }
 
-.hero-buttons {
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.hero-buttons,
+.hero-actions {
     display: flex;
+
     align-items: center;
+
     gap: 14px;
 
     margin-top: 34px;
@@ -384,8 +517,10 @@ textarea {
     min-height: 52px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 10px;
 
     padding: 0 22px;
@@ -393,21 +528,35 @@ textarea {
     border-radius: 9px;
 
     font-size: 14px;
+
     font-weight: 700;
 
-    transition: var(--transition);
+    line-height: 1;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .btn-primary {
     background: var(--blue);
+
     color: var(--white);
+
+    border: 1px solid var(--blue);
 
     box-shadow: 0 12px 30px rgba(0, 168, 255, 0.22);
 }
 
 .btn-primary:hover {
     background: var(--white);
+
     color: var(--navy);
+
+    border-color: var(--white);
 
     transform: translateY(-3px);
 
@@ -425,13 +574,59 @@ textarea {
 .btn-outline:hover {
     border-color: var(--blue);
 
-    background: rgba(0, 168, 255, 0.1);
+    background: rgba(0, 168, 255, 0.10);
 
     transform: translateY(-3px);
 }
 
+.btn-secondary {
+    border: 1px solid var(--border);
+
+    background: var(--white);
+
+    color: var(--navy);
+}
+
+.btn-secondary:hover {
+    border-color: var(--blue);
+
+    color: var(--blue);
+
+    transform: translateY(-3px);
+}
+
+.btn-white {
+    background: var(--white);
+
+    color: var(--navy);
+
+    border: 1px solid var(--white);
+
+    white-space: nowrap;
+
+    width: auto;
+
+    flex-shrink: 0;
+}
+
+.btn-white:hover {
+    background: var(--blue);
+
+    color: var(--white);
+
+    border-color: var(--blue);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CONFIANÇA NO HERO
+========================================================= */
+
 .hero-trust {
     display: flex;
+
     gap: 34px;
 
     margin-top: 42px;
@@ -439,7 +634,9 @@ textarea {
 
 .hero-trust > div {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
     color: rgba(255, 255, 255, 0.55);
@@ -447,38 +644,46 @@ textarea {
 
 .hero-trust i {
     color: var(--blue);
+
     font-size: 19px;
 }
 
 .hero-trust span {
     display: flex;
+
     flex-direction: column;
 
     font-size: 11px;
+
     line-height: 1.4;
 }
 
 .hero-trust strong {
     color: var(--white);
+
     font-size: 13px;
 }
 
 .hero-bottom-line {
     position: absolute;
+
     bottom: 0;
     left: 0;
 
     width: 100%;
     height: 3px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--blue),
-        transparent
-    );
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            transparent
+        );
 
     opacity: 0.8;
+
+    z-index: 3;
 }
 
 
@@ -486,13 +691,16 @@ textarea {
    INTRO
 ========================================================= */
 
-.intro-section {
+.intro-section,
+.intro {
     padding: 110px 0;
+
     background: var(--white);
 }
 
 .intro-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 100px;
@@ -506,15 +714,11 @@ textarea {
     color: var(--blue);
 
     font-size: 11px;
+
     font-weight: 800;
 
     letter-spacing: 2px;
 }
-
-
-/* =========================================================
-   TÍTULOS
-========================================================= */
 
 .section-heading {
     margin-top: 15px;
@@ -524,27 +728,11 @@ textarea {
     color: var(--navy);
 
     font-size: clamp(34px, 4vw, 50px);
+
     line-height: 1.08;
 
     font-weight: 900;
-    letter-spacing: -1.5px;
-}
 
-.section-top .section-heading {
-    margin-top: 15px;
-}
-
-.why-title {
-    margin-top: 15px;
-
-    font-family: "Lato", sans-serif;
-
-    color: var(--navy);
-
-    font-size: clamp(34px, 4vw, 50px);
-    line-height: 1.08;
-
-    font-weight: 900;
     letter-spacing: -1.5px;
 }
 
@@ -562,6 +750,7 @@ textarea {
     color: var(--gray);
 
     font-size: 15px;
+
     line-height: 1.8;
 }
 
@@ -577,6 +766,7 @@ textarea {
     color: var(--gray);
 
     font-size: 16px;
+
     line-height: 1.85;
 }
 
@@ -586,7 +776,7 @@ textarea {
 
 
 /* =========================================================
-   DIFFERENTIALS
+   DIFERENCIAIS
 ========================================================= */
 
 .differentials {
@@ -597,24 +787,23 @@ textarea {
     background: var(--navy);
 }
 
-.differentials-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-}
-
+.differentials-grid,
 .differential-grid {
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    border-left: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.differentials-grid {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.differential-grid {
+    border: 1px solid var(--border);
 
     border-radius: var(--radius);
-
-    overflow: hidden;
 
     background: var(--white);
 
@@ -623,6 +812,7 @@ textarea {
 
 .differential-item {
     display: flex;
+
     align-items: center;
 
     gap: 15px;
@@ -651,6 +841,7 @@ textarea {
     height: 44px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -658,28 +849,22 @@ textarea {
 
     border-radius: 9px;
 
-    background: rgba(0, 168, 255, 0.1);
+    background: rgba(0, 168, 255, 0.10);
 
     color: var(--blue);
 
     font-size: 17px;
 }
 
-.differential-grid .differential-item strong {
-    color: var(--navy);
-}
-
-.differential-grid .differential-item span {
-    color: var(--gray);
-}
-
 .differential-item div:last-child {
     display: flex;
+
     flex-direction: column;
 }
 
 .differential-item strong {
     color: var(--white);
+
     font-size: 13px;
 }
 
@@ -689,6 +874,14 @@ textarea {
     color: rgba(255, 255, 255, 0.5);
 
     font-size: 11px;
+}
+
+.differential-grid .differential-item strong {
+    color: var(--navy);
+}
+
+.differential-grid .differential-item span {
+    color: var(--gray);
 }
 
 
@@ -744,47 +937,14 @@ textarea {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.section-dark .differential-item,
-.section-dark .maintenance-feature {
-    color: var(--white);
-}
-
-.section-dark .differential-item strong,
-.section-dark .maintenance-feature strong {
-    color: var(--white);
-}
-
-.section-dark .differential-item span,
-.section-dark .maintenance-feature p,
-.section-dark .maintenance-feature span {
-    color: rgba(255, 255, 255, 0.64);
-}
-
-.section-dark .differential-icon {
-    background: rgba(0, 168, 255, 0.12);
-    color: var(--blue);
-}
-
-.section-dark .why-item {
-    border-color: rgba(255, 255, 255, 0.12);
-}
-
-.section-dark .why-item h3 {
-    color: var(--white);
-}
-
-.section-dark .why-icon {
-    background: rgba(0, 168, 255, 0.12);
-    color: var(--blue);
-}
-
 
 /* =========================================================
-   SOLUÇÕES
+   SOLUÇÕES / SERVIÇOS
 ========================================================= */
 
 .solutions-section,
-.section.services {
+.section.services,
+.services {
     padding: 120px 0;
 
     background: var(--ice);
@@ -808,6 +968,7 @@ textarea {
     color: var(--gray);
 
     font-size: 15px;
+
     line-height: 1.8;
 }
 
@@ -833,7 +994,10 @@ textarea {
 
     box-shadow: 0 8px 30px rgba(11, 31, 59, 0.04);
 
-    transition: var(--transition);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .service-card:hover {
@@ -858,13 +1022,15 @@ textarea {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
-    background: linear-gradient(
-        180deg,
-        transparent 45%,
-        rgba(7, 20, 38, 0.65) 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(7, 20, 38, 0.65) 100%
+        );
 }
 
 .service-image img {
@@ -891,6 +1057,7 @@ textarea {
     color: var(--white);
 
     font-size: 12px;
+
     font-weight: 800;
 
     letter-spacing: 1px;
@@ -905,6 +1072,7 @@ textarea {
     color: var(--blue);
 
     font-size: 9px;
+
     font-weight: 800;
 
     letter-spacing: 1.5px;
@@ -912,13 +1080,14 @@ textarea {
 
 .service-content h3,
 .service-card-body h3 {
-    margin-top: 0;
+    margin-top: 5px;
 
     color: var(--navy);
 
     font-family: "Lato", sans-serif;
 
     font-size: 22px;
+
     line-height: 1.2;
 
     font-weight: 900;
@@ -931,6 +1100,7 @@ textarea {
     color: var(--gray);
 
     font-size: 13px;
+
     line-height: 1.75;
 }
 
@@ -940,38 +1110,36 @@ textarea {
 ========================================================= */
 
 .other-solutions {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
     margin-top: 45px;
 
     padding: 27px 30px;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--white);
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 30px;
 }
 
-.other-solutions-title {
-    color: var(--navy);
-
-    font-size: 13px;
-    font-weight: 800;
-}
-
+.other-solutions-title,
 .other-solutions-title span {
     color: var(--navy);
 
     font-size: 13px;
+
     font-weight: 800;
 }
 
 .solution-tags {
     display: flex;
+
     flex-wrap: wrap;
 
     justify-content: flex-end;
@@ -989,6 +1157,7 @@ textarea {
     color: var(--gray);
 
     font-size: 11px;
+
     font-weight: 600;
 }
 
@@ -1010,6 +1179,7 @@ textarea {
 
 .maintenance-background {
     position: absolute;
+
     inset: 0;
 
     background:
@@ -1026,6 +1196,7 @@ textarea {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -1038,12 +1209,14 @@ textarea {
 
 .maintenance-content {
     position: relative;
+
     z-index: 2;
 
     max-width: 900px;
 }
 
-.maintenance-section .maintenance-content {
+.maintenance-section .maintenance-content,
+.maintenance .maintenance-content {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
@@ -1114,7 +1287,7 @@ textarea {
 
     padding: 22px;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 
     border-radius: 14px;
 
@@ -1161,7 +1334,8 @@ textarea {
    POR QUE A CMPORT
 ========================================================= */
 
-.why-section {
+.why-section,
+.why-cmport {
     padding: 120px 0;
 
     background: var(--navy) !important;
@@ -1187,20 +1361,31 @@ textarea {
     margin-top: 0;
 
     color: var(--white) !important;
+
+    font-family: "Lato", sans-serif;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
 }
 
 .why-title span {
     color: var(--blue) !important;
 }
 
-.why-section .section-label {
+.why-section .section-label,
+.why-cmport .section-label {
     color: var(--blue) !important;
 }
 
 .why-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-
     min-width: 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .why-item {
@@ -1210,11 +1395,11 @@ textarea {
 
     gap: 22px;
 
+    min-width: 0;
+
     padding: 27px 0;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-
-    min-width: 0;
 }
 
 .why-icon {
@@ -1222,6 +1407,7 @@ textarea {
     height: 48px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1277,6 +1463,107 @@ textarea {
 
 
 /* =========================================================
+   HERO DAS PÁGINAS INTERNAS
+========================================================= */
+
+.page-hero {
+    min-height: 380px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-top: 74px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 20, 38, 0.96),
+            rgba(11, 31, 59, 0.75)
+        ),
+        url("Imagens/security-service-hero-img-bg.jpg")
+        center / cover no-repeat;
+}
+
+.page-hero-content {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0;
+
+    color: var(--white);
+
+    text-align: left;
+}
+
+.page-hero-content h1,
+.page-hero > .container h1 {
+    max-width: 850px;
+
+    margin: 12px 0 0;
+
+    color: var(--white);
+
+    font-family: "Lato", sans-serif;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+}
+
+.page-hero-content p,
+.page-hero > .container p {
+    max-width: 720px;
+
+    margin: 18px 0 0;
+
+    color: rgba(255, 255, 255, 0.64);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.page-hero .eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.page-hero .eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 2px;
+
+    background: var(--blue);
+}
+
+.page-hero > .container {
+    width: min(var(--container), calc(100% - 48px));
+
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+
+/* =========================================================
    CTA FINAL
 ========================================================= */
 
@@ -1286,20 +1573,11 @@ textarea {
     background: var(--ice);
 }
 
-.final-cta-box {
+.final-cta-box,
+.final-cta-content {
     position: relative;
 
     overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 40px;
-
-    padding: 60px 65px;
 
     border-radius: var(--radius-lg);
 
@@ -1308,7 +1586,23 @@ textarea {
     box-shadow: var(--shadow);
 }
 
-.final-cta-box::after {
+.final-cta-box {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 60px 65px;
+}
+
+.final-cta-content {
+    padding: 60px 65px;
+}
+
+.final-cta-box::after,
+.final-cta-content::after {
     content: "";
 
     position: absolute;
@@ -1324,13 +1618,15 @@ textarea {
     background: rgba(0, 168, 255, 0.09);
 }
 
-.final-cta-box > * {
+.final-cta-box > *,
+.final-cta-content > * {
     position: relative;
 
     z-index: 2;
 }
 
-.final-cta h2 {
+.final-cta h2,
+.final-cta-content h2 {
     margin-top: 10px;
 
     color: var(--white);
@@ -1344,36 +1640,21 @@ textarea {
     line-height: 1.1;
 }
 
-.final-cta p {
+.final-cta p,
+.final-cta-content p {
     max-width: 650px;
 
     margin-top: 8px;
 
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.58);
 
     font-size: 14px;
 
     line-height: 1.7;
 }
 
-.btn-white {
-    background: var(--white);
-
-    color: var(--navy);
-
-    white-space: nowrap;
-
-    width: auto;
-
-    flex-shrink: 0;
-}
-
-.btn-white:hover {
-    background: var(--blue);
-
-    color: var(--white);
-
-    transform: translateY(-3px);
+.final-cta-content .btn {
+    margin-top: 25px;
 }
 
 
@@ -1408,7 +1689,8 @@ textarea {
    FOOTER
 ========================================================= */
 
-.site-footer {
+.site-footer,
+.footer {
     background: var(--navy-dark);
 
     color: var(--white);
@@ -1484,14 +1766,23 @@ textarea {
     font-size: 16px;
 }
 
-.footer-column {
+.footer-column,
+.footer-contact {
     display: flex;
 
     flex-direction: column;
 
-    gap: 11px;
-
     min-width: 0;
+}
+
+.footer-column {
+    gap: 11px;
+}
+
+.footer-contact {
+    gap: 13px;
+
+    margin-top: 0;
 }
 
 .footer-column h3,
@@ -1507,6 +1798,10 @@ textarea {
     letter-spacing: 0.6px;
 }
 
+.footer-contact h3 {
+    margin-bottom: 2px;
+}
+
 .footer-column a {
     color: rgba(255, 255, 255, 0.48);
 
@@ -1514,7 +1809,9 @@ textarea {
 
     line-height: 1.5;
 
-    transition: var(--transition);
+    transition:
+        color var(--transition),
+        transform var(--transition);
 }
 
 .footer-column a:hover {
@@ -1527,22 +1824,6 @@ textarea {
     color: var(--blue);
 
     font-weight: 700;
-}
-
-.footer-contact {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 13px;
-
-    min-width: 0;
-
-    margin-top: 0;
-}
-
-.footer-contact h3 {
-    margin-bottom: 2px;
 }
 
 .footer-contact p {
@@ -1573,7 +1854,8 @@ textarea {
     text-align: center;
 }
 
-.site-footer strong {
+.site-footer strong,
+.footer strong {
     color: rgba(255, 255, 255, 0.72);
 
     font-size: 11px;
@@ -1587,7 +1869,6 @@ textarea {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 25px;
@@ -1624,7 +1905,6 @@ textarea {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1658,135 +1938,6 @@ textarea {
     display: block;
 
     line-height: 1;
-}
-
-
-/* =========================================================
-   PÁGINAS INTERNAS — HERO
-========================================================= */
-
-.page-hero {
-    min-height: 380px;
-
-    display: flex;
-
-    align-items: center;
-
-    padding-top: 74px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(7, 20, 38, 0.96),
-            rgba(11, 31, 59, 0.75)
-        ),
-        url("Imagens/security-service-hero-img-bg.jpg")
-        center / cover no-repeat;
-}
-
-.page-hero-content {
-    width: 100%;
-
-    max-width: 760px;
-
-    margin: 0;
-
-    color: var(--white);
-
-    text-align: left;
-}
-
-.page-hero-content h1 {
-    max-width: 850px;
-
-    margin: 12px 0 0;
-
-    color: var(--white);
-
-    font-family: "Lato", sans-serif;
-
-    font-size: clamp(38px, 5vw, 60px);
-
-    line-height: 1;
-
-    font-weight: 900;
-
-    letter-spacing: -1.5px;
-}
-
-.page-hero-content p {
-    max-width: 720px;
-
-    margin: 18px 0 0;
-
-    color: rgba(255, 255, 255, 0.62);
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-.page-hero .eyebrow {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    color: var(--blue);
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.page-hero .eyebrow::before {
-    content: "";
-
-    width: 28px;
-    height: 2px;
-
-    background: var(--blue);
-}
-
-.page-hero > .container {
-    width: min(var(--container), calc(100% - 48px));
-
-    margin: 0 auto;
-
-    text-align: left;
-}
-
-.page-hero > .container h1 {
-    max-width: 850px;
-
-    margin: 18px 0 0;
-
-    color: var(--white);
-
-    font-family: "Lato", sans-serif;
-
-    font-size: clamp(38px, 5vw, 60px);
-
-    line-height: 1.05;
-
-    font-weight: 900;
-
-    letter-spacing: -1.5px;
-}
-
-.page-hero > .container p {
-    max-width: 720px;
-
-    margin: 20px 0 0;
-
-    color: rgba(255, 255, 255, 0.64);
-
-    font-size: 15px;
-
-    line-height: 1.8;
 }
 
 
@@ -1830,9 +1981,9 @@ textarea {
 
     gap: 9px;
 
-    padding: 13px 17px;
-
     min-height: 48px;
+
+    padding: 13px 17px;
 
     border-radius: 100px;
 
@@ -1953,14 +2104,13 @@ textarea {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     flex-shrink: 0;
 
     border-radius: 10px;
 
-    background: rgba(0, 168, 255, 0.1);
+    background: rgba(0, 168, 255, 0.10);
 
     color: var(--blue);
 
@@ -2011,7 +2161,7 @@ textarea {
 
 
 /* =========================================================
-   SOLUÇÕES — CONTATO
+   SERVIÇOS DA PÁGINA DE CONTATO
 ========================================================= */
 
 .contact-services {
@@ -2034,101 +2184,8 @@ textarea {
 
 
 /* =========================================================
-   BOTÕES — CONTATO
+   CTA CONTATO
 ========================================================= */
-
-.hero-actions {
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    margin-top: 34px;
-}
-
-.btn-secondary {
-    border: 1px solid var(--border);
-
-    background: var(--white);
-
-    color: var(--navy);
-}
-
-.btn-secondary:hover {
-    border-color: var(--blue);
-
-    color: var(--blue);
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   CTA FINAL — CONTATO
-========================================================= */
-
-.final-cta-content {
-    position: relative;
-
-    padding: 60px 65px;
-
-    overflow: hidden;
-
-    border-radius: var(--radius-lg);
-
-    background: var(--navy);
-
-    box-shadow: var(--shadow);
-}
-
-.final-cta-content::after {
-    content: "";
-
-    position: absolute;
-
-    right: -120px;
-    top: -180px;
-
-    width: 400px;
-    height: 400px;
-
-    border-radius: 50%;
-
-    background: rgba(0, 168, 255, 0.09);
-}
-
-.final-cta-content > * {
-    position: relative;
-
-    z-index: 2;
-}
-
-.final-cta-content h2 {
-    margin-top: 10px;
-
-    color: var(--white);
-
-    font-family: "Lato", sans-serif;
-
-    font-size: clamp(35px, 4vw, 48px);
-
-    font-weight: 900;
-
-    line-height: 1.1;
-}
-
-.final-cta-content p {
-    max-width: 650px;
-
-    margin-top: 12px;
-
-    color: rgba(255, 255, 255, 0.6);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
 
 .final-cta-content .btn {
     margin-top: 25px;
@@ -2136,12 +2193,14 @@ textarea {
 
 
 /* =========================================================
-   RESPONSIVO — 1000PX
+   RESPONSIVO
+   1000PX
 ========================================================= */
 
 @media (max-width: 1000px) {
 
-    .main-nav {
+    .main-nav,
+    .nav {
         gap: 20px;
     }
 
@@ -2194,7 +2253,8 @@ textarea {
 
 
 /* =========================================================
-   RESPONSIVO — 800PX
+   RESPONSIVO
+   800PX
 ========================================================= */
 
 @media (max-width: 800px) {
@@ -2215,7 +2275,8 @@ textarea {
         display: flex;
     }
 
-    .main-nav {
+    .main-nav,
+    .nav {
         position: absolute;
 
         top: 68px;
@@ -2233,35 +2294,45 @@ textarea {
 
         padding: 12px;
 
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.10);
 
         border-radius: 14px;
 
         background: rgba(7, 20, 38, 0.98);
 
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.30);
     }
 
-    .main-nav.open {
+    .main-nav.open,
+    .nav.open {
         display: flex;
     }
 
-    .main-nav > a {
+    .main-nav > a,
+    .nav > a {
+        width: 100%;
+
         padding: 14px;
 
         border-radius: 8px;
     }
 
-    .main-nav > a:not(.nav-button)::after {
+    .main-nav > a:not(.nav-button):not(.header-whatsapp)::after,
+    .nav > a:not(.nav-button):not(.header-whatsapp)::after {
         display: none;
     }
 
     .main-nav > a:hover,
-    .main-nav > a.active {
+    .main-nav > a.active,
+    .nav > a:hover,
+    .nav > a.active {
         background: rgba(0, 168, 255, 0.08);
     }
 
-    .main-nav > a.nav-button {
+    .main-nav > a.nav-button,
+    .main-nav > a.header-whatsapp,
+    .nav > a.nav-button,
+    .nav > a.header-whatsapp {
         width: 100%;
 
         padding: 11px 15px !important;
@@ -2281,7 +2352,8 @@ textarea {
         font-size: clamp(40px, 10vw, 60px);
     }
 
-    .hero-buttons {
+    .hero-buttons,
+    .hero-actions {
         align-items: stretch;
 
         flex-direction: column;
@@ -2296,10 +2368,14 @@ textarea {
     }
 
     .intro-section,
+    .intro,
     .solutions-section,
     .maintenance-section,
+    .maintenance,
     .why-section,
+    .why-cmport,
     .section.services,
+    .services,
     .section-dark {
         padding: 80px 0;
     }
@@ -2318,7 +2394,8 @@ textarea {
         gap: 20px;
     }
 
-    .maintenance-section .maintenance-content {
+    .maintenance-section .maintenance-content,
+    .maintenance .maintenance-content {
         grid-template-columns: 1fr;
     }
 
@@ -2341,6 +2418,10 @@ textarea {
 
         flex-direction: column;
 
+        padding: 45px 35px;
+    }
+
+    .final-cta-content {
         padding: 45px 35px;
     }
 
@@ -2374,23 +2455,12 @@ textarea {
 
         gap: 50px;
     }
-
-    .hero-actions {
-        align-items: stretch;
-
-        flex-direction: column;
-
-        max-width: 320px;
-    }
-
-    .final-cta-content {
-        padding: 45px 35px;
-    }
 }
 
 
 /* =========================================================
-   RESPONSIVO — 600PX
+   RESPONSIVO
+   600PX
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -2399,20 +2469,41 @@ textarea {
         width: min(100% - 28px, 500px);
     }
 
+    .header-container {
+        min-height: 66px;
+    }
+
     .logo img {
-        width: 90px;
+        width: 88px;
+    }
+
+    .main-nav,
+    .nav {
+        top: 66px;
+
+        left: 14px;
+        right: 14px;
     }
 
     .hero {
         min-height: 730px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(7, 20, 38, 0.97),
+                rgba(11, 31, 59, 0.82)
+            ),
+            url("Imagens/security-service-hero-img-bg.jpg")
+            center / cover no-repeat;
     }
 
     .hero-background {
         background:
             linear-gradient(
                 180deg,
-                rgba(7, 20, 38, 0.97),
-                rgba(11, 31, 59, 0.82)
+                rgba(7, 20, 38, 0.35),
+                rgba(11, 31, 59, 0.12)
             ),
             url("Imagens/security-service-hero-img-bg.jpg")
             center / cover no-repeat;
@@ -2488,6 +2579,10 @@ textarea {
         padding: 38px 25px;
     }
 
+    .final-cta-content {
+        padding: 38px 25px;
+    }
+
     .internal-final-cta {
         padding: 45px 0;
     }
@@ -2512,7 +2607,7 @@ textarea {
 
 
     /* =====================================================
-       QUEM SOMOS — CELULAR
+       TÍTULOS MOBILE
     ===================================================== */
 
     .section-heading,
@@ -2526,7 +2621,13 @@ textarea {
         margin-bottom: 38px;
     }
 
-    .why-section {
+
+    /* =====================================================
+       WHY CMPORT MOBILE
+    ===================================================== */
+
+    .why-section,
+    .why-cmport {
         padding: 70px 0;
 
         background: var(--navy) !important;
@@ -2568,7 +2669,7 @@ textarea {
 
 
     /* =====================================================
-       FOOTER
+       FOOTER MOBILE
     ===================================================== */
 
     .footer-grid {
@@ -2608,7 +2709,8 @@ textarea {
         font-size: 11px;
     }
 
-    .site-footer strong {
+    .site-footer strong,
+    .footer strong {
         font-size: 11px;
     }
 
@@ -2637,7 +2739,7 @@ textarea {
 
 
     /* =====================================================
-       HERO DAS PÁGINAS INTERNAS — CELULAR
+       HERO INTERNO MOBILE
     ===================================================== */
 
     .page-hero {
@@ -2652,7 +2754,8 @@ textarea {
         text-align: left;
     }
 
-    .page-hero-content h1 {
+    .page-hero-content h1,
+    .page-hero > .container h1 {
         max-width: 100%;
 
         margin: 12px 0 0;
@@ -2660,7 +2763,8 @@ textarea {
         font-size: clamp(36px, 11vw, 48px);
     }
 
-    .page-hero-content p {
+    .page-hero-content p,
+    .page-hero > .container p {
         max-width: 100%;
 
         margin: 18px 0 0;
@@ -2672,25 +2776,9 @@ textarea {
         text-align: left;
     }
 
-    .page-hero > .container h1 {
-        max-width: 100%;
-
-        margin: 18px 0 0;
-
-        font-size: clamp(36px, 11vw, 48px);
-    }
-
-    .page-hero > .container p {
-        max-width: 100%;
-
-        margin: 18px 0 0;
-
-        font-size: 14px;
-    }
-
 
     /* =====================================================
-       WHATSAPP NO CELULAR
+       WHATSAPP FLUTUANTE MOBILE
     ===================================================== */
 
     .whatsapp-float {
@@ -2699,7 +2787,6 @@ textarea {
         bottom: 15px;
 
         width: 52px;
-
         height: 52px;
 
         min-height: 52px;
@@ -2719,7 +2806,7 @@ textarea {
 
 
     /* =====================================================
-       CONTATO
+       CONTATO MOBILE
     ===================================================== */
 
     .contact-section,
@@ -2733,12 +2820,7 @@ textarea {
 
     .contact-icon {
         width: 44px;
-
         height: 44px;
-    }
-
-    .final-cta-content {
-        padding: 38px 25px;
     }
 
     .final-cta-content h2 {
@@ -2747,5 +2829,110 @@ textarea {
 
     .final-cta-content p {
         font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVO EXTRA
+   420PX
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-content {
+        padding-top: 95px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1.2px;
+    }
+
+    .hero p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        max-width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-trust strong {
+        font-size: 12px;
+    }
+
+    .hero-trust span {
+        font-size: 10px;
+    }
+
+    .service-content,
+    .service-card-body {
+        padding: 23px;
+    }
+
+    .service-content h3,
+    .service-card-body h3 {
+        font-size: 20px;
+    }
+
+    .final-cta-box,
+    .final-cta-content {
+        border-radius: 20px;
+    }
+
+    .contact-card {
+        gap: 13px;
+    }
+
+    .contact-card h3 {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+:focus-visible {
+    outline: 3px solid rgba(0, 168, 255, 0.55);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
