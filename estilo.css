@@ -341,7 +341,7 @@ button {
 
 
 /* =========================================================
-   HERO
+   HERO PRINCIPAL
 ========================================================= */
 
 .hero {
@@ -380,7 +380,16 @@ button {
         );
 
     pointer-events: none;
+
+    z-index: 1;
 }
+
+
+/* =========================================================
+   CAMADA AZUL DO HERO
+   CORREÇÃO:
+   não duplica mais a imagem de fundo
+========================================================= */
 
 .hero-background {
     position: absolute;
@@ -390,15 +399,16 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(7, 20, 38, 0.35),
-            rgba(11, 31, 59, 0.10)
-        ),
-        url("Imagens/security-service-hero-img-bg.jpg")
-        center center / cover no-repeat;
+            rgba(7, 20, 38, 0.32) 0%,
+            rgba(11, 31, 59, 0.46) 50%,
+            rgba(11, 31, 59, 0.58) 100%
+        );
 
     transform: scale(1.02);
 
     z-index: 0;
+
+    pointer-events: none;
 }
 
 .hero-background::after {
@@ -411,10 +421,15 @@ button {
     background:
         radial-gradient(
             circle at 78% 45%,
-            rgba(0, 168, 255, 0.12),
+            rgba(0, 168, 255, 0.10),
             transparent 32%
         );
 }
+
+
+/* =========================================================
+   CONTEÚDO DO HERO
+========================================================= */
 
 .hero-content {
     position: relative;
@@ -1485,8 +1500,9 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(7, 20, 38, 0.96),
-            rgba(11, 31, 59, 0.75)
+            rgba(7, 20, 38, 0.98) 0%,
+            rgba(11, 31, 59, 0.92) 45%,
+            rgba(11, 31, 59, 0.86) 100%
         ),
         url("Imagens/security-service-hero-img-bg.jpg")
         center / cover no-repeat;
@@ -2505,15 +2521,18 @@ button {
             center / cover no-repeat;
     }
 
+    /* =====================================================
+       CAMADA AZUL MOBILE
+       sem duplicar a imagem
+    ===================================================== */
+
     .hero-background {
         background:
             linear-gradient(
                 180deg,
-                rgba(7, 20, 38, 0.35),
-                rgba(11, 31, 59, 0.12)
-            ),
-            url("Imagens/security-service-hero-img-bg.jpg")
-            center / cover no-repeat;
+                rgba(7, 20, 38, 0.34),
+                rgba(11, 31, 59, 0.52)
+            );
     }
 
     .hero h1 {
@@ -2753,6 +2772,15 @@ button {
         min-height: 420px;
 
         padding-top: 85px;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(7, 20, 38, 0.98),
+                rgba(11, 31, 59, 0.88)
+            ),
+            url("Imagens/security-service-hero-img-bg.jpg")
+            center / cover no-repeat;
     }
 
     .page-hero-content {
