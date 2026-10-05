@@ -160,15 +160,21 @@ p { color: var(--gray); }
     position: relative; z-index: 1; min-height: 620px;
     display: flex; align-items: center; gap: 60px;
     padding-top: 72px; padding-bottom: 72px;
+   
 }
-.hero-content { position: relative; z-index: 2; flex: 1; }
-.hero-content-inner { max-width: 700px; }
-.hero-eyebrow, .hero-label {
-    display: inline-flex; align-items: center; margin-bottom: 18px;
-    color: var(--blue-light); font-size: 12px; font-weight: 800;
-    letter-spacing: 0.15em; text-transform: uppercase;
+.hero-eyebrow,
+.hero-label,
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 18px;
+    color: var(--blue-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
 }
-.hero-eyebrow span { display: none; }
+
 .hero h1 {
     max-width: 760px; margin-bottom: 22px; color: var(--white);
     font-family: "Lato", sans-serif; font-size: clamp(42px, 5vw, 68px);
@@ -201,10 +207,21 @@ p { color: var(--gray); }
 
 /* 08. PAGE HERO - SERVIÇOS */
 .page-hero {
-    position: relative; overflow: hidden; padding: 110px 0;
-    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+    background-color: var(--navy-dark) !important;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(7, 20, 38, 0.96) 0%,
+            rgba(11, 31, 59, 0.88) 48%,
+            rgba(11, 31, 59, 0.66) 100%
+        ),
+        url("Imagens/security-service-hero-img-bg.jpg") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
     color: var(--white);
 }
+
 .page-hero::after {
     content: ""; position: absolute; right: -180px; top: -220px;
     width: 520px; height: 520px; border-radius: 50%;
@@ -644,11 +661,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(0, 168, 255, 0.3
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    color: #FFFFFF;
-}
-
-.page-hero {
-    background: linear-gradient(135deg, #071426 0%, #0B1F3B 100%) !important;
     color: #FFFFFF;
 }
 
