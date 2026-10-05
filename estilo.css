@@ -1,8 +1,6 @@
 /* =========================================================
    CMPORT - SISTEMAS ELETRÔNICOS DE SEGURANÇA
    CSS PRINCIPAL (index, serviços, quem-somos, contato)
-   ATENÇÃO: este arquivo deve ficar em inglês (propriedades
-   e valores CSS). Não traduza nem cole de página traduzida.
 ========================================================= */
 
 /* 01. VARIÁVEIS */
@@ -635,4 +633,31 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(0, 168, 255, 0.3
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+}
+/* Hero azul-marinho (identidade CMPORT) */
+
+.hero {
+    background-color: #071426 !important;
+    background-image:
+        linear-gradient(90deg, rgba(7, 20, 38, 0.96) 0%, rgba(11, 31, 59, 0.88) 48%, rgba(11, 31, 59, 0.66) 100%),
+        url("Imagens/security-service-hero-img-bg.jpg") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    color: #FFFFFF;
+}
+
+.page-hero {
+    background: linear-gradient(135deg, #071426 0%, #0B1F3B 100%) !important;
+    color: #FFFFFF;
+}
+
+.hero h1,
+.page-hero h1 {
+    color: #FFFFFF !important;
+}
+
+.hero p,
+.page-hero p {
+    color: rgba(255, 255, 255, 0.76) !important;
 }
