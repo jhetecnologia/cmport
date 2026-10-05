@@ -2834,3 +2834,16 @@ button:focus-visible {
         animation-iteration-count: 1 !important;
     }
 }
+.maintenance-item span,
+.maintenance-feature span {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.contact-card span i {
+    display: inline-block;
+}
