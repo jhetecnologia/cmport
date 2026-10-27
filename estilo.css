@@ -1996,3 +1996,152 @@ button:focus-visible {
 .page-hero p {
     color: rgba(255, 255, 255, 0.76) !important;
 }
+
+
+/* =========================================================
+   CMPORT — AVISO DE COOKIES
+========================================================= */
+
+.cookie-banner {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+    width: min(440px, calc(100% - 32px));
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: 0 20px 60px rgba(7, 20, 38, 0.22);
+}
+
+.cookie-banner[hidden],
+.cookie-preferences[hidden] {
+    display: none !important;
+}
+
+.cookie-banner h2,
+.cookie-preferences h2 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.cookie-banner p,
+.cookie-preferences p {
+    margin: 0 0 16px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.cookie-banner a,
+.cookie-preferences a {
+    color: var(--blue-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cookie-actions button {
+    min-height: 43px;
+    flex: 1 1 145px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--navy);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.cookie-actions .cookie-accept {
+    border-color: var(--blue);
+    background: var(--blue);
+    color: var(--white);
+}
+
+.cookie-actions .cookie-accept:hover {
+    border-color: var(--blue-dark);
+    background: var(--blue-dark);
+}
+
+.cookie-actions .cookie-reject:hover,
+.cookie-actions .cookie-settings:hover {
+    background: var(--ice);
+}
+
+.cookie-preferences {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(7, 20, 38, 0.65);
+}
+
+.cookie-preferences-panel {
+    width: min(100%, 480px);
+    padding: 28px;
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.cookie-essential {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 18px 0;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--navy);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.cookie-essential input {
+    margin-top: 4px;
+    accent-color: var(--blue);
+}
+
+.cookie-preferences .cookie-actions {
+    margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+    .cookie-banner {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100% - 24px);
+        padding: 21px;
+    }
+
+    .cookie-banner h2,
+    .cookie-preferences h2 {
+        font-size: 19px;
+    }
+
+    .cookie-actions button {
+        flex-basis: 100%;
+    }
+
+    .cookie-preferences-panel {
+        padding: 22px;
+    }
+}
+
