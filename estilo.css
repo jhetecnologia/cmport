@@ -3281,3 +3281,207 @@ button:focus-visible {
         width: min(100%, 260px);
     }
 }
+
+
+
+/* =========================================================
+   CMPORT — AJUSTES (colar no FINAL do estilo.css)
+   ========================================================= */
+
+/* 01. Espaço entre a descrição do cabeçalho e os botões */
+.hero .hero-buttons,
+.hero .hero-actions {
+    margin-top: 48px;
+}
+
+.hero-home .hero-trust {
+    margin-top: 52px;
+}
+
+
+/* 02. Carrossel do Poste de Monitoramento */
+.pole-carousel {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    background: var(--navy-light);
+}
+
+.pole-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    cursor: grab;
+}
+
+.pole-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.pole-carousel-track.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+}
+
+.pole-carousel-track:focus-visible {
+    outline: 3px solid rgba(0, 168, 255, 0.35);
+    outline-offset: -3px;
+}
+
+.pole-slide {
+    position: relative;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 540px;
+    margin: 0;
+    padding: 24px 24px 52px;
+    scroll-snap-align: center;
+}
+
+/* Imagem inteira, sem cortes e sem distorção */
+.pole-slide img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.pole-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    background: rgba(7, 20, 38, 0.72);
+    color: var(--white);
+    font-size: 14px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    transition: background var(--transition), opacity var(--transition);
+}
+
+.pole-arrow:hover:not(:disabled) {
+    background: var(--blue);
+}
+
+.pole-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.pole-arrow-prev { left: 14px; }
+.pole-arrow-next { right: 14px; }
+
+.pole-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pole-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: background var(--transition), width var(--transition);
+}
+
+.pole-dots button.active {
+    width: 22px;
+    border-radius: 10px;
+    background: var(--blue);
+}
+
+@media (max-width: 1050px) {
+    .pole-slide { height: 480px; }
+}
+
+@media (max-width: 768px) {
+    .pole-slide {
+        height: 380px;
+        padding: 18px 18px 46px;
+    }
+
+    /* No celular o arraste por toque basta */
+    .pole-arrow { display: none; }
+}
+
+@media (max-width: 480px) {
+    .pole-slide { height: 320px; }
+}
+
+
+/* 03. Rodapé: redes sociais centralizadas e afastadas do WhatsApp flutuante */
+.footer-bottom-inner,
+.footer > .footer-bottom.container,
+.site-footer .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    text-align: center;
+}
+
+.footer-social {
+    justify-content: center;
+    align-self: center;
+}
+
+.footer-bottom p,
+.footer-bottom-inner p {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer > .footer-bottom.container,
+    .footer-bottom-inner,
+    .site-footer .footer-bottom {
+        align-items: center;
+        padding-bottom: 92px;
+    }
+
+    .footer-social {
+        align-self: center;
+    }
+}
+
+
+/* 04. Espaço entre a descrição e os botões no mobile */
+@media (max-width: 768px) {
+    .hero .hero-buttons,
+    .hero .hero-actions {
+        margin-top: 38px;
+    }
+
+    .hero-home .hero-trust {
+        margin-top: 40px;
+    }
+}
