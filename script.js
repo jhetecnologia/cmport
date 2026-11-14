@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
@@ -25,10 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggle.addEventListener("click", function () {
             const aberto = nav.classList.toggle("active");
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                aberto ? "true" : "false"
-            );
+            menuToggle.setAttribute("aria-expanded", aberto ? "true" : "false");
 
             const icon = menuToggle.querySelector("i");
 
@@ -51,7 +47,122 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       2. GERENCIAMENTO DE COOKIES
+       2. CARROSSEL DO POSTE DE MONITORAMENTO
+       Arrastar (mouse e toque), setas e indicadores.
+    ===================================================== */
+
+    document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+
+        const track = carousel.querySelector("[data-carousel-track]");
+        const prev = carousel.querySelector("[data-carousel-prev]");
+        const next = carousel.querySelector("[data-carousel-next]");
+        const dots = Array.from(carousel.querySelectorAll("[data-carousel-dots] button"));
+        const slides = track ? Array.from(track.children) : [];
+
+        if (!track || slides.length === 0) {
+            return;
+        }
+
+        function currentIndex() {
+            return Math.max(
+                0,
+                Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth))
+            );
+        }
+
+        function goTo(index) {
+            const target = Math.max(0, Math.min(slides.length - 1, index));
+
+            track.scrollTo({
+                left: target * track.clientWidth,
+                behavior: "smooth"
+            });
+        }
+
+        function updateControls() {
+            const index = currentIndex();
+
+            dots.forEach(function (dot, i) {
+                dot.classList.toggle("active", i === index);
+
+                if (i === index) {
+                    dot.setAttribute("aria-current", "true");
+                } else {
+                    dot.removeAttribute("aria-current");
+                }
+            });
+
+            if (prev) { prev.disabled = index === 0; }
+            if (next) { next.disabled = index === slides.length - 1; }
+        }
+
+        if (prev) {
+            prev.addEventListener("click", function () { goTo(currentIndex() - 1); });
+        }
+
+        if (next) {
+            next.addEventListener("click", function () { goTo(currentIndex() + 1); });
+        }
+
+        dots.forEach(function (dot, i) {
+            dot.addEventListener("click", function () { goTo(i); });
+        });
+
+        track.addEventListener("scroll", function () {
+            window.requestAnimationFrame(updateControls);
+        }, { passive: true });
+
+        track.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                goTo(currentIndex() - 1);
+            } else if (event.key === "ArrowRight") {
+                event.preventDefault();
+                goTo(currentIndex() + 1);
+            }
+        });
+
+        // Arrastar com o mouse (o toque já funciona nativamente).
+        let dragging = false;
+        let startX = 0;
+        let startScroll = 0;
+
+        track.addEventListener("pointerdown", function (event) {
+            if (event.pointerType !== "mouse") { return; }
+
+            dragging = true;
+            startX = event.clientX;
+            startScroll = track.scrollLeft;
+            track.classList.add("is-dragging");
+        });
+
+        window.addEventListener("pointermove", function (event) {
+            if (!dragging) { return; }
+            track.scrollLeft = startScroll - (event.clientX - startX);
+        });
+
+        function endDrag() {
+            if (!dragging) { return; }
+
+            dragging = false;
+            track.classList.remove("is-dragging");
+            goTo(currentIndex());
+        }
+
+        window.addEventListener("pointerup", endDrag);
+        window.addEventListener("pointercancel", endDrag);
+
+        window.addEventListener("resize", function () {
+            track.scrollLeft = currentIndex() * track.clientWidth;
+            updateControls();
+        });
+
+        updateControls();
+    });
+
+
+    /* =====================================================
+       3. GERENCIAMENTO DE COOKIES
     ===================================================== */
 
     const banner = document.getElementById("cookie-banner");
@@ -133,19 +244,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function openPreferences() {
         const current = readConsent();
 
-        analyticsCheckbox.checked = current
-            ? current.analytics
-            : false;
-
-        marketingCheckbox.checked = current
-            ? current.marketing
-            : false;
+        analyticsCheckbox.checked = current ? current.analytics : false;
+        marketingCheckbox.checked = current ? current.marketing : false;
 
         preferences.hidden = false;
 
-        const panel = preferences.querySelector(
-            ".cookie-preferences-panel"
-        );
+        const panel = preferences.querySelector(".cookie-preferences-panel");
 
         if (panel) {
             panel.setAttribute("tabindex", "-1");
@@ -158,10 +262,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!readConsent()) {
             banner.hidden = false;
-        }
 
-        if (settingsButton) {
-            settingsButton.focus();
+            if (settingsButton) {
+                settingsButton.focus();
+            }
         }
     }
 
@@ -170,32 +274,22 @@ document.addEventListener("DOMContentLoaded", function () {
     banner.hidden = Boolean(savedConsent);
     preferences.hidden = true;
 
-    // Aceitar cookies opcionais.
     if (acceptButton) {
         acceptButton.addEventListener("click", function () {
-            saveConsent({
-                analytics: true,
-                marketing: true
-            });
+            saveConsent({ analytics: true, marketing: true });
         });
     }
 
-    // Rejeitar cookies opcionais.
     if (rejectButton) {
         rejectButton.addEventListener("click", function () {
-            saveConsent({
-                analytics: false,
-                marketing: false
-            });
+            saveConsent({ analytics: false, marketing: false });
         });
     }
 
-    // Abrir preferências.
     if (settingsButton) {
         settingsButton.addEventListener("click", openPreferences);
     }
 
-    // Salvar escolhas personalizadas.
     if (saveButton) {
         saveButton.addEventListener("click", function () {
             saveConsent({
@@ -205,7 +299,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Cancelar a configuração.
     if (cancelButton) {
         cancelButton.addEventListener("click", closePreferences);
     }
@@ -225,13 +318,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Permite reabrir as preferências por links ou botões do site.
-    document.querySelectorAll("[data-cookie-settings]").forEach(
-        function (element) {
-            element.addEventListener("click", function (event) {
-                event.preventDefault();
-                openPreferences();
-            });
-        }
-    );
+    document.querySelectorAll("[data-cookie-settings]").forEach(function (element) {
+        element.addEventListener("click", function (event) {
+            event.preventDefault();
+            openPreferences();
+        });
+    });
 
 });
