@@ -2145,3 +2145,1139 @@ button:focus-visible {
     }
 }
 
+
+/* =========================================================
+   CMPORT — NOVAS SEÇÕES DA PÁGINA INICIAL
+   ========================================================= */
+
+/* 01. NÚMEROS DA EMPRESA */
+
+.company-numbers {
+    padding: 100px 0;
+    background: var(--navy-dark);
+    color: var(--white);
+}
+
+.numbers-heading {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
+
+.numbers-heading .section-label {
+    color: var(--blue-light);
+}
+
+.numbers-heading h2 {
+    margin-bottom: 16px;
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.numbers-heading p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.75;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.number-card {
+    min-height: 190px;
+    padding: 28px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.number-card > strong {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--blue-light);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.number-card h3 {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.number-card p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 13px;
+}
+
+
+/* 02. DESTAQUE DO PRODUTO PRINCIPAL */
+
+.featured-service-card {
+    border: 2px solid var(--blue);
+    box-shadow: 0 15px 35px rgba(0, 168, 255, 0.12);
+}
+
+.featured-service-card:hover {
+    border-color: var(--blue-dark);
+}
+
+.featured-service-card .service-image {
+    height: 245px;
+}
+
+.featured-service-badge {
+    position: absolute;
+    left: 14px;
+    top: 15px;
+    z-index: 3;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    color: var(--blue-dark);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.service-link i {
+    transition: transform var(--transition);
+}
+
+.service-link:hover i {
+    transform: translateX(4px);
+}
+
+
+/* 03. PROJETO INTEGRADO */
+
+.integrated-project {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.integrated-project-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 0.85fr);
+    gap: 75px;
+    align-items: center;
+}
+
+.integrated-project-content h2 {
+    margin-bottom: 20px;
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.integrated-project-content > p {
+    margin-bottom: 24px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.integrated-points {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.integrated-points > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.integrated-points i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(0, 168, 255, 0.10);
+    color: var(--blue-dark);
+    font-size: 12px;
+}
+
+.commercial-areas {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--ice);
+}
+
+.commercial-areas-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 22px;
+}
+
+.commercial-areas-heading span {
+    color: var(--blue-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.commercial-areas-heading strong {
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.commercial-area {
+    display: grid;
+    grid-template-columns: 36px 1fr 42px;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 0;
+    border-top: 1px solid var(--border);
+}
+
+.commercial-area-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.commercial-area h3 {
+    margin-bottom: 3px;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.commercial-area p {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.commercial-area > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(0, 168, 255, 0.10);
+    color: var(--blue-dark);
+    font-size: 17px;
+}
+
+
+/* 04. POSTE DE MONITORAMENTO */
+
+.pole-section {
+    padding: 110px 0;
+    overflow: hidden;
+    background: var(--navy-dark);
+    color: var(--white);
+}
+
+.pole-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 75px;
+    align-items: center;
+}
+
+.pole-image-wrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 540px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    background: var(--navy-light);
+}
+
+.pole-image-wrap img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+}
+
+.pole-image-label {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 50px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.pole-content .section-label {
+    color: var(--blue-light);
+}
+
+.availability-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding: 7px 12px;
+    border: 1px solid rgba(102, 204, 255, 0.24);
+    border-radius: 50px;
+    background: rgba(0, 168, 255, 0.08);
+    color: var(--blue-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.availability-label > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #39D98A;
+    box-shadow: 0 0 0 4px rgba(57, 217, 138, 0.12);
+}
+
+.pole-content h2 {
+    margin-bottom: 18px;
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.08;
+}
+
+.pole-description {
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.70);
+    line-height: 1.8;
+}
+
+.pole-features {
+    display: grid;
+    gap: 17px;
+    margin-bottom: 30px;
+}
+
+.pole-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.pole-feature > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(0, 168, 255, 0.12);
+    color: var(--blue-light);
+    font-size: 16px;
+}
+
+.pole-feature h3 {
+    margin-bottom: 3px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.pole-feature p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* 05. APLICATIVO */
+
+.app-section {
+    padding: 105px 0;
+    background: var(--ice);
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 65px;
+    align-items: center;
+}
+
+.app-content h2 {
+    margin-bottom: 18px;
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 45px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.app-content > p {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.app-benefits {
+    display: grid;
+    gap: 18px;
+    margin: 27px 0;
+}
+
+.app-benefits > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.app-benefits > div > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(0, 168, 255, 0.10);
+    color: var(--blue-dark);
+}
+
+.app-benefits span {
+    display: block;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.app-benefits strong {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.app-content .app-note {
+    padding-left: 14px;
+    border-left: 3px solid var(--blue);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.app-download {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.app-download-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.app-download-header > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--navy);
+    color: var(--blue-light);
+    font-size: 19px;
+}
+
+.app-download-header strong,
+.app-download-header span {
+    display: block;
+}
+
+.app-download-header strong {
+    color: var(--navy);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.app-download-header span {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.app-store-options {
+    display: grid;
+    gap: 16px;
+}
+
+.app-store-card {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--white);
+}
+
+.app-store-card img {
+    width: 112px;
+    height: 112px;
+    padding: 5px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    object-fit: contain;
+}
+
+.app-store-card h3 {
+    margin-bottom: 4px;
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.app-store-card p {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.app-store-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 39px;
+    padding: 0 13px;
+    border-radius: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 800;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.app-store-button:hover {
+    transform: translateY(-2px);
+    background: var(--blue-dark);
+    color: var(--white);
+}
+
+
+/* 06. SMART SAMPA */
+
+.smart-sampa-section {
+    padding: 90px 0;
+    background: var(--white);
+}
+
+.smart-sampa-content {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 30px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.smart-sampa-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    background: var(--navy);
+    color: var(--blue-light);
+    font-size: 27px;
+}
+
+.smart-sampa-text .section-label {
+    margin-bottom: 10px;
+}
+
+.homologation-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 14px;
+    color: #14865B;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.smart-sampa-text h2 {
+    margin-bottom: 14px;
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.smart-sampa-text > p {
+    max-width: 780px;
+    line-height: 1.8;
+}
+
+.smart-sampa-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 28px 0;
+}
+
+.smart-sampa-details > div {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--ice);
+}
+
+.smart-sampa-details strong,
+.smart-sampa-details span {
+    display: block;
+}
+
+.smart-sampa-details strong {
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.smart-sampa-details span {
+    color: var(--gray);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.smart-sampa-text .smart-sampa-note {
+    padding: 15px 18px;
+    border-left: 3px solid var(--blue);
+    background: var(--ice);
+    font-size: 12px;
+}
+
+
+/* 07. INSPEÇÃO TÉCNICA */
+
+.inspection-section {
+    padding: 100px 0;
+    background: var(--ice);
+}
+
+.inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.inspection-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.inspection-card > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: rgba(0, 168, 255, 0.09);
+    color: var(--blue-dark);
+    font-size: 18px;
+}
+
+.inspection-card h3 {
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.inspection-card p {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.inspection-alert {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+    padding: 22px 25px;
+    border: 1px solid rgba(0, 168, 255, 0.18);
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.inspection-alert > i {
+    color: var(--blue-dark);
+    font-size: 22px;
+}
+
+.inspection-alert p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.inspection-alert strong {
+    color: var(--navy);
+}
+
+
+/* 08. INTERFONE FUTURO */
+
+.intercom-future {
+    padding: 100px 0;
+    overflow: hidden;
+    background: var(--navy-dark);
+}
+
+.intercom-future-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+    gap: 80px;
+    align-items: center;
+}
+
+.intercom-future-text .section-label {
+    color: var(--blue-light);
+}
+
+.development-label {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    color: var(--blue-light);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.intercom-future-text h2 {
+    margin-bottom: 16px;
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 45px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.intercom-future-text > p {
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.8;
+}
+
+.intercom-steps {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.intercom-steps > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.intercom-steps > div > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(0, 168, 255, 0.14);
+    color: var(--blue-light);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.intercom-steps p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.intercom-steps strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.intercom-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.intercom-phone {
+    position: relative;
+    width: min(100%, 285px);
+    min-height: 440px;
+    padding: 45px 24px 25px;
+    border: 7px solid #263B56;
+    border-radius: 38px;
+    background: #F4F6FA;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.30);
+    text-align: center;
+}
+
+.intercom-phone-top {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 75px;
+    height: 7px;
+    border-radius: 10px;
+    background: #263B56;
+    transform: translateX(-50%);
+}
+
+.intercom-call-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    margin: 35px auto 22px;
+    border-radius: 50%;
+    background: rgba(0, 168, 255, 0.12);
+    color: var(--blue-dark);
+    font-size: 28px;
+}
+
+.intercom-call-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--blue-dark);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.intercom-phone h3 {
+    margin-bottom: 5px;
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.intercom-phone > p {
+    font-size: 12px;
+}
+
+.intercom-actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.intercom-actions span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    border-radius: 9px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.intercom-actions span:first-child {
+    background: #159B62;
+}
+
+
+/* 09. CONTATOS NO CTA */
+
+.cta-contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 13px 22px;
+    margin-top: 30px;
+}
+
+.cta-contact-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 11px;
+}
+
+.cta-contact-details i {
+    color: var(--blue-light);
+}
+
+
+/* 10. RESPONSIVIDADE TABLET */
+
+@media (max-width: 1050px) {
+
+    .numbers-grid,
+    .inspection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .integrated-project-container,
+    .pole-grid,
+    .app-grid,
+    .intercom-future-content {
+        gap: 45px;
+    }
+
+    .pole-image-wrap,
+    .pole-image-wrap img {
+        min-height: 480px;
+        height: 480px;
+    }
+
+    .smart-sampa-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 11. RESPONSIVIDADE MOBILE */
+
+@media (max-width: 768px) {
+
+    .company-numbers,
+    .integrated-project,
+    .pole-section,
+    .app-section,
+    .smart-sampa-section,
+    .inspection-section,
+    .intercom-future {
+        padding: 75px 0;
+    }
+
+    .numbers-heading {
+        margin-bottom: 30px;
+    }
+
+    .numbers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .number-card {
+        min-height: 155px;
+        padding: 20px 16px;
+    }
+
+    .number-card > strong {
+        font-size: 36px;
+    }
+
+    .number-card h3 {
+        font-size: 13px;
+    }
+
+    .number-card p {
+        font-size: 11px;
+    }
+
+    .integrated-project-container,
+    .pole-grid,
+    .app-grid,
+    .intercom-future-content {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .commercial-areas {
+        padding: 22px;
+    }
+
+    .pole-image-wrap,
+    .pole-image-wrap img {
+        min-height: 360px;
+        height: 360px;
+    }
+
+    .pole-content h2,
+    .app-content h2,
+    .intercom-future-text h2 {
+        font-size: 35px;
+    }
+
+    .app-download {
+        padding: 22px;
+    }
+
+    .smart-sampa-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .smart-sampa-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 22px;
+    }
+
+    .inspection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .intercom-phone {
+        min-height: 410px;
+    }
+
+    .cta-contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* 12. MOBILE PEQUENO */
+
+@media (max-width: 480px) {
+
+    .numbers-grid {
+        gap: 10px;
+    }
+
+    .number-card {
+        min-height: 145px;
+        padding: 17px 13px;
+    }
+
+    .number-card > strong {
+        font-size: 32px;
+    }
+
+    .number-card h3 {
+        font-size: 12px;
+    }
+
+    .commercial-areas {
+        padding: 18px;
+    }
+
+    .commercial-area {
+        grid-template-columns: 32px 1fr 35px;
+        gap: 9px;
+    }
+
+    .commercial-area > i {
+        width: 35px;
+        height: 35px;
+    }
+
+    .pole-image-wrap,
+    .pole-image-wrap img {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .app-download {
+        padding: 17px;
+    }
+
+    .app-store-card {
+        grid-template-columns: 85px 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .app-store-card img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .app-store-card h3 {
+        font-size: 14px;
+    }
+
+    .app-store-card p {
+        font-size: 11px;
+    }
+
+    .app-store-button {
+        min-height: 37px;
+        padding: 0 9px;
+        font-size: 10px;
+    }
+
+    .inspection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inspection-alert {
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+    .intercom-phone {
+        width: min(100%, 260px);
+    }
+}
