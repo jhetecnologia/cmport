@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,65 +29,74 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preload" as="image" href="Imagens/security-service-hero-img-bg.jpg" fetchpriority="high">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 <link rel="stylesheet" href="estilo.css">
 
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Organization",
-            "@id": "https://www.cmport.com.br/#organization",
-            "name": "CMPORT Sistemas Eletrônicos de Segurança",
-            "url": "https://www.cmport.com.br/",
-            "logo": "https://www.cmport.com.br/Logo.png",
-            "image": "https://www.cmport.com.br/Logo.png",
-            "description": "Empresa de São Paulo especializada em segurança eletrônica, CFTV, controle de acesso, alarmes, cercas elétricas, portões, interfones, manutenção e Poste de Monitoramento Inteligente.",
-            "telephone": "+55 11 94034-1682",
-            "foundingDate": "2015",
-            "sameAs": [
-                "https://www.instagram.com/cmport_/",
-                "https://www.facebook.com/cmport.sistemas/"
-            ]
-        },
-        {
-            "@type": "WebSite",
-            "@id": "https://www.cmport.com.br/#website",
-            "url": "https://www.cmport.com.br/",
-            "name": "CMPORT Sistemas Eletrônicos de Segurança",
-            "publisher": {
-                "@id": "https://www.cmport.com.br/#organization"
-            },
-            "inLanguage": "pt-BR"
-        },
-        {
-            "@type": "Service",
-            "@id": "https://www.cmport.com.br/#service",
-            "name": "Serviços de Segurança Eletrônica",
-            "url": "https://www.cmport.com.br/",
-            "provider": {
-                "@id": "https://www.cmport.com.br/#organization"
-            },
-            "serviceType": [
-                "Sistemas de Alarme",
-                "Câmeras de Segurança",
-                "CFTV",
-                "Controle de Acesso",
-                "Cerca Elétrica",
-                "Manutenção de Portões",
-                "Interfone",
-                "Poste de Monitoramento Inteligente",
-                "Sistema Linear",
-                "Antena Coletiva",
-                "Sistema IVA",
-                "Alarme de Incêndio"
-            ]
-        }
-    ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.cmport.com.br/#organization",
+      "name": "CMPORT Sistemas Eletrônicos de Segurança",
+      "url": "https://www.cmport.com.br/",
+      "logo": "https://www.cmport.com.br/Logo.png",
+      "image": "https://www.cmport.com.br/Logo.png",
+      "description": "Empresa de São Paulo especializada em segurança eletrônica, CFTV, controle de acesso, alarmes, cercas elétricas, portões, interfones, manutenção e Poste de Monitoramento Inteligente.",
+      "telephone": "+55 11 94034-1682",
+      "email": "comercial@cmport.com.br",
+      "foundingDate": "2015",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/cmport_/",
+        "https://www.facebook.com/cmport.sistemas/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cmport.com.br/#website",
+      "url": "https://www.cmport.com.br/",
+      "name": "CMPORT Sistemas Eletrônicos de Segurança",
+      "publisher": {
+        "@id": "https://www.cmport.com.br/#organization"
+      },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.cmport.com.br/#service",
+      "name": "Serviços de Segurança Eletrônica",
+      "url": "https://www.cmport.com.br/",
+      "provider": {
+        "@id": "https://www.cmport.com.br/#organization"
+      },
+      "serviceType": [
+        "Poste de Monitoramento Inteligente",
+        "Câmeras e CFTV",
+        "Controle de Acesso",
+        "Cerca Elétrica",
+        "Alarmes e Sensores",
+        "Portões e Cancelas",
+        "Interfone",
+        "Sistema Linear",
+        "Antena Coletiva",
+        "Sistema IVA",
+        "Alarme de Incêndio"
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -115,7 +123,8 @@
             <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT."
                class="nav-button"
                target="_blank"
-               rel="noopener noreferrer">
+               rel="noopener noreferrer"
+               aria-label="Falar com a CMPORT pelo WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
                 Fale conosco
             </a>
@@ -132,70 +141,44 @@
 
             <div class="hero-content">
                 <span class="hero-label">SISTEMAS ELETRÔNICOS DE SEGURANÇA</span>
-
                 <h1>Segurança que vai além do equipamento.</h1>
-
                 <p>
                     Tecnologia, monitoramento e suporte técnico para condomínios,
                     empresas, comércios e residências. Conheça as soluções da
                     CMPORT e nosso Poste de Monitoramento Inteligente.
                 </p>
-
                 <div class="hero-buttons">
-                    <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT."
-                       class="btn btn-primary"
-                       target="_blank"
-                       rel="noopener noreferrer">
+                    <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-whatsapp"></i>
                         Solicitar atendimento
                     </a>
-
-                    <a href="#poste-monitoramento" class="btn btn-secondary">
-                        Conheça o poste inteligente
-                    </a>
+                    <a href="#poste-monitoramento" class="btn btn-secondary">Conheça o poste inteligente</a>
                 </div>
             </div>
 
             <div class="hero-trust">
-
                 <div class="trust-item">
                     <i class="fa-solid fa-calendar-check"></i>
-                    <span>
-                        <strong>Desde 2015</strong>
-                        Experiência em segurança
-                    </span>
+                    <span><strong>Desde 2015</strong> Experiência em segurança</span>
                 </div>
-
                 <div class="trust-item">
                     <i class="fa-solid fa-clock"></i>
-                    <span>
-                        <strong>Atendimento 24h</strong>
-                        De segunda a segunda
-                    </span>
+                    <span><strong>Atendimento 24h</strong> De segunda a segunda</span>
                 </div>
-
                 <div class="trust-item">
                     <i class="fa-solid fa-shield-halved"></i>
-                    <span>
-                        <strong>Soluções integradas</strong>
-                        Tecnologia e suporte
-                    </span>
+                    <span><strong>Soluções integradas</strong> Tecnologia e suporte</span>
                 </div>
-
             </div>
 
         </div>
     </section>
 
-
     <!-- APRESENTAÇÃO INSTITUCIONAL -->
     <section class="intro">
         <div class="container">
-
             <span class="section-label">CMPORT</span>
-
             <h2>Segurança eletrônica que vai além do equipamento.</h2>
-
             <p>
                 A CMPORT Sistemas Eletrônicos de Segurança oferece soluções
                 para proteger e facilitar a administração de diferentes
@@ -203,127 +186,63 @@
                 e corretiva e suporte técnico para condomínios, empresas,
                 comércios e residências.
             </p>
-
             <p>
                 Reunimos diferentes tecnologias em projetos adequados
                 às necessidades de cada ambiente, com acompanhamento
                 técnico em todas as etapas.
             </p>
-
             <div class="intro-features">
-
-                <div class="feature-item">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <strong>Instalação técnica</strong>
-                    <span>Projetos e equipamentos</span>
-                </div>
-
-                <div class="feature-item">
-                    <i class="fa-solid fa-gear"></i>
-                    <strong>Manutenção</strong>
-                    <span>Preventiva e corretiva</span>
-                </div>
-
-                <div class="feature-item">
-                    <i class="fa-solid fa-building-shield"></i>
-                    <strong>Soluções integradas</strong>
-                    <span>Diferentes sistemas de segurança</span>
-                </div>
-
-                <div class="feature-item">
-                    <i class="fa-solid fa-headset"></i>
-                    <strong>Suporte técnico</strong>
-                    <span>Acompanhamento especializado</span>
-                </div>
-
+                <div class="feature-item"><i class="fa-solid fa-screwdriver-wrench"></i><strong>Instalação técnica</strong><span>Projetos e equipamentos</span></div>
+                <div class="feature-item"><i class="fa-solid fa-gear"></i><strong>Manutenção</strong><span>Preventiva e corretiva</span></div>
+                <div class="feature-item"><i class="fa-solid fa-building-shield"></i><strong>Soluções integradas</strong><span>Diferentes sistemas de segurança</span></div>
+                <div class="feature-item"><i class="fa-solid fa-headset"></i><strong>Suporte técnico</strong><span>Acompanhamento especializado</span></div>
             </div>
-
         </div>
     </section>
-
 
     <!-- HISTÓRIA E NÚMEROS -->
     <section class="company-numbers">
         <div class="container">
-
             <div class="numbers-heading">
                 <span class="section-label">QUEM SOMOS</span>
                 <h2>Desde 2015 cuidando da segurança de quem importa.</h2>
-                <p>
-                    Uma trajetória construída com atendimento técnico,
-                    tecnologia e compromisso com a segurança.
-                </p>
+                <p>Uma trajetória construída com atendimento técnico, tecnologia e compromisso com a segurança.</p>
             </div>
-
             <div class="numbers-grid">
-
-                <article class="number-card">
-                    <strong>2015</strong>
-                    <h3>Início das atividades</h3>
-                    <p>Empresa de São Paulo</p>
-                </article>
-
-                <article class="number-card">
-                    <strong>200+</strong>
-                    <h3>Clientes atendidos</h3>
-                    <p>Em 2026</p>
-                </article>
-
-                <article class="number-card">
-                    <strong>1.800+</strong>
-                    <h3>Atendimentos técnicos</h3>
-                    <p>Em 2026</p>
-                </article>
-
-                <article class="number-card">
-                    <strong>24h</strong>
-                    <h3>Atendimento</h3>
-                    <p>De segunda a segunda</p>
-                </article>
-
+                <article class="number-card"><strong>2015</strong><h3>Início das atividades</h3><p>Empresa de São Paulo</p></article>
+                <article class="number-card"><strong>200+</strong><h3>Clientes atendidos</h3><p>Em 2026</p></article>
+                <article class="number-card"><strong>1.800+</strong><h3>Atendimentos técnicos</h3><p>Em 2026</p></article>
+                <article class="number-card"><strong>24h</strong><h3>Atendimento</h3><p>De segunda a segunda</p></article>
             </div>
-
         </div>
     </section>
-
 
     <!-- SOLUÇÕES -->
     <section class="services">
         <div class="container">
-
             <div class="section-header">
                 <div>
                     <span class="section-label">NOSSAS SOLUÇÕES</span>
                     <h2>Tudo em um só fornecedor.</h2>
                 </div>
-
                 <p>
                     Soluções em segurança eletrônica, monitoramento,
                     controle de acesso e manutenção para diferentes
                     necessidades e ambientes.
                 </p>
             </div>
-
             <div class="services-grid">
 
                 <article class="service-card featured-service-card">
                     <div class="service-image">
-                        <img src="Imagens/Poste de Monitoramento1.jpeg"
-                             alt="Poste de Monitoramento Inteligente da CMPORT"
-                             loading="lazy">
-
+                        <img src="Imagens/Poste%20de%20Monitoramento1.jpeg" alt="Poste de Monitoramento Inteligente da CMPORT" loading="lazy">
                         <span class="service-number">01</span>
                         <span class="featured-service-badge">PRODUTO PRINCIPAL</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">MONITORAMENTO INTELIGENTE</span>
                         <h3>Poste de Monitoramento Inteligente</h3>
-                        <p>
-                            Estrutura com câmeras, iluminação LED e aviso
-                            de vigilância para reforçar a segurança de
-                            áreas externas e pontos estratégicos.
-                        </p>
+                        <p>Estrutura com câmeras, iluminação LED e aviso de vigilância para reforçar a segurança de áreas externas e pontos estratégicos.</p>
                         <a href="#poste-monitoramento" class="service-link">
                             Conheça o produto
                             <i class="fa-solid fa-arrow-right"></i>
@@ -333,117 +252,78 @@
 
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="Imagens/Camera de segurança.jpeg"
-                             alt="Câmeras de segurança e sistema de CFTV"
-                             loading="lazy">
+                        <img src="Imagens/Camera%20de%20segurança.jpeg" alt="Câmeras de segurança e sistema de CFTV" loading="lazy">
                         <span class="service-number">02</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">MONITORAMENTO</span>
                         <h3>Câmeras e CFTV</h3>
-                        <p>
-                            Sistemas de câmeras para acompanhamento e
-                            gravação de imagens em diferentes ambientes.
-                        </p>
+                        <p>Sistemas de câmeras para acompanhamento e gravação de imagens em diferentes ambientes.</p>
                     </div>
                 </article>
 
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="Imagens/controle%20de%20acesso.jpeg"
-                             alt="Sistema de controle de acesso"
-                             loading="lazy">
+                        <img src="Imagens/controle%20de%20acesso.jpeg" alt="Sistema de controle de acesso" loading="lazy">
                         <span class="service-number">03</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">CONTROLE</span>
                         <h3>Controle de Acesso</h3>
-                        <p>
-                            Soluções com reconhecimento facial,
-                            biometria e tag para controle de entrada.
-                        </p>
+                        <p>Soluções com reconhecimento facial, biometria e tag para controle de entrada.</p>
                     </div>
                 </article>
 
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg"
-                             alt="Cerca elétrica para proteção perimetral"
-                             loading="lazy">
+                        <img src="Imagens/original-dc3877520bd2c9fdb4041e0e8166e64f.jpg" alt="Cerca elétrica para proteção perimetral" loading="lazy">
                         <span class="service-number">04</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">PROTEÇÃO</span>
                         <h3>Cerca Elétrica</h3>
-                        <p>
-                            Proteção perimetral para reforçar a segurança
-                            de condomínios, empresas e residências.
-                        </p>
+                        <p>Proteção perimetral para reforçar a segurança de condomínios, empresas e residências.</p>
                     </div>
                 </article>
 
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="Imagens/alarme.jpeg"
-                             alt="Sistema de alarme e sensores de segurança"
-                             loading="lazy">
+                        <img src="Imagens/alarme.jpeg" alt="Sistema de alarme e sensores de segurança" loading="lazy">
                         <span class="service-number">05</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">SEGURANÇA</span>
                         <h3>Alarmes e Sensores</h3>
-                        <p>
-                            Sistemas para detecção de situações e
-                            proteção de ambientes.
-                        </p>
+                        <p>Sistemas para detecção de situações e proteção de ambientes.</p>
                     </div>
                 </article>
 
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="Imagens/manutencao-portao-automatico-1.jpg"
-                             alt="Manutenção de portões e cancelas automáticas"
-                             loading="lazy">
+                        <img src="Imagens/manutencao-portao-automatico-1.jpg" alt="Manutenção de portões e cancelas automáticas" loading="lazy">
                         <span class="service-number">06</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">AUTOMAÇÃO</span>
                         <h3>Portões e Cancelas</h3>
-                        <p>
-                            Instalação e manutenção de portões,
-                            cancelas e sistemas de acionamento.
-                        </p>
+                        <p>Instalação e manutenção de portões, cancelas e sistemas de acionamento.</p>
                     </div>
                 </article>
 
                 <article class="service-card">
                     <div class="service-image">
-                        <img src="Imagens/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages-1-1024x683.jpg"
-                             alt="Sistema de interfone para comunicação e acesso"
-                             loading="lazy">
+                        <img src="Imagens/back-view-deliverer-ringing-intercom-gate-customer-s-house-while-delivering-packages-1-1024x683.jpg" alt="Sistema de interfone para comunicação e acesso" loading="lazy">
                         <span class="service-number">07</span>
                     </div>
-
                     <div class="service-content">
                         <span class="service-category">COMUNICAÇÃO</span>
                         <h3>Interfone</h3>
-                        <p>
-                            Soluções de comunicação para portarias,
-                            residências e condomínios.
-                        </p>
+                        <p>Soluções de comunicação para portarias, residências e condomínios.</p>
                     </div>
                 </article>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- OUTRAS SOLUÇÕES -->
     <section class="other-solutions">
@@ -461,275 +341,122 @@
         </div>
     </section>
 
-
     <!-- PROJETO INTEGRADO -->
     <section class="integrated-project">
         <div class="container integrated-project-container">
 
             <div class="integrated-project-content">
                 <span class="section-label">PROJETO INTEGRADO</span>
-
                 <h2>Uma solução completa para o seu empreendimento.</h2>
-
                 <p>
                     Projeto, instalação e manutenção de sistemas de
                     segurança eletrônica em diferentes áreas do
                     empreendimento, com atendimento centralizado
                     pela CMPORT.
                 </p>
-
                 <div class="integrated-points">
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Projeto adequado às características do ambiente</span>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Integração de diferentes sistemas de segurança</span>
-                    </div>
-
-                    <div>
-                        <i class="fa-solid fa-check"></i>
-                        <span>Instalação e acompanhamento técnico</span>
-                    </div>
+                    <div><i class="fa-solid fa-check"></i><span>Projeto adequado às características do ambiente</span></div>
+                    <div><i class="fa-solid fa-check"></i><span>Integração de diferentes sistemas de segurança</span></div>
+                    <div><i class="fa-solid fa-check"></i><span>Instalação e acompanhamento técnico</span></div>
                 </div>
-
-                <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto%20integrado%20de%20seguran%C3%A7a."
-                   class="btn btn-primary"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Solicitar avaliação
-                </a>
+                <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto%20integrado%20de%20seguran%C3%A7a." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Solicitar avaliação</a>
             </div>
 
             <div class="commercial-areas">
-
                 <div class="commercial-areas-heading">
                     <span>CENTRO COMERCIAL</span>
                     <strong>Segurança em cada área</strong>
                 </div>
-
                 <article class="commercial-area">
                     <span class="commercial-area-number">01</span>
-                    <div>
-                        <h3>Estacionamento</h3>
-                        <p>Poste de monitoramento e câmeras.</p>
-                    </div>
+                    <div><h3>Estacionamento</h3><p>Poste de monitoramento e câmeras.</p></div>
                     <i class="fa-solid fa-car"></i>
                 </article>
-
                 <article class="commercial-area">
                     <span class="commercial-area-number">02</span>
-                    <div>
-                        <h3>Perímetro</h3>
-                        <p>Cerca elétrica e iluminação.</p>
-                    </div>
+                    <div><h3>Perímetro</h3><p>Cerca elétrica e iluminação.</p></div>
                     <i class="fa-solid fa-shield-halved"></i>
                 </article>
-
                 <article class="commercial-area">
                     <span class="commercial-area-number">03</span>
-                    <div>
-                        <h3>Acessos</h3>
-                        <p>Cancelas, controle de acesso e interfone.</p>
-                    </div>
+                    <div><h3>Acessos</h3><p>Cancelas, controle de acesso e interfone.</p></div>
                     <i class="fa-solid fa-door-open"></i>
                 </article>
-
             </div>
 
         </div>
     </section>
 
-
     <!-- POSTE DE MONITORAMENTO -->
     <section class="pole-section" id="poste-monitoramento">
         <div class="container">
-
             <div class="pole-grid">
 
-                <div class="pole-carousel"
-                     data-carousel
-                     aria-roledescription="carrossel"
-                     aria-label="Modelos do Poste de Monitoramento Inteligente">
-
+                <div class="pole-carousel" data-carousel aria-roledescription="carrossel" aria-label="Modelos do Poste de Monitoramento Inteligente">
                     <div class="pole-carousel-track" data-carousel-track tabindex="0">
-
                         <figure class="pole-slide" aria-label="Modelo 1 de 2">
-                            <span class="pole-image-label">
-                                <i class="fa-solid fa-circle-check"></i>
-                                MODELO 1
-                            </span>
-                            <img src="Imagens/Poste de Monitoramento1.jpeg"
-                                 alt="Poste de Monitoramento Inteligente da CMPORT, modelo 1, com câmeras e iluminação LED"
-                                 draggable="false"
-                                 loading="lazy">
+                            <span class="pole-image-label"><i class="fa-solid fa-circle-check"></i> MODELO 1</span>
+                            <img src="Imagens/Poste%20de%20Monitoramento1.jpeg" alt="Poste de Monitoramento Inteligente da CMPORT, modelo 1, com câmeras e iluminação LED" draggable="false" loading="lazy">
                         </figure>
-
                         <figure class="pole-slide" aria-label="Modelo 2 de 2">
-                            <span class="pole-image-label">
-                                <i class="fa-solid fa-circle-check"></i>
-                                MODELO 2
-                            </span>
-                            <img src="Imagens/Poste de Monitoramento 2.jpeg"
-                                 alt="Poste de Monitoramento Inteligente da CMPORT, modelo 2, com câmeras e iluminação LED"
-                                 draggable="false"
-                                 loading="lazy">
+                            <span class="pole-image-label"><i class="fa-solid fa-circle-check"></i> MODELO 2</span>
+                            <img src="Imagens/Poste%20de%20Monitoramento%202.jpeg" alt="Poste de Monitoramento Inteligente da CMPORT, modelo 2, com câmeras e iluminação LED" draggable="false" loading="lazy">
                         </figure>
-
                     </div>
-
-                    <button class="pole-arrow pole-arrow-prev"
-                            type="button"
-                            data-carousel-prev
-                            aria-label="Modelo anterior">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-
-                    <button class="pole-arrow pole-arrow-next"
-                            type="button"
-                            data-carousel-next
-                            aria-label="Próximo modelo">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-
+                    <button class="pole-arrow pole-arrow-prev" type="button" data-carousel-prev aria-label="Modelo anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="pole-arrow pole-arrow-next" type="button" data-carousel-next aria-label="Próximo modelo"><i class="fa-solid fa-chevron-right"></i></button>
                     <div class="pole-dots" data-carousel-dots>
                         <button type="button" class="active" aria-label="Ver modelo 1" aria-current="true"></button>
                         <button type="button" aria-label="Ver modelo 2"></button>
                     </div>
-
                 </div>
 
                 <div class="pole-content">
-
                     <span class="section-label">NOSSO PRODUTO PRINCIPAL</span>
-
-                    <span class="availability-label">
-                        <span></span>
-                        DISPONÍVEL
-                    </span>
-
+                    <span class="availability-label"><span></span> DISPONÍVEL</span>
                     <h2>Poste de Monitoramento Inteligente</h2>
-
                     <p class="pole-description">
                         Uma solução de monitoramento para áreas externas,
                         com câmeras, iluminação e aviso de vigilância
                         em uma estrutura desenvolvida para reforçar
                         a segurança de locais estratégicos.
                     </p>
-
                     <div class="pole-features">
-
-                        <article class="pole-feature">
-                            <i class="fa-solid fa-video"></i>
-                            <div>
-                                <h3>Câmeras de alta resolução</h3>
-                                <p>Imagens nítidas durante o dia e à noite.</p>
-                            </div>
-                        </article>
-
-                        <article class="pole-feature">
-                            <i class="fa-solid fa-lightbulb"></i>
-                            <div>
-                                <h3>Iluminação LED</h3>
-                                <p>Ajuda a inibir ações e melhora a visibilidade.</p>
-                            </div>
-                        </article>
-
-                        <article class="pole-feature">
-                            <i class="fa-solid fa-eye"></i>
-                            <div>
-                                <h3>Aviso de vigilância</h3>
-                                <p>Presença visível para reforçar a sensação de segurança.</p>
-                            </div>
-                        </article>
-
-                        <article class="pole-feature">
-                            <i class="fa-solid fa-record-vinyl"></i>
-                            <div>
-                                <h3>Gravação 24 horas</h3>
-                                <p>Câmeras com gravação contínua de imagens.</p>
-                            </div>
-                        </article>
-
+                        <article class="pole-feature"><i class="fa-solid fa-video"></i><div><h3>Câmeras de alta resolução</h3><p>Imagens nítidas durante o dia e à noite.</p></div></article>
+                        <article class="pole-feature"><i class="fa-solid fa-lightbulb"></i><div><h3>Iluminação LED</h3><p>Ajuda a inibir ações e melhora a visibilidade.</p></div></article>
+                        <article class="pole-feature"><i class="fa-solid fa-eye"></i><div><h3>Aviso de vigilância</h3><p>Presença visível para reforçar a sensação de segurança.</p></div></article>
+                        <article class="pole-feature"><i class="fa-solid fa-record-vinyl"></i><div><h3>Gravação 24 horas</h3><p>Câmeras com gravação contínua de imagens.</p></div></article>
                     </div>
-
-                    <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Poste%20de%20Monitoramento%20Inteligente."
-                       class="btn btn-primary"
-                       target="_blank"
-                       rel="noopener noreferrer">
+                    <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20o%20Poste%20de%20Monitoramento%20Inteligente." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-whatsapp"></i>
                         Tenho interesse no poste
                     </a>
-
                 </div>
 
             </div>
-
         </div>
     </section>
-
 
     <!-- APLICATIVO DO POSTE -->
     <section class="app-section">
         <div class="container">
-
             <div class="app-grid">
 
                 <div class="app-content">
                     <span class="section-label">APLICATIVO DO POSTE</span>
-
-                    <span class="availability-label">
-                        <span></span>
-                        DISPONÍVEL
-                    </span>
-
+                    <span class="availability-label"><span></span> DISPONÍVEL</span>
                     <h2>As imagens do seu poste na palma da mão.</h2>
-
                     <p>
                         Com o aplicativo do Poste de Monitoramento Inteligente,
                         os síndicos podem acompanhar as imagens pelo celular,
                         de forma prática.
                     </p>
-
                     <div class="app-benefits">
-
-                        <div>
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <span>
-                                <strong>Acesso pelo celular</strong>
-                                Acompanhe as imagens pelo aplicativo.
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fa-solid fa-video"></i>
-                            <span>
-                                <strong>Visualização ao vivo</strong>
-                                Consulte as câmeras disponíveis no poste.
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fa-solid fa-cloud"></i>
-                            <span>
-                                <strong>Gravação em nuvem</strong>
-                                Opções de retenção de 7, 14, 20 ou 30 dias,
-                                conforme configuração e autorização da administração.
-                            </span>
-                        </div>
-
-                        <div>
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                            <span>
-                                <strong>Histórico de acesso</strong>
-                                Registro dos acessos às imagens.
-                            </span>
-                        </div>
-
+                        <div><i class="fa-solid fa-mobile-screen-button"></i><span><strong>Acesso pelo celular</strong> Acompanhe as imagens pelo aplicativo.</span></div>
+                        <div><i class="fa-solid fa-video"></i><span><strong>Visualização ao vivo</strong> Consulte as câmeras disponíveis no poste.</span></div>
+                        <div><i class="fa-solid fa-cloud"></i><span><strong>Gravação em nuvem</strong> Opções de retenção de 7, 14, 20 ou 30 dias, conforme configuração e autorização da administração.</span></div>
+                        <div><i class="fa-solid fa-clock-rotate-left"></i><span><strong>Histórico de acesso</strong> Registro dos acessos às imagens.</span></div>
                     </div>
-
                     <p class="app-note">
                         O acesso às imagens e às funcionalidades depende
                         das permissões configuradas para cada usuário.
@@ -737,121 +464,61 @@
                 </div>
 
                 <div class="app-download">
-
                     <div class="app-download-header">
                         <i class="fa-solid fa-download"></i>
-                        <div>
-                            <strong>Baixe o aplicativo</strong>
-                            <span>Disponível para Android e iPhone</span>
-                        </div>
+                        <div><strong>Baixe o aplicativo</strong><span>Disponível para Android e iPhone</span></div>
                     </div>
-
                     <div class="app-store-options">
-
                         <article class="app-store-card">
-                            <img src="Imagens/cmport_qr_android.png"
-                                 alt="QR Code para baixar o aplicativo CMPORT na Google Play"
-                                 loading="lazy">
-
+                            <img src="Imagens/cmport_qr_android.png" alt="QR Code para baixar o aplicativo CMPORT na Google Play" loading="lazy">
                             <div>
                                 <h3>Android</h3>
                                 <p>Escaneie o QR Code ou baixe pela Google Play.</p>
-
-                                <a href="https://play.google.com/store/apps/details?id=br.com.cmport.app"
-                                   class="app-store-button"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                    <i class="fa-brands fa-google-play"></i>
-                                    Baixar na Google Play
-                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=br.com.cmport.app" class="app-store-button" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-play"></i> Baixar na Google Play</a>
                             </div>
                         </article>
-
                         <article class="app-store-card">
-                            <img src="Imagens/cmport_qr_ios.png"
-                                 alt="QR Code para baixar o aplicativo CMPORT na App Store"
-                                 loading="lazy">
-
+                            <img src="Imagens/cmport_qr_ios.png" alt="QR Code para baixar o aplicativo CMPORT na App Store" loading="lazy">
                             <div>
                                 <h3>iPhone</h3>
                                 <p>Escaneie o QR Code ou baixe pela App Store.</p>
-
-                                <a href="https://apps.apple.com/br/app/cmport/id6828667620"
-                                   class="app-store-button"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                    <i class="fa-brands fa-apple"></i>
-                                    Baixar na App Store
-                                </a>
+                                <a href="https://apps.apple.com/br/app/cmport/id6828667620" class="app-store-button" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-apple"></i> Baixar na App Store</a>
                             </div>
                         </article>
-
                     </div>
-
                 </div>
 
             </div>
-
         </div>
     </section>
-
 
     <!-- SMART SAMPA -->
     <section class="smart-sampa-section">
         <div class="container">
-
             <div class="smart-sampa-content">
-
-                <div class="smart-sampa-icon">
-                    <i class="fa-solid fa-city"></i>
-                </div>
-
+                <div class="smart-sampa-icon"><i class="fa-solid fa-city"></i></div>
                 <div class="smart-sampa-text">
                     <span class="section-label">SEGURANÇA INTEGRADA</span>
-
-                    <span class="homologation-label">
-                        <i class="fa-solid fa-circle-check"></i>
-                        HOMOLOGADA
-                    </span>
-
+                    <span class="homologation-label"><i class="fa-solid fa-circle-check"></i> HOMOLOGADA</span>
                     <h2>Conectada ao Smart Sampa</h2>
-
                     <p>
                         A CMPORT informa sua homologação no programa
                         Smart Sampa, iniciativa de monitoramento urbano
                         da cidade de São Paulo.
                     </p>
-
                     <div class="smart-sampa-details">
-
-                        <div>
-                            <strong>Câmeras do empreendimento</strong>
-                            <span>Imagens Full HD, 30 quadros por segundo.</span>
-                        </div>
-
-                        <div>
-                            <strong>CMPORT</strong>
-                            <span>Provedora de nuvem e cedente de imagens.</span>
-                        </div>
-
-                        <div>
-                            <strong>Smart Sampa</strong>
-                            <span>Monitoramento urbano de São Paulo.</span>
-                        </div>
-
+                        <div><strong>Câmeras do empreendimento</strong><span>Imagens Full HD, 30 quadros por segundo.</span></div>
+                        <div><strong>CMPORT</strong><span>Provedora de nuvem e cedente de imagens.</span></div>
+                        <div><strong>Smart Sampa</strong><span>Monitoramento urbano de São Paulo.</span></div>
                     </div>
-
                     <p class="smart-sampa-note">
                         O compartilhamento das imagens acontece mediante
                         autorização da administração do empreendimento.
                     </p>
                 </div>
-
             </div>
-
         </div>
     </section>
-
 
     <!-- MANUTENÇÃO E SUPORTE -->
     <section class="maintenance">
@@ -860,16 +527,13 @@
 
                 <div class="maintenance-text">
                     <span class="section-label">SUPORTE CMPORT</span>
-
                     <h2>Suporte que não termina na instalação.</h2>
-
                     <p>
                         A segurança exige acompanhamento. Por isso,
                         a CMPORT oferece manutenção preventiva,
                         atendimento técnico e acompanhamento dos
                         equipamentos instalados.
                     </p>
-
                     <p>
                         Nosso trabalho é ajudar a manter os sistemas
                         em funcionamento e identificar possíveis
@@ -878,90 +542,35 @@
                 </div>
 
                 <div class="maintenance-list">
-
-                    <div class="maintenance-item">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        <div>
-                            <strong>Preventiva mensal</strong>
-                            <span>Visita programada todos os meses.</span>
-                        </div>
-                    </div>
-
-                    <div class="maintenance-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <div>
-                            <strong>Chamados 24 horas</strong>
-                            <span>Atendimento de segunda a segunda.</span>
-                        </div>
-                    </div>
-
-                    <div class="maintenance-item">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                        <div>
-                            <strong>Visita técnica</strong>
-                            <span>Equipe própria no local.</span>
-                        </div>
-                    </div>
-
-                    <div class="maintenance-item">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <div>
-                            <strong>Relatório da visita</strong>
-                            <span>Registro com fotos e assinatura.</span>
-                        </div>
-                    </div>
-
+                    <div class="maintenance-item"><i class="fa-solid fa-calendar-check"></i><div><strong>Preventiva mensal</strong><span>Visita programada todos os meses.</span></div></div>
+                    <div class="maintenance-item"><i class="fa-solid fa-clock"></i><div><strong>Chamados 24 horas</strong><span>Atendimento de segunda a segunda.</span></div></div>
+                    <div class="maintenance-item"><i class="fa-solid fa-screwdriver-wrench"></i><div><strong>Visita técnica</strong><span>Equipe própria no local.</span></div></div>
+                    <div class="maintenance-item"><i class="fa-solid fa-file-lines"></i><div><strong>Relatório da visita</strong><span>Registro com fotos e assinatura.</span></div></div>
                 </div>
 
             </div>
         </div>
     </section>
 
-
     <!-- INSPEÇÃO PREVENTIVA -->
     <section class="inspection-section">
         <div class="container">
-
             <div class="section-header">
                 <div>
                     <span class="section-label">ACOMPANHAMENTO TÉCNICO</span>
                     <h2>O cuidado com cada parte do sistema.</h2>
                 </div>
-
                 <p>
                     Nas visitas preventivas, diferentes equipamentos
                     e pontos de segurança podem ser inspecionados.
                 </p>
             </div>
-
             <div class="inspection-grid">
-
-                <article class="inspection-card">
-                    <i class="fa-solid fa-door-open"></i>
-                    <h3>Portões e cancelas</h3>
-                    <p>Conferência do funcionamento durante a preventiva.</p>
-                </article>
-
-                <article class="inspection-card">
-                    <i class="fa-solid fa-fingerprint"></i>
-                    <h3>Controle de acesso</h3>
-                    <p>Verificação de leitores, sistemas faciais e fechaduras.</p>
-                </article>
-
-                <article class="inspection-card">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h3>Cerca elétrica</h3>
-                    <p>Verificação do funcionamento e das hastes.</p>
-                </article>
-
-                <article class="inspection-card">
-                    <i class="fa-solid fa-video"></i>
-                    <h3>Câmeras e gravação</h3>
-                    <p>Conferência de imagem, data e período de gravação.</p>
-                </article>
-
+                <article class="inspection-card"><i class="fa-solid fa-door-open"></i><h3>Portões e cancelas</h3><p>Conferência do funcionamento durante a preventiva.</p></article>
+                <article class="inspection-card"><i class="fa-solid fa-fingerprint"></i><h3>Controle de acesso</h3><p>Verificação de leitores, sistemas faciais e fechaduras.</p></article>
+                <article class="inspection-card"><i class="fa-solid fa-bolt"></i><h3>Cerca elétrica</h3><p>Verificação do funcionamento e das hastes.</p></article>
+                <article class="inspection-card"><i class="fa-solid fa-video"></i><h3>Câmeras e gravação</h3><p>Conferência de imagem, data e período de gravação.</p></article>
             </div>
-
             <div class="inspection-alert">
                 <i class="fa-solid fa-bell"></i>
                 <p>
@@ -969,204 +578,113 @@
                     Nossa equipe é avisada automaticamente para verificar a ocorrência.
                 </p>
             </div>
-
         </div>
     </section>
-
 
     <!-- INTERFONE EM DESENVOLVIMENTO -->
     <section class="intercom-future">
         <div class="container">
-
             <div class="intercom-future-content">
 
                 <div class="intercom-future-text">
                     <span class="section-label">NOVIDADE</span>
-
-                    <span class="development-label">
-                        EM DESENVOLVIMENTO
-                    </span>
-
+                    <span class="development-label">EM DESENVOLVIMENTO</span>
                     <h2>Interfone na palma da mão.</h2>
-
                     <p>
                         Uma nova funcionalidade em desenvolvimento
                         para tornar a comunicação com a portaria
                         ainda mais prática.
                     </p>
-
                     <div class="intercom-steps">
-
-                        <div>
-                            <span>01</span>
-                            <p>
-                                <strong>O visitante chama no portão</strong>
-                                A chamada chega ao celular.
-                            </p>
-                        </div>
-
-                        <div>
-                            <span>02</span>
-                            <p>
-                                <strong>Você atende pelo aplicativo</strong>
-                                De qualquer lugar, sem precisar estar na portaria.
-                            </p>
-                        </div>
-
-                        <div>
-                            <span>03</span>
-                            <p>
-                                <strong>Libera o acesso pelo celular</strong>
-                                Um toque para abrir o portão.
-                            </p>
-                        </div>
-
+                        <div><span>01</span><p><strong>O visitante chama no portão</strong> A chamada chega ao celular.</p></div>
+                        <div><span>02</span><p><strong>Você atende pelo aplicativo</strong> De qualquer lugar, sem precisar estar na portaria.</p></div>
+                        <div><span>03</span><p><strong>Libera o acesso pelo celular</strong> Um toque para abrir o portão.</p></div>
                     </div>
                 </div>
 
                 <div class="intercom-visual">
                     <div class="intercom-phone">
                         <div class="intercom-phone-top"></div>
-
-                        <div class="intercom-call-icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-
+                        <div class="intercom-call-icon"><i class="fa-solid fa-phone"></i></div>
                         <span class="intercom-call-label">CHAMADA DA PORTARIA</span>
                         <h3>Visitante no portão</h3>
                         <p>Entrada principal</p>
-
                         <div class="intercom-actions">
-                            <span>
-                                <i class="fa-solid fa-phone"></i>
-                                Atender
-                            </span>
-
-                            <span>
-                                <i class="fa-solid fa-lock-open"></i>
-                                Liberar acesso
-                            </span>
+                            <span><i class="fa-solid fa-phone"></i> Atender</span>
+                            <span><i class="fa-solid fa-lock-open"></i> Liberar acesso</span>
                         </div>
                     </div>
                 </div>
 
             </div>
-
         </div>
     </section>
-
 
     <!-- POR QUE A CMPORT -->
     <section class="why-cmport">
         <div class="container">
-
             <div class="section-header">
                 <div>
                     <span class="section-label">POR QUE A CMPORT</span>
                     <h2>Segurança pensada para funcionar de verdade.</h2>
                 </div>
-
                 <p>
                     Cada projeto considera as características do ambiente,
                     os equipamentos necessários e o acompanhamento técnico.
                 </p>
             </div>
-
             <div class="why-grid">
-
-                <article class="why-card">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <h3>Experiência no setor</h3>
-                    <p>Atuação em segurança eletrônica desde 2015.</p>
-                </article>
-
-                <article class="why-card">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h3>Acompanhamento técnico</h3>
-                    <p>Inspeções e suporte para os sistemas instalados.</p>
-                </article>
-
-                <article class="why-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h3>Projetos integrados</h3>
-                    <p>Diferentes tecnologias reunidas em uma solução.</p>
-                </article>
-
-                <article class="why-card">
-                    <i class="fa-solid fa-building"></i>
-                    <h3>Diferentes ambientes</h3>
-                    <p>Projetos para condomínios, empresas, comércios e residências.</p>
-                </article>
-
+                <article class="why-card"><i class="fa-solid fa-calendar-check"></i><h3>Experiência no setor</h3><p>Atuação em segurança eletrônica desde 2015.</p></article>
+                <article class="why-card"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Acompanhamento técnico</h3><p>Inspeções e suporte para os sistemas instalados.</p></article>
+                <article class="why-card"><i class="fa-solid fa-shield-halved"></i><h3>Projetos integrados</h3><p>Diferentes tecnologias reunidas em uma solução.</p></article>
+                <article class="why-card"><i class="fa-solid fa-building"></i><h3>Diferentes ambientes</h3><p>Projetos para condomínios, empresas, comércios e residências.</p></article>
             </div>
-
         </div>
     </section>
-
 
     <!-- CTA FINAL -->
     <section class="cta">
         <div class="container cta-container">
-
             <div class="cta-content">
-
                 <span class="section-label">PRÓXIMO PASSO</span>
-
                 <h2>Vamos conhecer o seu espaço?</h2>
-
                 <p>
                     Agende uma visita técnica. Avaliamos os pontos de atenção
                     e apresentamos uma proposta adequada às necessidades
                     do seu empreendimento.
                 </p>
-
-                <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20visita%20t%C3%A9cnica%20com%20a%20CMPORT."
-                   class="btn btn-primary"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20visita%20t%C3%A9cnica%20com%20a%20CMPORT." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-whatsapp"></i>
                     Falar no WhatsApp
                 </a>
-
                 <div class="cta-contact-details">
                     <span><i class="fa-solid fa-phone"></i> (11) 94034-1682</span>
                     <span><i class="fa-solid fa-envelope"></i> comercial@cmport.com.br</span>
                     <span><i class="fa-solid fa-globe"></i> www.cmport.com.br</span>
                     <span><i class="fa-brands fa-instagram"></i> @cmport_</span>
                 </div>
-
             </div>
-
         </div>
     </section>
-
 </main>
 
-
-<!-- FOOTER -->
+<!-- RODAPÉ -->
 <footer class="footer">
 
     <div class="container footer-container">
 
         <div class="footer-brand">
-
             <a href="index.html" class="footer-logo" aria-label="CMPORT - Página inicial">
                 <img src="Logo.png" alt="CMPORT Sistemas Eletrônicos de Segurança">
             </a>
-
             <p>
                 Sistemas eletrônicos de segurança, monitoramento,
                 manutenção e suporte técnico desde 2015.
             </p>
-
-            <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT."
-               class="footer-whatsapp"
-               target="_blank"
-               rel="noopener noreferrer">
+            <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT." class="footer-whatsapp" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp"></i>
                 Fale conosco
             </a>
-
         </div>
 
         <div class="footer-column">
@@ -1175,27 +693,26 @@
             <a href="serviços.html">Serviços</a>
             <a href="quem-somos.html">Quem somos</a>
             <a href="contato.html">Contato</a>
-            <a href="política.html">Política de Privacidade</a>
+            <a href="politica.html">Política de Privacidade</a>
             <a href="#" data-cookie-settings>Preferências de cookies</a>
         </div>
 
         <div class="footer-column">
             <h3>Serviços</h3>
-            <a href="serviços.html">Poste de Monitoramento</a>
+            <a href="index.html#poste-monitoramento">Poste de Monitoramento</a>
             <a href="serviços.html">Câmeras e CFTV</a>
             <a href="serviços.html">Controle de Acesso</a>
             <a href="serviços.html">Cerca Elétrica</a>
-            <a href="serviços.html">Alarmes</a>
+            <a href="serviços.html">Alarmes e Sensores</a>
             <a href="serviços.html">Portões e Cancelas</a>
         </div>
 
         <div class="footer-contact">
             <h3>Atendimento</h3>
-
             <span><i class="fa-solid fa-clock"></i> Atendimento 24 horas</span>
             <span><i class="fa-solid fa-calendar-days"></i> De segunda a segunda</span>
-            <span><i class="fa-solid fa-shield-halved"></i> Segurança e manutenção</span>
-
+            <span><i class="fa-solid fa-phone"></i> (11) 94034-1682</span>
+            <span><i class="fa-solid fa-envelope"></i> comercial@cmport.com.br</span>
             <a href="contato.html" class="footer-contact-link">
                 Entre em contato
                 <i class="fa-solid fa-arrow-right"></i>
@@ -1206,35 +723,15 @@
 
     <div class="footer-bottom">
         <div class="container footer-bottom-inner">
-
             <div class="footer-social">
-
-                <a href="https://www.instagram.com/cmport_/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Instagram da CMPORT">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="https://www.facebook.com/cmport.sistemas/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="Facebook da CMPORT">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
+                <a href="https://www.instagram.com/cmport_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da CMPORT"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/cmport.sistemas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook da CMPORT"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
-
-            <p>
-                © 2026 CMPORT Sistemas Eletrônicos de Segurança.
-                Todos os direitos reservados.
-            </p>
-
+            <p>© 2026 CMPORT Sistemas Eletrônicos de Segurança. Todos os direitos reservados.</p>
         </div>
     </div>
 
 </footer>
-
 
 <!-- WHATSAPP FLUTUANTE -->
 <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT."
@@ -1245,23 +742,14 @@
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-
 <!-- AVISO DE COOKIES -->
-<div class="cookie-banner"
-     id="cookie-banner"
-     role="dialog"
-     aria-labelledby="cookie-banner-title"
-     aria-describedby="cookie-banner-text"
-     hidden>
-
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-describedby="cookie-banner-text" hidden>
     <h2 id="cookie-banner-title">Sua privacidade</h2>
-
     <p id="cookie-banner-text">
         Utilizamos cookies essenciais para o funcionamento do site e, com a sua
         autorização, cookies de análise e marketing. Saiba mais na
-        <a href="política.html">Política de Privacidade</a>.
+        <a href="politica.html">Política de Privacidade</a>.
     </p>
-
     <div class="cookie-actions">
         <button type="button" id="cookie-reject" class="cookie-reject">Rejeitar</button>
         <button type="button" id="cookie-settings" class="cookie-settings">Personalizar</button>
@@ -1269,55 +757,28 @@
     </div>
 </div>
 
-
 <div class="cookie-preferences" id="cookie-preferences" hidden>
-
-    <div class="cookie-preferences-panel"
-         role="dialog"
-         aria-modal="true"
-         aria-labelledby="cookie-preferences-title">
-
+    <div class="cookie-preferences-panel" role="dialog" aria-modal="true" aria-labelledby="cookie-preferences-title">
         <h2 id="cookie-preferences-title">Preferências de cookies</h2>
-
-        <p>
-            Escolha quais categorias de cookies você autoriza.
-            Você pode alterar a decisão a qualquer momento.
-        </p>
-
+        <p>Escolha quais categorias de cookies você autoriza. Você pode alterar a decisão a qualquer momento.</p>
         <label class="cookie-essential">
             <input type="checkbox" checked disabled>
-            <span>
-                <strong>Essenciais</strong><br>
-                Necessários para o funcionamento do site. Sempre ativos.
-            </span>
+            <span><strong>Essenciais</strong><br>Necessários para o funcionamento do site. Sempre ativos.</span>
         </label>
-
         <label class="cookie-essential">
             <input type="checkbox" id="cookie-analytics">
-            <span>
-                <strong>Análise</strong><br>
-                Ajudam a entender como o site é utilizado.
-            </span>
+            <span><strong>Análise</strong><br>Ajudam a entender como o site é utilizado.</span>
         </label>
-
         <label class="cookie-essential">
             <input type="checkbox" id="cookie-marketing">
-            <span>
-                <strong>Marketing</strong><br>
-                Usados para campanhas e comunicação relevante.
-            </span>
+            <span><strong>Marketing</strong><br>Usados para campanhas e comunicação relevante.</span>
         </label>
-
         <div class="cookie-actions">
             <button type="button" id="cookie-cancel">Cancelar</button>
-            <button type="button" id="cookie-save" class="cookie-accept">
-                Salvar preferências
-            </button>
+            <button type="button" id="cookie-save" class="cookie-accept">Salvar preferências</button>
         </div>
-
     </div>
 </div>
-
 
 <script src="script.js"></script>
 
