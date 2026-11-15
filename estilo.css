@@ -3215,6 +3215,49 @@ button:focus-visible {
         font-size: 32px;
     }
 
+   /* ---------- Menu do celular: fundo escuro e links legíveis ---------- */
+
+@media (max-width: 768px) {
+
+    .header .nav {
+        background: var(--navy-dark, #071426) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    .header .nav > a:not(.nav-button) {
+        color: var(--white, #FFFFFF) !important;
+
+        background: transparent !important;
+    }
+
+    .header .nav > a:not(.nav-button):hover,
+    .header .nav > a.active:not(.nav-button) {
+        color: var(--blue-light, #66CCFF) !important;
+
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+}
+
+
+/* ---------- Foco visível para navegação por teclado ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--blue-light, #66CCFF);
+
+    outline-offset: 3px;
+}
+
+
+/* ---------- Rodapé: links de contato legíveis ---------- */
+
+.footer-contact span {
+    word-break: break-word;
+}
+
     .number-card h3 {
         font-size: 12px;
     }
