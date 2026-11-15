@@ -3484,21 +3484,14 @@ button:focus-visible {
     .hero-home .hero-trust {
         margin-top: 40px;
     }
-}
-
-
-.company-numbers .numbers-heading h2,
-.company-numbers .company-numbers-content .section-heading,
-.company-numbers .company-numbers-content .section-heading h2 {
+.company-numbers .numbers-heading h2 {
     color: #FFFFFF !important;
 }
 
-.company-numbers .numbers-heading p,
-.company-numbers .company-numbers-content p {
+.company-numbers .numbers-heading p {
     color: rgba(255, 255, 255, 0.76);
 }
 
-.company-numbers .numbers-heading .section-label,
-.company-numbers .company-numbers-content .section-label {
+.company-numbers .numbers-heading .section-label {
     color: #66CCFF !important;
 }
