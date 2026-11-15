@@ -3538,3 +3538,281 @@ button:focus-visible {
 .company-numbers .numbers-heading .section-label {
     color: #66CCFF !important;
 }
+/* Destaque do produto principal */
+.featured-service-card {
+    border: 1px solid rgba(0, 168, 255, 0.35);
+    box-shadow: 0 14px 35px rgba(7, 20, 38, 0.10);
+}
+
+.featured-service-badge {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    z-index: 3;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    color: var(--blue-dark);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.service-link:hover {
+    color: var(--navy);
+}
+
+/* Página Quem Somos */
+.about-intro {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.about-intro-grid,
+.about-highlight-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-intro-text h2,
+.about-highlight-content h2,
+.about-commitment h2 {
+    color: var(--navy);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.12;
+}
+
+.about-intro-text p,
+.about-highlight-content p,
+.about-commitment p {
+    line-height: 1.8;
+}
+
+.about-intro-text .btn {
+    margin-top: 18px;
+}
+
+.about-intro-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, var(--navy), #153c65);
+}
+
+.about-visual-card {
+    width: 80%;
+    padding: 38px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    background: rgba(255,255,255,.07);
+    text-align: center;
+}
+
+.about-visual-icon {
+    margin-bottom: 20px;
+    color: var(--blue-light);
+    font-size: 38px;
+}
+
+.about-visual-year,
+.about-visual-card strong,
+.about-visual-card p {
+    display: block;
+    color: #fff;
+}
+
+.about-visual-year {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .15em;
+}
+
+.about-visual-card strong {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.about-visual-card p {
+    margin: 8px 0 0;
+    color: rgba(255,255,255,.75);
+}
+
+/* Números da empresa */
+.about-numbers {
+    padding: 65px 0;
+    background: var(--navy);
+}
+
+.about-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+
+.about-number-item strong,
+.about-number-item span {
+    display: block;
+    color: #fff;
+}
+
+.about-number-item strong {
+    color: var(--blue-light);
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 900;
+}
+
+.about-number-item span {
+    font-size: 14px;
+}
+
+/* Missão, visão e valores */
+.about-mission {
+    padding: 100px 0;
+    background: var(--ice);
+}
+
+.about-mission .section-heading {
+    max-width: 800px;
+    margin-bottom: 45px;
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.about-value-card {
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.about-value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    background: rgba(0,168,255,.10);
+    color: var(--blue-dark);
+    font-size: 21px;
+}
+
+.about-value-card h3 {
+    color: var(--navy);
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.about-value-card p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* Destaque do poste */
+.about-highlight {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.about-highlight-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    padding: 30px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #071426, #153c65);
+    color: #fff;
+    text-align: center;
+}
+
+.about-highlight-icon {
+    margin-bottom: 20px;
+    color: var(--blue-light);
+    font-size: 76px;
+}
+
+.about-highlight-visual span {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+/* Compromisso */
+.about-commitment {
+    padding: 90px 0;
+    background: var(--ice);
+    text-align: center;
+}
+
+.about-commitment-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-commitment .section-label {
+    justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .about-intro,
+    .about-mission,
+    .about-highlight {
+        padding: 70px 0;
+    }
+
+    .about-intro-grid,
+    .about-highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-intro-visual,
+    .about-highlight-visual {
+        min-height: 270px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-numbers {
+        padding: 45px 0;
+    }
+
+    .about-numbers-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-visual-card {
+        padding: 28px;
+    }
+}
