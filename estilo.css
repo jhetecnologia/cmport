@@ -3816,3 +3816,47 @@ button:focus-visible {
         padding: 28px;
     }
 }
+
+   /* =========================================
+   CMPORT - CORREÇÕES DE ACESSIBILIDADE
+   Contraste e legibilidade
+========================================= */
+
+/* Botões azuis com texto branco */
+.btn-primary,
+.nav-button {
+    background-color: #006FA8 !important;
+    color: #FFFFFF !important;
+}
+
+/* Estado ao passar o mouse */
+.btn-primary:hover,
+.nav-button:hover {
+    background-color: #005580 !important;
+    color: #FFFFFF !important;
+}
+
+/* Identificação das seções */
+.section-label,
+.service-category {
+    color: #00618F !important;
+}
+
+/* Textos descritivos */
+.service-content p {
+    color: #4B5563 !important;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #00618F;
+    outline-offset: 4px;
+}
+
+/* Áreas de toque dos botões principais */
+.btn-primary,
+.nav-button {
+    min-height: 44px;
+    padding: 12px 20px;
+}
