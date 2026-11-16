@@ -3,38 +3,483 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quem Somos | CMPORT Sistemas Eletrônicos de Segurança</title>
-<meta name="description" content="Conheça a CMPORT. Desde 2015, oferecemos soluções em segurança eletrônica, monitoramento, tecnologia e manutenção para empresas, condomínios e residências.">
+
+<title>Quem Somos | CMPORT Sistemas Eletrônicos</title>
+<meta name="description" content="Conheça a CMPORT. Desde 2015, oferecendo soluções em segurança eletrônica, monitoramento e tecnologia.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0B1F3B">
+
 <link rel="canonical" href="https://www.cmport.com.br/quem-somos.html">
 <link rel="icon" type="image/png" href="Logo.png">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Quem Somos | CMPORT">
-<meta property="og:description" content="Desde 2015, conectando tecnologia e segurança para proteger pessoas e patrimônios.">
-<meta property="og:url" content="https://www.cmport.com.br/quem-somos.html">
-<meta property="og:image" content="https://www.cmport.com.br/Logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="estilo.css">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CMPORT Sistemas Eletrônicos de Segurança",
-  "url": "https://www.cmport.com.br/",
-  "logo": "https://www.cmport.com.br/Logo.png",
-  "foundingDate": "2015",
-  "sameAs": [
-    "https://www.instagram.com/cmport_/",
-    "https://www.facebook.com/cmport.sistemas/"
-  ]
+<style>
+:root {
+    --about-navy: #0B1F3B;
+    --about-blue: #00A8FF;
+    --about-gray: #6B7280;
+    --about-light: #F4F6FA;
+    --about-black: #111111;
 }
-</script>
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+.about-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 95px 0;
+    background: var(--about-navy);
+    color: white;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -180px;
+    top: -220px;
+    border: 1px solid rgba(0,168,255,.25);
+    border-radius: 50%;
+    box-shadow: 0 0 0 55px rgba(0,168,255,.035),
+                0 0 0 110px rgba(0,168,255,.025);
+}
+
+.about-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-hero-copy {
+    max-width: 560px;
+}
+
+.about-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    color: var(--about-blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.about-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--about-blue);
+}
+
+.about-hero h1 {
+    margin: 0 0 24px;
+    color: white;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.about-hero h1 span {
+    color: var(--about-blue);
+}
+
+.about-hero-copy p {
+    max-width: 490px;
+    color: rgba(255,255,255,.75);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.about-hero-image {
+    position: relative;
+}
+
+.about-hero-image img {
+    display: block;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 25px 65px rgba(0,0,0,.35);
+}
+
+.about-image-caption {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    padding: 13px 18px;
+    border-left: 3px solid var(--about-blue);
+    background: rgba(11,31,59,.9);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* HISTÓRIA */
+.about-story {
+    padding: 105px 0;
+    background: white;
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: 1fr .85fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.about-section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--about-blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-story h2,
+.about-purpose h2,
+.about-poste h2,
+.about-commitment h2 {
+    margin: 0 0 24px;
+    color: var(--about-navy);
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -1.3px;
+}
+
+.about-story p,
+.about-poste p,
+.about-commitment p {
+    color: var(--about-gray);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.about-story-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(11,31,59,.15), rgba(11,31,59,.98)),
+      url('Imagens/Poste%20de%20Monitoramento%202.jpeg') center/cover;
+}
+
+.about-story-card span {
+    color: var(--about-blue);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-story-card strong {
+    display: block;
+    margin: 10px 0;
+    color: white;
+    font-size: 65px;
+    font-weight: 900;
+}
+
+.about-story-card p {
+    margin: 0;
+    color: rgba(255,255,255,.8);
+}
+
+/* NÚMEROS */
+.about-results {
+    padding: 75px 0;
+    background: var(--about-navy);
+}
+
+.about-results-heading {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.about-results-heading span {
+    color: var(--about-blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-results-heading h2 {
+    margin: 15px 0 0;
+    color: white;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 800;
+}
+
+.about-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.about-result {
+    padding: 30px 20px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 14px;
+    background: rgba(255,255,255,.045);
+    text-align: center;
+}
+
+.about-result strong {
+    display: block;
+    color: var(--about-blue);
+    font-size: clamp(38px,5vw,54px);
+    font-weight: 900;
+}
+
+.about-result span {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255,255,255,.8);
+    font-size: 14px;
+}
+
+/* PROPÓSITO */
+.about-purpose {
+    padding: 105px 0;
+    background: var(--about-light);
+}
+
+.about-purpose-heading {
+    max-width: 760px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.about-purpose-heading p {
+    color: var(--about-gray);
+    line-height: 1.8;
+}
+
+.about-purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.about-purpose-card {
+    position: relative;
+    overflow: hidden;
+    padding: 36px 30px;
+    min-height: 260px;
+    border: 1px solid #E4E8EF;
+    border-radius: 16px;
+    background: white;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.about-purpose-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(11,31,59,.09);
+}
+
+.about-purpose-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background: rgba(0,168,255,.1);
+    color: var(--about-blue);
+    font-size: 22px;
+}
+
+.about-purpose-card h3 {
+    margin: 0 0 14px;
+    color: var(--about-navy);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.about-purpose-card p {
+    margin: 0;
+    color: var(--about-gray);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* POSTE */
+.about-poste {
+    padding: 105px 0;
+    background: white;
+}
+
+.about-poste-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-poste-image {
+    position: relative;
+}
+
+.about-poste-image img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.about-poste-image::after {
+    content: "";
+    position: absolute;
+    right: -13px;
+    bottom: -13px;
+    width: 65%;
+    height: 65%;
+    border-right: 4px solid var(--about-blue);
+    border-bottom: 4px solid var(--about-blue);
+    border-radius: 0 0 18px 0;
+    z-index: -1;
+}
+
+.about-poste h2 {
+    font-size: clamp(30px,4vw,42px);
+}
+
+.about-poste-tag {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: rgba(0,168,255,.1);
+    color: #007FC2;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* COMPROMISSO */
+.about-commitment {
+    padding: 90px 0;
+    background: var(--about-light);
+    text-align: center;
+}
+
+.about-commitment-content {
+    max-width: 780px;
+    margin: auto;
+}
+
+.about-commitment p {
+    margin-bottom: 28px;
+}
+
+.about-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 7px;
+    background: var(--about-blue);
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.about-cta-button:hover {
+    background: var(--about-navy);
+    color: white;
+}
+
+/* RESPONSIVO */
+@media(max-width: 850px) {
+    .about-hero-grid,
+    .about-story-grid,
+    .about-poste-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .about-hero {
+        padding: 70px 0;
+    }
+
+    .about-hero-image img {
+        height: 360px;
+    }
+
+    .about-story,
+    .about-purpose,
+    .about-poste {
+        padding: 75px 0;
+    }
+
+    .about-purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-results-grid {
+        gap: 12px;
+    }
+}
+
+@media(max-width: 520px) {
+    .about-hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .about-hero-image img {
+        height: 290px;
+    }
+
+    .about-results {
+        padding: 60px 0;
+    }
+
+    .about-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-result {
+        padding: 23px;
+    }
+
+    .about-story-card {
+        min-height: 280px;
+        padding: 28px;
+    }
+
+    .about-poste-image img {
+        height: 300px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -42,7 +487,7 @@
 <header class="header">
     <div class="container header-container">
         <a href="index.html" class="logo" aria-label="CMPORT - Página inicial">
-            <img src="Logo.png" alt="Logo da CMPORT Sistemas Eletrônicos de Segurança">
+            <img src="Logo.png" alt="Logo CMPORT">
         </a>
 
         <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
@@ -63,48 +508,68 @@
 
 <main>
 
-    <section class="page-hero">
-        <div class="container page-hero-content">
-            <span class="hero-eyebrow">QUEM SOMOS</span>
-            <h1>Tecnologia e segurança para proteger o que realmente importa.</h1>
-            <p>Desde 2015, a CMPORT trabalha com soluções em segurança eletrônica, monitoramento e tecnologia para diferentes tipos de ambientes.</p>
+    <!-- ABERTURA -->
+    <section class="about-hero">
+        <div class="container about-hero-grid">
+            <div class="about-hero-copy">
+                <span class="about-eyebrow">QUEM SOMOS</span>
+                <h1>Proteção, tecnologia e confiança em <span>cada projeto.</span></h1>
+                <p>Desde 2015, a CMPORT conecta tecnologia e segurança para proteger pessoas, empresas e patrimônios. Conheça nossa história e o compromisso que move nosso trabalho.</p>
+            </div>
+
+            <div class="about-hero-image">
+                <img src="Imagens/T%C3%A9cnicos%20trabalhando.jpeg" alt="Técnicos da CMPORT trabalhando com instalação de equipamentos de segurança eletrônica">
+                <div class="about-image-caption">CMPORT SISTEMAS ELETRÔNICOS</div>
+            </div>
         </div>
     </section>
 
-    <section class="about-intro">
-        <div class="container about-intro-grid">
-            <div class="about-intro-text">
-                <span class="section-label">NOSSA HISTÓRIA</span>
-                <h2>Segurança construída com experiência e tecnologia.</h2>
+    <!-- HISTÓRIA -->
+    <section class="about-story">
+        <div class="container about-story-grid">
+            <div>
+                <span class="about-section-label">NOSSA HISTÓRIA</span>
+                <h2>Uma trajetória construída com tecnologia e compromisso.</h2>
+
                 <p>A CMPORT Sistemas Eletrônicos de Segurança nasceu com o propósito de oferecer soluções que ajudem a proteger pessoas, empresas e patrimônios.</p>
+
                 <p>Desde 2015, desenvolvemos projetos e prestamos serviços em segurança eletrônica, unindo equipamentos, tecnologia, instalação e manutenção.</p>
+
                 <p>Nosso trabalho envolve entender a necessidade de cada ambiente e buscar uma solução adequada para cada projeto.</p>
-                <a href="contato.html" class="btn btn-primary">Fale com nossa equipe <i class="fa-solid fa-arrow-right"></i></a>
+
+                <a href="contato.html" class="about-cta-button">
+                    Fale com nossa equipe <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
 
-            <div class="about-intro-visual">
-                <div class="about-visual-card">
-                    <div class="about-visual-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <span class="about-visual-year">DESDE</span>
-                    <strong>2015</strong>
-                    <p>Experiência em segurança eletrônica</p>
-                </div>
+            <div class="about-story-card">
+                <span>NOSSA TRAJETÓRIA COMEÇOU EM</span>
+                <strong>2015</strong>
+                <p>Experiência e evolução em segurança eletrônica.</p>
             </div>
         </div>
     </section>
 
-    <section class="about-numbers">
+    <!-- RESULTADOS -->
+    <section class="about-results">
         <div class="container">
-            <div class="about-numbers-grid">
-                <div class="about-number-item">
+            <div class="about-results-heading">
+                <span>NOSSA EXPERIÊNCIA EM NÚMEROS</span>
+                <h2>Uma história feita de confiança e atendimento.</h2>
+            </div>
+
+            <div class="about-results-grid">
+                <div class="about-result">
                     <strong>2015</strong>
-                    <span>Início da nossa trajetória</span>
+                    <span>Ano de início da nossa trajetória</span>
                 </div>
-                <div class="about-number-item">
+
+                <div class="about-result">
                     <strong>200+</strong>
                     <span>Clientes</span>
                 </div>
-                <div class="about-number-item">
+
+                <div class="about-result">
                     <strong>1.800+</strong>
                     <span>Atendimentos realizados</span>
                 </div>
@@ -112,29 +577,36 @@
         </div>
     </section>
 
-    <section class="about-mission">
+    <!-- MISSÃO, VISÃO E VALORES -->
+    <section class="about-purpose">
         <div class="container">
-            <div class="section-heading">
-                <span class="section-label">NOSSO PROPÓSITO</span>
+            <div class="about-purpose-heading">
+                <span class="about-section-label">NOSSO PROPÓSITO</span>
                 <h2>Mais do que instalar equipamentos, queremos oferecer tranquilidade.</h2>
                 <p>Trabalhamos para que a tecnologia seja uma aliada na proteção e no cuidado com cada ambiente.</p>
             </div>
 
-            <div class="about-values-grid">
-                <article class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="about-purpose-grid">
+                <article class="about-purpose-card">
+                    <div class="about-purpose-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
                     <h3>Missão</h3>
                     <p>Oferecer soluções em segurança eletrônica com responsabilidade, qualidade e atenção às necessidades de cada cliente.</p>
                 </article>
 
-                <article class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-eye"></i></div>
+                <article class="about-purpose-card">
+                    <div class="about-purpose-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
                     <h3>Visão</h3>
                     <p>Continuar evoluindo com a tecnologia e ampliar nossas soluções para contribuir com ambientes mais seguros.</p>
                 </article>
 
-                <article class="about-value-card">
-                    <div class="about-value-icon"><i class="fa-solid fa-handshake"></i></div>
+                <article class="about-purpose-card">
+                    <div class="about-purpose-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
                     <h3>Valores</h3>
                     <p>Compromisso, confiança, respeito, responsabilidade e dedicação em cada atendimento.</p>
                 </article>
@@ -142,42 +614,40 @@
         </div>
     </section>
 
-    <section class="about-highlight">
-        <div class="container about-highlight-grid">
-            <div class="about-highlight-content">
-                <span class="section-label">TECNOLOGIA EM DESTAQUE</span>
-                <h2>Poste de Monitoramento Inteligente</h2>
-                <p>Uma das soluções de destaque da CMPORT é o Poste de Monitoramento Inteligente, desenvolvido para reforçar a segurança em áreas externas e pontos estratégicos.</p>
-                <p>Com recursos de monitoramento e sinalização, ele contribui para ampliar a percepção de segurança em diferentes ambientes.</p>
-                <a href="serviços.html" class="btn btn-primary">Conheça nossas soluções <i class="fa-solid fa-arrow-right"></i></a>
+    <!-- POSTE DE MONITORAMENTO -->
+    <section class="about-poste">
+        <div class="container about-poste-grid">
+            <div class="about-poste-image">
+                <img src="Imagens/Poste%20de%20Monitoramento%201.jpeg" alt="Poste de Monitoramento Inteligente da CMPORT">
             </div>
 
-            <div class="about-highlight-visual">
-                <div class="about-highlight-icon"><i class="fa-solid fa-tower-broadcast"></i></div>
-                <span>MONITORAMENTO INTELIGENTE</span>
+            <div>
+                <span class="about-section-label">TECNOLOGIA EM DESTAQUE</span>
+                <span class="about-poste-tag">SOLUÇÃO DE MONITORAMENTO</span>
+                <h2>Poste de Monitoramento Inteligente.</h2>
+
+                <p>Uma das soluções de destaque da CMPORT é o Poste de Monitoramento Inteligente, desenvolvido para reforçar a segurança em áreas externas e pontos estratégicos.</p>
+
+                <p>Com recursos de monitoramento e sinalização, ele contribui para ampliar a percepção de segurança em diferentes ambientes.</p>
+
+                <a href="serviços.html" class="about-cta-button">
+                    Conheça nossas soluções <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- COMPROMISSO -->
     <section class="about-commitment">
         <div class="container">
             <div class="about-commitment-content">
-                <span class="section-label">NOSSO COMPROMISSO</span>
+                <span class="about-section-label">NOSSO COMPROMISSO</span>
                 <h2>Cada ambiente tem uma necessidade. Cada projeto merece atenção.</h2>
-                <p>Seja para um condomínio, uma empresa, um comércio ou uma residência, a CMPORT busca entender o cenário e apresentar soluções adequadas em segurança eletrônica.</p>
-                <a href="contato.html" class="btn btn-primary">Converse com a CMPORT</a>
-            </div>
-        </div>
-    </section>
 
-    <section class="final-cta">
-        <div class="container">
-            <div class="final-cta-content">
-                <span class="section-label">VAMOS CONVERSAR?</span>
-                <h2>Conte com a CMPORT para cuidar da segurança do seu espaço.</h2>
-                <p>Entre em contato e conheça nossas soluções em monitoramento, segurança eletrônica e manutenção.</p>
-                <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20CMPORT." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-whatsapp"></i> Falar pelo WhatsApp
+                <p>Seja para um condomínio, uma empresa, um comércio ou uma residência, a CMPORT busca entender o cenário e apresentar soluções adequadas em segurança eletrônica.</p>
+
+                <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20CMPORT." class="about-cta-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i> Converse com a CMPORT
                 </a>
             </div>
         </div>
@@ -191,8 +661,10 @@
             <a href="index.html" class="footer-logo">
                 <img src="Logo.png" alt="CMPORT Sistemas Eletrônicos de Segurança">
             </a>
+
             <p>Soluções em segurança eletrônica para proteger pessoas, empresas e patrimônios.</p>
-            <a href="https://api.whatsapp.com/send?phone=5511940341682&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20CMPORT." class="footer-whatsapp" target="_blank" rel="noopener noreferrer">
+
+            <a href="https://api.whatsapp.com/send?phone=5511940341682" class="footer-whatsapp" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp"></i> Fale conosco
             </a>
         </div>
@@ -225,9 +697,14 @@
 
     <div class="container footer-bottom">
         <p>© 2026 CMPORT Sistemas Eletrônicos de Segurança. Todos os direitos reservados.</p>
+
         <div class="footer-social">
-            <a href="https://www.instagram.com/cmport_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da CMPORT"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/cmport.sistemas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook da CMPORT"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/cmport_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da CMPORT">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/cmport.sistemas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook da CMPORT">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
         </div>
     </div>
 </footer>
