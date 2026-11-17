@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-
     /* =====================================================
        1. MENU MOBILE
     ===================================================== */
@@ -12,48 +9,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuToggle && nav) {
 
-        const menuIcon = menuToggle.querySelector("i");
+        function fecharMenu() {
+            nav.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
 
-        function setMenu(open) {
-            nav.classList.toggle("active", open);
+            const icon = menuToggle.querySelector("i");
 
-            menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
-            menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-
-            if (menuIcon) {
-                menuIcon.classList.toggle("fa-bars", !open);
-                menuIcon.classList.toggle("fa-xmark", open);
+            if (icon) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
             }
         }
 
         menuToggle.addEventListener("click", function () {
-            setMenu(!nav.classList.contains("active"));
+            const aberto = nav.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", aberto ? "true" : "false");
+
+            const icon = menuToggle.querySelector("i");
+
+            if (icon) {
+                icon.classList.toggle("fa-bars", !aberto);
+                icon.classList.toggle("fa-xmark", aberto);
+            }
         });
 
         nav.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () { setMenu(false); });
-        });
-
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape" && nav.classList.contains("active")) {
-                setMenu(false);
-                menuToggle.focus();
-            }
-        });
-
-        document.addEventListener("click", function (event) {
-            if (
-                nav.classList.contains("active") &&
-                !nav.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
-                setMenu(false);
-            }
+            link.addEventListener("click", fecharMenu);
         });
 
         window.addEventListener("resize", function () {
             if (window.innerWidth > 768) {
-                setMenu(false);
+                fecharMenu();
             }
         });
     }
@@ -62,11 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        2. CARROSSEL DO POSTE DE MONITORAMENTO
        Arrastar (mouse e toque), setas e indicadores.
-       Só é iniciado quando chega perto da tela, para não
-       pesar no carregamento inicial da página.
     ===================================================== */
 
-    function initCarousel(carousel) {
+    document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
 
         const track = carousel.querySelector("[data-carousel-track]");
         const prev = carousel.querySelector("[data-carousel-prev]");
@@ -90,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             track.scrollTo({
                 left: target * track.clientWidth,
-                behavior: reduceMotion ? "auto" : "smooth"
+                behavior: "smooth"
             });
         }
 
@@ -111,19 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (next) { next.disabled = index === slides.length - 1; }
         }
 
-        let scrollTicking = false;
-
-        track.addEventListener("scroll", function () {
-            if (scrollTicking) { return; }
-
-            scrollTicking = true;
-
-            window.requestAnimationFrame(function () {
-                updateControls();
-                scrollTicking = false;
-            });
-        }, { passive: true });
-
         if (prev) {
             prev.addEventListener("click", function () { goTo(currentIndex() - 1); });
         }
@@ -135,6 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
         dots.forEach(function (dot, i) {
             dot.addEventListener("click", function () { goTo(i); });
         });
+
+        track.addEventListener("scroll", function () {
+            window.requestAnimationFrame(updateControls);
+        }, { passive: true });
 
         track.addEventListener("keydown", function (event) {
             if (event.key === "ArrowLeft") {
@@ -176,39 +152,13 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("pointerup", endDrag);
         window.addEventListener("pointercancel", endDrag);
 
-        let resizeFrame = null;
-
         window.addEventListener("resize", function () {
-            if (resizeFrame) { return; }
-
-            resizeFrame = window.requestAnimationFrame(function () {
-                resizeFrame = null;
-                track.scrollLeft = currentIndex() * track.clientWidth;
-                updateControls();
-            });
+            track.scrollLeft = currentIndex() * track.clientWidth;
+            updateControls();
         });
 
         updateControls();
-    }
-
-    const carousels = document.querySelectorAll("[data-carousel]");
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    observer.unobserve(entry.target);
-                    initCarousel(entry.target);
-                }
-            });
-        }, { rootMargin: "300px 0px" });
-
-        carousels.forEach(function (carousel) { observer.observe(carousel); });
-
-    } else {
-        carousels.forEach(initCarousel);
-    }
+    });
 
 
     /* =====================================================
@@ -235,7 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const marketingCheckbox = document.getElementById("cookie-marketing");
 
     let savedConsent = null;
-    let lastOpener = null;
 
     function readConsent() {
         try {
@@ -278,10 +227,6 @@ document.addEventListener("DOMContentLoaded", function () {
             banner.hidden = true;
             preferences.hidden = true;
 
-            if (lastOpener && typeof lastOpener.focus === "function") {
-                lastOpener.focus();
-            }
-
             document.dispatchEvent(
                 new CustomEvent("cmport:consent-updated", {
                     detail: savedConsent
@@ -296,10 +241,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function openPreferences(opener) {
+    function openPreferences() {
         const current = readConsent();
-
-        lastOpener = opener || document.activeElement;
 
         analyticsCheckbox.checked = current ? current.analytics : false;
         marketingCheckbox.checked = current ? current.marketing : false;
@@ -323,8 +266,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (settingsButton) {
                 settingsButton.focus();
             }
-        } else if (lastOpener && typeof lastOpener.focus === "function") {
-            lastOpener.focus();
         }
     }
 
@@ -346,9 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (settingsButton) {
-        settingsButton.addEventListener("click", function () {
-            openPreferences(settingsButton);
-        });
+        settingsButton.addEventListener("click", openPreferences);
     }
 
     if (saveButton) {
@@ -382,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-cookie-settings]").forEach(function (element) {
         element.addEventListener("click", function (event) {
             event.preventDefault();
-            openPreferences(element);
+            openPreferences();
         });
     });
 
