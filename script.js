@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
     /* =====================================================
        1. MENU MOBILE
     ===================================================== */
@@ -9,38 +12,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (menuToggle && nav) {
 
-        function fecharMenu() {
-            nav.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
+        const menuIcon = menuToggle.querySelector("i");
 
-            const icon = menuToggle.querySelector("i");
+        function setMenu(open) {
+            nav.classList.toggle("active", open);
 
-            if (icon) {
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
+            menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+
+            if (menuIcon) {
+                menuIcon.classList.toggle("fa-bars", !open);
+                menuIcon.classList.toggle("fa-xmark", open);
             }
         }
 
         menuToggle.addEventListener("click", function () {
-            const aberto = nav.classList.toggle("active");
-
-            menuToggle.setAttribute("aria-expanded", aberto ? "true" : "false");
-
-            const icon = menuToggle.querySelector("i");
-
-            if (icon) {
-                icon.classList.toggle("fa-bars", !aberto);
-                icon.classList.toggle("fa-xmark", aberto);
-            }
+            setMenu(!nav.classList.contains("active"));
         });
 
         nav.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", fecharMenu);
+            link.addEventListener("click", function () { setMenu(false); });
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && nav.classList.contains("active")) {
+                setMenu(false);
+                menuToggle.focus();
+            }
+        });
+
+        document.addEventListener("click", function (event) {
+            if (
+                nav.classList.contains("active") &&
+                !nav.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                setMenu(false);
+            }
         });
 
         window.addEventListener("resize", function () {
             if (window.innerWidth > 768) {
-                fecharMenu();
+                setMenu(false);
             }
         });
     }
@@ -49,9 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        2. CARROSSEL DO POSTE DE MONITORAMENTO
        Arrastar (mouse e toque), setas e indicadores.
+       Só é iniciado quando chega perto da tela, para não
+       pesar no carregamento inicial da página.
     ===================================================== */
 
-    document.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+    function initCarousel(carousel) {
 
         const track = carousel.querySelector("[data-carousel-track]");
         const prev = carousel.querySelector("[data-carousel-prev]");
@@ -75,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             track.scrollTo({
                 left: target * track.clientWidth,
-                behavior: "smooth"
+                behavior: reduceMotion ? "auto" : "smooth"
             });
         }
 
@@ -96,6 +111,19 @@ document.addEventListener("DOMContentLoaded", function () {
             if (next) { next.disabled = index === slides.length - 1; }
         }
 
+        let scrollTicking = false;
+
+        track.addEventListener("scroll", function () {
+            if (scrollTicking) { return; }
+
+            scrollTicking = true;
+
+            window.requestAnimationFrame(function () {
+                updateControls();
+                scrollTicking = false;
+            });
+        }, { passive: true });
+
         if (prev) {
             prev.addEventListener("click", function () { goTo(currentIndex() - 1); });
         }
@@ -107,10 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         dots.forEach(function (dot, i) {
             dot.addEventListener("click", function () { goTo(i); });
         });
-
-        track.addEventListener("scroll", function () {
-            window.requestAnimationFrame(updateControls);
-        }, { passive: true });
 
         track.addEventListener("keydown", function (event) {
             if (event.key === "ArrowLeft") {
@@ -152,13 +176,39 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("pointerup", endDrag);
         window.addEventListener("pointercancel", endDrag);
 
+        let resizeFrame = null;
+
         window.addEventListener("resize", function () {
-            track.scrollLeft = currentIndex() * track.clientWidth;
-            updateControls();
+            if (resizeFrame) { return; }
+
+            resizeFrame = window.requestAnimationFrame(function () {
+                resizeFrame = null;
+                track.scrollLeft = currentIndex() * track.clientWidth;
+                updateControls();
+            });
         });
 
         updateControls();
-    });
+    }
+
+    const carousels = document.querySelectorAll("[data-carousel]");
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target);
+                    initCarousel(entry.target);
+                }
+            });
+        }, { rootMargin: "300px 0px" });
+
+        carousels.forEach(function (carousel) { observer.observe(carousel); });
+
+    } else {
+        carousels.forEach(initCarousel);
+    }
 
 
     /* =====================================================
@@ -185,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const marketingCheckbox = document.getElementById("cookie-marketing");
 
     let savedConsent = null;
+    let lastOpener = null;
 
     function readConsent() {
         try {
@@ -227,6 +278,10 @@ document.addEventListener("DOMContentLoaded", function () {
             banner.hidden = true;
             preferences.hidden = true;
 
+            if (lastOpener && typeof lastOpener.focus === "function") {
+                lastOpener.focus();
+            }
+
             document.dispatchEvent(
                 new CustomEvent("cmport:consent-updated", {
                     detail: savedConsent
@@ -241,8 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function openPreferences() {
+    function openPreferences(opener) {
         const current = readConsent();
+
+        lastOpener = opener || document.activeElement;
 
         analyticsCheckbox.checked = current ? current.analytics : false;
         marketingCheckbox.checked = current ? current.marketing : false;
@@ -266,6 +323,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (settingsButton) {
                 settingsButton.focus();
             }
+        } else if (lastOpener && typeof lastOpener.focus === "function") {
+            lastOpener.focus();
         }
     }
 
@@ -287,7 +346,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (settingsButton) {
-        settingsButton.addEventListener("click", openPreferences);
+        settingsButton.addEventListener("click", function () {
+            openPreferences(settingsButton);
+        });
     }
 
     if (saveButton) {
@@ -321,176 +382,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-cookie-settings]").forEach(function (element) {
         element.addEventListener("click", function (event) {
             event.preventDefault();
-            openPreferences();
+            openPreferences(element);
         });
     });
 
 });
-
-
-/* ==========================================
-   ANIMAÇÕES DE SCROLL - CM PORT
-   ========================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-    const selectors = [
-        "main > section",
-        ".hero-content",
-        ".hero-container > *",
-        ".section-header",
-        ".section-top",
-        ".section-heading",
-        ".intro-grid > *",
-        ".intro-features > *",
-        ".differential-grid > *",
-        ".services-grid > *",
-        ".numbers-grid > *",
-        ".inspection-grid > *",
-        ".contact-grid > *",
-        ".about-hero-copy",
-        ".about-hero-image",
-        ".about-story-grid > *",
-        ".about-results-heading",
-        ".about-results-grid > *",
-        ".about-purpose-heading",
-        ".about-purpose-grid > *",
-        ".about-poste-grid > *",
-        ".about-commitment-content",
-        ".footer .container > *"
-    ];
-
-    const elements = document.querySelectorAll(selectors.join(","));
-
-    if (!elements.length) return;
-
-    document.documentElement.classList.add("cm-motion-enabled");
-
-    elements.forEach(function (element) {
-        element.setAttribute("data-cm-reveal", "");
-
-        const grid = element.parentElement;
-
-        if (
-            grid &&
-            grid.matches(
-                ".services-grid, .differential-grid, .numbers-grid, .inspection-grid, .contact-grid, .about-results-grid, .about-purpose-grid, .about-poste-grid"
-            )
-        ) {
-            const siblings = Array.from(grid.children);
-            const index = siblings.indexOf(element);
-
-            element.style.setProperty(
-                "--cm-reveal-delay",
-                Math.min(index * 100, 400) + "ms"
-            );
-        }
-    });
-
-    if (
-        "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-        const observer = new IntersectionObserver(
-            function (entries, observerInstance) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("cm-is-visible");
-                        observerInstance.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.12,
-                rootMargin: "0px 0px -35px 0px"
-            }
-        );
-
-        elements.forEach(function (element) {
-            observer.observe(element);
-        });
-    } else {
-        elements.forEach(function (element) {
-            element.classList.add("cm-is-visible");
-        });
-    }
-
-    /* ======================================
-       CONTADORES ANIMADOS
-       ====================================== */
-
-    const counterSelectors = [
-        ".number-card > strong",
-        ".about-result strong",
-        ".about-number-item strong"
-    ];
-
-    const counters = document.querySelectorAll(
-        counterSelectors.join(",")
-    );
-
-    function animateCounter(element) {
-        if (element.dataset.cmCounterAnimated) return;
-
-        const originalText = element.textContent.trim();
-        const match = originalText.match(/^([\d.]+)(.*)$/);
-
-        if (!match) return;
-
-        const target = Number(match[1].replace(/\./g, ""));
-        const suffix = match[2];
-
-        if (!Number.isFinite(target) || target <= 0) return;
-
-        element.dataset.cmCounterAnimated = "true";
-
-        const duration = 1300;
-        const startTime = performance.now();
-
-        function updateCounter(currentTime) {
-            const progress = Math.min(
-                (currentTime - startTime) / duration,
-                1
-            );
-
-            const easedProgress = 1 - Math.pow(1 - progress, 3);
-            const currentValue = Math.round(target * easedProgress);
-
-            element.textContent =
-                currentValue.toLocaleString("pt-BR") + suffix;
-
-            if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-            } else {
-                element.textContent =
-                    target.toLocaleString("pt-BR") + suffix;
-            }
-        }
-
-        requestAnimationFrame(updateCounter);
-    }
-
-    if (
-        "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-        const counterObserver = new IntersectionObserver(
-            function (entries, observerInstance) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observerInstance.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.5
-            }
-        );
-
-        counters.forEach(function (counter) {
-            counterObserver.observe(counter);
-        });
-    }
-});
-
-
