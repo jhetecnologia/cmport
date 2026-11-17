@@ -326,3 +326,170 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+/* ==========================================
+   ANIMAÇÕES DE SCROLL - CM PORT
+   ========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const selectors = [
+        "main > section",
+        ".hero-content",
+        ".hero-container > *",
+        ".section-header",
+        ".section-top",
+        ".section-heading",
+        ".intro-grid > *",
+        ".intro-features > *",
+        ".differential-grid > *",
+        ".services-grid > *",
+        ".numbers-grid > *",
+        ".inspection-grid > *",
+        ".contact-grid > *",
+        ".about-hero-copy",
+        ".about-hero-image",
+        ".about-story-grid > *",
+        ".about-results-heading",
+        ".about-results-grid > *",
+        ".about-purpose-heading",
+        ".about-purpose-grid > *",
+        ".about-poste-grid > *",
+        ".about-commitment-content",
+        ".footer .container > *"
+    ];
+
+    const elements = document.querySelectorAll(selectors.join(","));
+
+    if (!elements.length) return;
+
+    document.documentElement.classList.add("cm-motion-enabled");
+
+    elements.forEach(function (element) {
+        element.setAttribute("data-cm-reveal", "");
+
+        const grid = element.parentElement;
+
+        if (
+            grid &&
+            grid.matches(
+                ".services-grid, .differential-grid, .numbers-grid, .inspection-grid, .contact-grid, .about-results-grid, .about-purpose-grid, .about-poste-grid"
+            )
+        ) {
+            const siblings = Array.from(grid.children);
+            const index = siblings.indexOf(element);
+
+            element.style.setProperty(
+                "--cm-reveal-delay",
+                Math.min(index * 100, 400) + "ms"
+            );
+        }
+    });
+
+    if (
+        "IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+        const observer = new IntersectionObserver(
+            function (entries, observerInstance) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("cm-is-visible");
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            }
+        );
+
+        elements.forEach(function (element) {
+            observer.observe(element);
+        });
+    } else {
+        elements.forEach(function (element) {
+            element.classList.add("cm-is-visible");
+        });
+    }
+
+    /* ======================================
+       CONTADORES ANIMADOS
+       ====================================== */
+
+    const counterSelectors = [
+        ".number-card > strong",
+        ".about-result strong",
+        ".about-number-item strong"
+    ];
+
+    const counters = document.querySelectorAll(
+        counterSelectors.join(",")
+    );
+
+    function animateCounter(element) {
+        if (element.dataset.cmCounterAnimated) return;
+
+        const originalText = element.textContent.trim();
+        const match = originalText.match(/^([\d.]+)(.*)$/);
+
+        if (!match) return;
+
+        const target = Number(match[1].replace(/\./g, ""));
+        const suffix = match[2];
+
+        if (!Number.isFinite(target) || target <= 0) return;
+
+        element.dataset.cmCounterAnimated = "true";
+
+        const duration = 1300;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.round(target * easedProgress);
+
+            element.textContent =
+                currentValue.toLocaleString("pt-BR") + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent =
+                    target.toLocaleString("pt-BR") + suffix;
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
+    }
+
+    if (
+        "IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+        const counterObserver = new IntersectionObserver(
+            function (entries, observerInstance) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observerInstance.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.5
+            }
+        );
+
+        counters.forEach(function (counter) {
+            counterObserver.observe(counter);
+        });
+    }
+});
+
